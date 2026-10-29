@@ -1,0 +1,24 @@
+{
+  "name": "naoshang-ai-server",
+  "version": "1.0.0",
+  "description": "脑商AI - 小程序注册/登录后端服务",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "sync": "node scripts/sync_to_mysql.js",
+    "sync:watch": "node scripts/sync_to_mysql.js --watch",
+    "sms:last": "node scripts/last-code.js",
+    "check:api-response": "node scripts/check_api_response.cjs",
+    "test:api-response": "node --test scripts/api_standard.test.cjs scripts/api_module_policy.test.cjs scripts/api_response_ci.test.cjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.24.6",
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

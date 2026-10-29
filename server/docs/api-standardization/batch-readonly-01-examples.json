@@ -1,0 +1,880 @@
+{
+  "GET /api/hq/materials": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "items": [
+            {
+              "materialId": "m1",
+              "title": "Guide",
+              "category": "general",
+              "fileUrl": null,
+              "assetId": null,
+              "status": "online",
+              "size": 0,
+              "mimeType": null,
+              "version": 1,
+              "createdAt": "2026-01-01T00:00:00.000Z",
+              "allowedActions": [
+                "offline",
+                "save",
+                "delete"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "online": 1
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "items": [
+            {
+              "materialId": "m1",
+              "title": "Guide",
+              "category": "general",
+              "fileUrl": null,
+              "assetId": null,
+              "status": "online",
+              "size": 0,
+              "mimeType": null,
+              "version": 1,
+              "createdAt": "2026-01-01T00:00:00.000Z",
+              "allowedActions": [
+                "offline",
+                "save",
+                "delete"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "online": 1
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/materials/catalog": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "categories": [
+            {
+              "value": "general",
+              "label": "general",
+              "count": 1
+            }
+          ],
+          "statuses": [
+            {
+              "value": "online",
+              "label": "已上架"
+            },
+            {
+              "value": "offline",
+              "label": "已下架"
+            }
+          ],
+          "audit": [],
+          "summary": {
+            "total": 1
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "categories": [
+            {
+              "value": "general",
+              "label": "general",
+              "count": 1
+            }
+          ],
+          "statuses": [
+            {
+              "value": "online",
+              "label": "已上架"
+            },
+            {
+              "value": "offline",
+              "label": "已下架"
+            }
+          ],
+          "audit": [],
+          "summary": {
+            "total": 1
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/materials/:materialId": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "material": {
+            "materialId": "m1",
+            "title": "Guide",
+            "category": "general",
+            "fileUrl": null,
+            "assetId": null,
+            "status": "online",
+            "size": 0,
+            "mimeType": null,
+            "version": 1,
+            "createdAt": "2026-01-01T00:00:00.000Z",
+            "allowedActions": [
+              "offline",
+              "save",
+              "delete"
+            ]
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "material": {
+            "materialId": "m1",
+            "title": "Guide",
+            "category": "general",
+            "fileUrl": null,
+            "assetId": null,
+            "status": "online",
+            "size": 0,
+            "mimeType": null,
+            "version": 1,
+            "createdAt": "2026-01-01T00:00:00.000Z",
+            "allowedActions": [
+              "offline",
+              "save",
+              "delete"
+            ]
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/announcements": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "items": [
+            {
+              "announcementId": "a1",
+              "title": "Notice",
+              "summary": "",
+              "content": null,
+              "status": "draft",
+              "publishedAt": null,
+              "audience": null,
+              "version": 1,
+              "allowedActions": [
+                "save",
+                "publish"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "published": 0,
+            "draft": 1
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "items": [
+            {
+              "announcementId": "a1",
+              "title": "Notice",
+              "summary": "",
+              "content": null,
+              "status": "draft",
+              "publishedAt": null,
+              "audience": null,
+              "version": 1,
+              "allowedActions": [
+                "save",
+                "publish"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "published": 0,
+            "draft": 1
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/announcements/catalog": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "statuses": [
+            {
+              "value": "draft",
+              "label": "draft"
+            },
+            {
+              "value": "published",
+              "label": "published"
+            },
+            {
+              "value": "offline",
+              "label": "offline"
+            }
+          ],
+          "audit": [],
+          "summary": {
+            "total": 1
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "statuses": [
+            {
+              "value": "draft",
+              "label": "draft"
+            },
+            {
+              "value": "published",
+              "label": "published"
+            },
+            {
+              "value": "offline",
+              "label": "offline"
+            }
+          ],
+          "audit": [],
+          "summary": {
+            "total": 1
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/announcements/:announcementId": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "announcement": {
+            "announcementId": "a1",
+            "title": "Notice",
+            "summary": "",
+            "content": null,
+            "status": "draft",
+            "publishedAt": null,
+            "audience": null,
+            "version": 1,
+            "allowedActions": [
+              "save",
+              "publish"
+            ]
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "announcement": {
+            "announcementId": "a1",
+            "title": "Notice",
+            "summary": "",
+            "content": null,
+            "status": "draft",
+            "publishedAt": null,
+            "audience": null,
+            "version": 1,
+            "allowedActions": [
+              "save",
+              "publish"
+            ]
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/course/entitlements": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "items": [
+            {
+              "entitlementId": "e1",
+              "accountId": null,
+              "memberId": null,
+              "productId": null,
+              "title": "Course",
+              "status": "ACTIVE",
+              "validFrom": null,
+              "validUntil": "2099-01-01T00:00:00.000Z",
+              "version": 1,
+              "allowedActions": [
+                "extend",
+                "freeze",
+                "unfreeze",
+                "revoke"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "active": 1,
+            "expired": 0
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "items": [
+            {
+              "entitlementId": "e1",
+              "accountId": null,
+              "memberId": null,
+              "productId": null,
+              "title": "Course",
+              "status": "ACTIVE",
+              "validFrom": null,
+              "validUntil": "2099-01-01T00:00:00.000Z",
+              "version": 1,
+              "allowedActions": [
+                "extend",
+                "freeze",
+                "unfreeze",
+                "revoke"
+              ]
+            }
+          ],
+          "total": 1,
+          "page": 1,
+          "pageSize": 20,
+          "summary": {
+            "total": 1,
+            "active": 1,
+            "expired": 0
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/course/catalog": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "products": [],
+          "statuses": [
+            {
+              "value": "ACTIVE",
+              "label": "ACTIVE"
+            },
+            {
+              "value": "FROZEN",
+              "label": "FROZEN"
+            },
+            {
+              "value": "EXPIRED",
+              "label": "EXPIRED"
+            },
+            {
+              "value": "REVOKED",
+              "label": "REVOKED"
+            }
+          ],
+          "summary": {
+            "total": 1
+          }
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "products": [],
+          "statuses": [
+            {
+              "value": "ACTIVE",
+              "label": "ACTIVE"
+            },
+            {
+              "value": "FROZEN",
+              "label": "FROZEN"
+            },
+            {
+              "value": "EXPIRED",
+              "label": "EXPIRED"
+            },
+            {
+              "value": "REVOKED",
+              "label": "REVOKED"
+            }
+          ],
+          "summary": {
+            "total": 1
+          }
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/hq/course/entitlements/:entitlementId": {
+    "success": {
+      "legacy": {
+        "code": 0,
+        "message": "ok",
+        "data": {
+          "entitlement": {
+            "entitlementId": "e1",
+            "accountId": null,
+            "memberId": null,
+            "productId": null,
+            "title": "Course",
+            "status": "ACTIVE",
+            "validFrom": null,
+            "validUntil": "2099-01-01T00:00:00.000Z",
+            "version": 1,
+            "allowedActions": [
+              "extend",
+              "freeze",
+              "unfreeze",
+              "revoke"
+            ]
+          },
+          "audit": []
+        }
+      },
+      "v2": {
+        "status": 1,
+        "response": {
+          "entitlement": {
+            "entitlementId": "e1",
+            "accountId": null,
+            "memberId": null,
+            "productId": null,
+            "title": "Course",
+            "status": "ACTIVE",
+            "validFrom": null,
+            "validUntil": "2099-01-01T00:00:00.000Z",
+            "version": 1,
+            "allowedActions": [
+              "extend",
+              "freeze",
+              "unfreeze",
+              "revoke"
+            ]
+          },
+          "audit": []
+        }
+      }
+    },
+    "failure": {
+      "http": 401,
+      "legacy": {
+        "code": 40100,
+        "message": "未登录或 token 已失效",
+        "data": null
+      },
+      "v2": {
+        "status": 0,
+        "code": "UNAUTHENTICATED",
+        "message": "未登录或 token 已失效",
+        "response": null
+      }
+    },
+    "validation": {
+      "fixtureOnly": true,
+      "http": 400,
+      "legacy": {
+        "code": 40000,
+        "message": "参数不合法",
+        "data": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      },
+      "v2": {
+        "status": 0,
+        "code": "VALIDATION_ERROR",
+        "message": "参数不合法",
+        "response": null,
+        "errors": [
+          {
+            "field": "keyword",
+            "message": "格式不正确"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "batchSize": 9,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/hq/materials",
+      "module": "materials",
+      "switch": "API_STANDARD_MATERIALS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\materials.js",
+        "line": 39
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/materials/catalog",
+      "module": "materials",
+      "switch": "API_STANDARD_MATERIALS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\materials.js",
+        "line": 62
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/materials/:materialId",
+      "module": "materials",
+      "switch": "API_STANDARD_MATERIALS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\materials.js",
+        "line": 85
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/announcements",
+      "module": "announcements",
+      "switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\announcements.js",
+        "line": 39
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/announcements/catalog",
+      "module": "announcements",
+      "switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\announcements.js",
+        "line": 61
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/announcements/:announcementId",
+      "module": "announcements",
+      "switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\announcements.js",
+        "line": 75
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/course/entitlements",
+      "module": "course",
+      "switch": "API_STANDARD_COURSE_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\course.js",
+        "line": 43
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/course/catalog",
+      "module": "course",
+      "switch": "API_STANDARD_COURSE_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\course.js",
+        "line": 73
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/course/entitlements/:entitlementId",
+      "module": "course",
+      "switch": "API_STANDARD_COURSE_PILOT",
+      "defaultEnabled": false,
+      "handler": {
+        "file": "E:\\project\\nodejs\\backend\\server\\src\\routes\\hq\\modules\\course.js",
+        "line": 95
+      },
+      "oldShape": "{code:0,message:\"ok\",data} / {code:number,message,data:null}",
+      "newShape": "{status:1,response} / {status:0,code:string,message,response:null,errors?}",
+      "businessPayload": "unchanged",
+      "scope": "response envelope only"
+    }
+  ]
+}

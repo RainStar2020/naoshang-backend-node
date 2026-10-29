@@ -1,0 +1,9 @@
+const test=require('node:test'),assert=require('node:assert/strict'),W=require('./money-ddl-wrapper.cjs');
+const sql='ALTER TABLE `skus` ADD COLUMN `list_price_cents` BIGINT NULL;';
+function fake(columns){const statements=[];return {statements,async query(statement){statements.push(statement);return statement.startsWith('SELECT')?[columns]:[{}];}};}
+test('absent column executes ADD',async()=>{const db=fake([]);const result=await W.execute(db,sql);assert.equal(result[0].status,'executed');assert.ok(db.statements[1].startsWith('ALTER TABLE'));});
+test('matching column is skipped',async()=>{const db=fake([{COLUMN_TYPE:'bigint',IS_NULLABLE:'YES',COLUMN_DEFAULT:null}]);const result=await W.execute(db,sql);assert.equal(result[0].status,'skipped-matching');assert.equal(db.statements.length,1);});
+test('type/null/default conflicts stop without DDL',async()=>{for(const row of [{COLUMN_TYPE:'int',IS_NULLABLE:'YES',COLUMN_DEFAULT:null},{COLUMN_TYPE:'bigint',IS_NULLABLE:'NO',COLUMN_DEFAULT:null},{COLUMN_TYPE:'bigint',IS_NULLABLE:'YES',COLUMN_DEFAULT:'0'}]){const db=fake([row]);await assert.rejects(W.execute(db,sql),/COLUMN_DEFINITION_CONFLICT/);assert.equal(db.statements.length,1);}});
+test('DROP missing column skips',async()=>{const db=fake([]);const result=await W.execute(db,'ALTER TABLE skus DROP COLUMN list_price_cents;');assert.equal(result[0].status,'skipped-absent');});
+test('DROP existing column executes',async()=>{const db=fake([{COLUMN_TYPE:'bigint',IS_NULLABLE:'YES',COLUMN_DEFAULT:null}]);const result=await W.execute(db,'ALTER TABLE skus DROP COLUMN list_price_cents;');assert.equal(result[0].status,'executed');});
+test('multiple operations preserve decimal comma and reject unrelated DDL',()=>{assert.equal(W.parse('ALTER TABLE t ADD COLUMN a DECIMAL(18,2) NULL, ADD COLUMN b CHAR(3) NULL;').length,2);assert.throws(()=>W.parse('DROP TABLE skus;'));});

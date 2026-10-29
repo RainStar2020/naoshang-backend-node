@@ -1,0 +1,2 @@
+-- CODE/CONFIG STEP ONLY: no SQL writes. Deploy reviewed code with all flags OFF.
+-- Enable shadow writer group only after batch A verification and explicit approval.

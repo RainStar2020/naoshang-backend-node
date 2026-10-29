@@ -1,0 +1,370 @@
+{
+  "node": "v24.22.0",
+  "metric": "integrated eligible read modules / eligible read modules; not endpoint or enabled-traffic coverage",
+  "integrated": 14,
+  "eligible": 14,
+  "percent": 100,
+  "modules": [
+    {
+      "name": "users",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_USERS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_USERS_PILOT = '0'"
+    },
+    {
+      "name": "course",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_COURSE_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_COURSE_PILOT = '0'"
+    },
+    {
+      "name": "announcements",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_ANNOUNCEMENTS_PILOT = '0'"
+    },
+    {
+      "name": "materials",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_MATERIALS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_MATERIALS_PILOT = '0'"
+    },
+    {
+      "name": "softwareCards",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_SOFTWARE_CARDS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_SOFTWARE_CARDS_PILOT = '0'"
+    },
+    {
+      "name": "quotas",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_QUOTAS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_QUOTAS_PILOT = '0'"
+    },
+    {
+      "name": "delivery",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_DELIVERY_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_DELIVERY_PILOT = '0'"
+    },
+    {
+      "name": "staff",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_STAFF_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_STAFF_PILOT = '0'"
+    },
+    {
+      "name": "stores",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_STORES_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_STORES_PILOT = '0'"
+    },
+    {
+      "name": "training",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_TRAINING_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_TRAINING_PILOT = '0'"
+    },
+    {
+      "name": "invitations",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_INVITATIONS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_INVITATIONS_PILOT = '0'"
+    },
+    {
+      "name": "transfers",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_TRANSFERS_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_TRANSFERS_PILOT = '0'"
+    },
+    {
+      "name": "support",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_SUPPORT_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_SUPPORT_PILOT = '0'"
+    },
+    {
+      "name": "trace",
+      "scope": "existing GET handlers only",
+      "status": "integrated",
+      "defaultEnabled": false,
+      "flag": "API_STANDARD_TRACE_PILOT",
+      "changedFiles": [
+        "server/src/common/api-standard/module-policy.js",
+        "server/src/common/api-standard/readonly-batch.js",
+        "server/src/routes/hq/index.js",
+        "server/scripts/api_module_policy.test.cjs"
+      ],
+      "contractTests": [
+        "factory output",
+        "default legacy contract",
+        "version2 plus module switch"
+      ],
+      "compatibility": [
+        "default legacy unchanged",
+        "version2 requires module flag=1",
+        "existing users/support DTO and pagination adapters retained"
+      ],
+      "rollbackCommand": "$env:API_STANDARD_TRACE_PILOT = '0'"
+    }
+  ],
+  "exceptionModules": {
+    "products": "金额/商品价格接口",
+    "orders": "订单与金额接口",
+    "coupons": "优惠金额接口",
+    "payments": "支付/对账及带写副作用的导出",
+    "revenue": "收益金额接口",
+    "withdrawals": "提现金额接口",
+    "partners": "年费与合伙收益接口",
+    "costore": "合店费用接口",
+    "auth": "查询可能初始化管理员",
+    "columns": "查询可能补建后台专栏",
+    "activationCodes": "查询可能构建批次记录",
+    "members": "查询可能补写会员门店名称"
+  },
+  "layerExceptions": {
+    "legacyWrites": "所有存量非GET动作，保持原实现",
+    "h5": "旧catch吞错/重分类链路",
+    "h5biz": "非法JSON回退链路",
+    "legacyMain": "主入口尚未模块化的混合管理接口",
+    "protocol": "CSV/健康检查/OPTIONS协议例外"
+  },
+  "endpointRegistrationRequired": false,
+  "remoteCI": "not run",
+  "database": "not connected",
+  "productionFlagsChanged": false
+}

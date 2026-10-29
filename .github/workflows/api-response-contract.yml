@@ -1,0 +1,25 @@
+name: API response contracts
+on:
+  pull_request:
+  push:
+jobs:
+  response-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install dependencies without lifecycle scripts or lockfile changes
+        working-directory: server
+        run: npm install --ignore-scripts --no-package-lock
+      - name: Check new interfaces against Git base
+        working-directory: server
+        env:
+          API_CI_BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before || 'HEAD' }}
+        run: npm run check:api-response
+      - name: Pure-memory module contracts
+        working-directory: server
+        run: npm run test:api-response

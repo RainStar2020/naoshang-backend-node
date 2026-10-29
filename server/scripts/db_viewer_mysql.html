@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>脑商AI · MySQL 数据库浏览器</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --panel:#ffffff; --border:#e3e6ec; --text:#1d2129; --muted:#86909c;
+    --accent:#2b6cf6; --accent-soft:#eaf1ff; --ok:#0aa06e; --warn:#d98016;
+    --mono:"Cascadia Code","Consolas","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font:14px/1.6 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}
+  header{background:var(--panel);border-bottom:1px solid var(--border);padding:14px 20px;
+         display:flex;align-items:center;gap:16px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+  h1{font-size:16px;margin:0;font-weight:600}
+  .stat{display:flex;gap:18px;font-size:12px;color:var(--muted)}
+  .stat b{color:var(--text);font-size:14px}
+  .path{font-family:var(--mono);font-size:11px;color:var(--muted);
+        background:#f2f3f5;padding:3px 8px;border-radius:4px;word-break:break-all}
+  .layout{display:flex;height:calc(100vh - 57px)}
+  aside{width:320px;background:var(--panel);border-right:1px solid var(--border);overflow-y:auto;flex-shrink:0}
+  main{flex:1;overflow-y:auto;padding:20px}
+  .search{padding:10px 12px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--panel);z-index:2}
+  .search input{width:100%;padding:7px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px}
+  .search input:focus{outline:none;border-color:var(--accent)}
+  .grp{padding:10px 14px 4px;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px}
+  .tbl{display:flex;justify-content:space-between;align-items:center;padding:6px 14px;cursor:pointer;font-size:13px;
+       border-left:3px solid transparent;gap:8px}
+  .tbl:hover{background:#f7f8fa}
+  .tbl.on{background:var(--accent-soft);border-left-color:var(--accent);font-weight:600}
+  .tbl .nm{font-family:var(--mono);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tbl .n{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;flex-shrink:0}
+  .tbl.has .n{color:var(--ok)}
+  h2{font-size:18px;margin:0 0 4px;font-family:var(--mono)}
+  .sub{color:var(--muted);font-size:12px;margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px}
+  .card h3{font-size:14px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{padding:6px 10px;text-align:left;border-bottom:1px solid #f0f2f5;vertical-align:top}
+  th{background:#fafbfc;font-weight:600;color:var(--muted);font-size:11px;white-space:nowrap;
+     position:sticky;top:0;border-bottom:1px solid var(--border)}
+  td.name{font-family:var(--mono)}
+  tr:hover td{background:#fafbfc}
+  .pk{color:var(--warn);font-size:10px;margin-left:4px}
+  .fk{color:var(--accent);font-size:10px;margin-left:4px}
+  .tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;
+       background:#f2f3f5;color:var(--muted);margin-right:4px}
+  .tag.pk{background:#fff3e6;color:var(--warn);margin:0}
+  .tag.fk{background:var(--accent-soft);color:var(--accent);margin:0}
+  .tag.nn{background:#fdecea;color:#c0392b;margin:0}
+  .tag.mg{background:#fff3e6;color:var(--warn);margin:0;font-size:9px;padding:1px 4px}
+  .er{display:flex;flex-wrap:wrap;gap:8px}
+  .er .edge{font-family:var(--mono);font-size:11px;background:#fafbfc;border:1px solid var(--border);
+            border-radius:5px;padding:5px 9px}
+  .er .edge b{color:var(--accent);font-weight:600}
+  .pager{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:12px;color:var(--muted)}
+  .pager button{padding:4px 11px;border:1px solid var(--border);background:#fff;border-radius:5px;cursor:pointer;font-size:12px}
+  .pager button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .pager button:disabled{opacity:.45;cursor:not-allowed}
+  .empty{text-align:center;padding:40px;color:var(--muted);font-size:13px}
+  .rowjson{font-family:var(--mono);font-size:11px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tabs{display:flex;gap:4px;margin-bottom:14px;border-bottom:1px solid var(--border)}
+  .tabs button{padding:8px 16px;border:none;background:none;cursor:pointer;font-size:13px;color:var(--muted);
+               border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tabs button.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+  .sqlbox{width:100%;min-height:90px;font-family:var(--mono);font-size:12px;padding:10px;
+          border:1px solid var(--border);border-radius:6px;resize:vertical}
+  .sqlbox:focus{outline:none;border-color:var(--accent)}
+  .cmt{color:var(--muted);font-size:11px;display:block;margin-top:2px;line-height:1.5}
+  .cmt-inline{color:var(--muted);font-size:11px}
+  .badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:3px;
+         background:#e8f7f0;color:var(--ok);margin-left:8px;vertical-align:middle;font-weight:400}
+  .tip{position:relative;cursor:help;border-bottom:1px dotted var(--muted)}
+  .tip:hover::after{content:attr(data-tip);position:absolute;left:0;top:120%;z-index:50;max-width:420px;
+      background:#1d2129;color:#fff;font-size:11px;font-family:"Microsoft YaHei",sans-serif;font-weight:400;
+      padding:8px 11px;border-radius:6px;line-height:1.6;white-space:normal;width:max-content;
+      box-shadow:0 6px 18px rgba(0,0,0,.22)}
+  .tip:hover::before{content:"";position:absolute;left:14px;top:100%;z-index:51;border:5px solid transparent;
+      border-bottom-color:#1d2129}
+  .kv{display:flex;gap:8px;align-items:baseline;font-size:12px;padding:5px 0;border-bottom:1px solid #f0f2f5}
+  .kv b{font-family:var(--mono);font-weight:600;min-width:150px}
+  .loading{padding:40px;text-align:center;color:var(--muted)}
+  .notice{border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.7;margin-bottom:12px;
+          background:#f7f8fa;border:1px solid var(--border);color:var(--text)}
+  .notice.ok{background:#e8f7f0;border-color:#b7e6d3;color:#0a6b4d}
+  .notice.err{background:#fdecea;border-color:#f5c2c0;color:#a02b20}
+  .notice code{font-family:var(--mono);background:rgba(0,0,0,.05);padding:1px 5px;border-radius:3px;font-size:11px}
+  .badge-write{background:#fff3e6;color:var(--warn)}
+</style>
+</head>
+<body>
+<header>
+  <h1>脑商AI · MySQL 数据库浏览器</h1>
+  <div class="stat">
+    <span>表 <b id="s-tables">0</b></span>
+    <span>有数据 <b id="s-filled">0</b></span>
+    <span>总行数 <b id="s-rows">0</b></span>
+    <span>外键 <b id="s-fk">0</b></span>
+  </div>
+  <div class="path" id="dbpath">连接中…</div>
+</header>
+<div class="layout">
+  <aside>
+    <div class="search"><input id="q" placeholder="搜索表名或说明…" /></div>
+    <div id="tree"></div>
+  </aside>
+  <main id="main"><div class="empty">← 从左侧选择一张表</div></main>
+</div>
+<script>
+let META=null, GROUPS=[], cur=null, PAGE=1, SIZE=20;
+
+const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function boot(){
+  const r = await fetch('/api/meta'); const j = await r.json();
+  if(j.error){ document.getElementById('dbpath').textContent='连接失败: '+j.error; return; }
+  META=j.meta; GROUPS=j.groups;
+  document.getElementById('dbpath').textContent = j.dbFile;
+  document.getElementById('s-tables').textContent = META.length;
+  document.getElementById('s-filled').textContent = META.filter(m=>m.count>0).length;
+  document.getElementById('s-rows').textContent = META.reduce((a,m)=>a+m.count,0);
+  document.getElementById('s-fk').textContent = j.fkEdges.length;
+  // 写入能力与托管表清单
+  try{
+    const wr = await fetch('/api/write-tables'); const wj = await wr.json();
+    window.WRITE_ON = !!wj.enabled;
+    window.MANAGED = wj.managed || [];
+  }catch(e){ window.WRITE_ON=false; window.MANAGED=[]; }
+  tree();
+}
+
+function tree(){
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const html = GROUPS.map(g=>{
+    const ts = g.tables.filter(t=>{
+      const m = META.find(x=>x.name===t); if(!m) return false;
+      if(!q) return true;
+      return t.toLowerCase().includes(q) || (m.comment||'').toLowerCase().includes(q);
+    });
+    if(!ts.length) return '';
+    const rows = ts.map(t=>{
+      const m = META.find(x=>x.name===t);
+      const cm = m.comment ? ` title="${esc(m.comment)}"` : '';
+      const mg = (window.MANAGED||[]).includes(t) ? ' <span class="tag mg" title="托管表：同步器会整表刷新，禁止直写">托管</span>' : '';
+      return `<div class="tbl ${m.count>0?'has':''} ${cur===t?'on':''}" data-t="${esc(t)}"${cm}>
+        <span class="nm">${esc(t)}</span>${mg}<span class="n">${m.count}</span></div>`;
+    }).join('');
+    return `<div class="grp">${esc(g.key)}</div>${rows}`;
+  }).join('');
+  document.getElementById('tree').innerHTML = html;
+  document.querySelectorAll('.tbl').forEach(el=>{
+    el.onclick=()=>{ cur=el.dataset.t; PAGE=1; tree(); open(cur); };
+  });
+}
+
+async function open(t){
+  const m = META.find(x=>x.name===t);
+  if(!m) return;
+  const inbound = META.filter(x=>x.fks.some(f=>f.toTable===t))
+                      .map(x=>`${x.name}.${x.fks.find(f=>f.toTable===t).from}`);
+  const outb = m.fks.map(f=>`${t}.${f.from} → ${f.toTable}.${f.toCol}`);
+  const cm = m.comment ? `<span class="badge">${esc(m.comment)}</span>` : '';
+
+  const cols = m.cols.map(c=>{
+    const fk = m.fks.find(f=>f.from===c.name);
+    const tip = c.comment ? ` class="tip" data-tip="${esc(c.comment)}"` : '';
+    return `<tr><td class="name"><span${tip}>${esc(c.name)}</span>
+      ${c.comment?`<span class="cmt">${esc(c.comment)}</span>`:''}</td>
+      <td>${esc(c.type||'—')}</td>
+      <td>${c.pk?'<span class="tag pk">PK</span>':''}${fk?'<span class="tag fk">FK</span>':''}${c.notnull?'<span class="tag nn">NOT NULL</span>':''}</td>
+      <td class="name">${fk?esc(fk.toTable+'.'+fk.toCol):''}</td></tr>`;
+  }).join('');
+
+  document.getElementById('main').innerHTML = `
+    <h2>${esc(t)}</h2>${cm}
+    <div class="sub">${m.count} 行 · ${m.cols.length} 列${m.fks.length?' · '+m.fks.length+' 个外键':''}</div>
+    <div class="tabs"><button class="on" data-v="d">数据</button><button data-v="s">结构与注释</button><button data-v="e">关系</button><button data-v="q">SQL 查询</button></div>
+    <div id="pane"></div>`;
+  const pane = document.getElementById('pane');
+
+  const showData = async(page)=>{
+    pane.innerHTML = '<div class="loading">加载中…</div>';
+    const d = await (await fetch(`/api/rows?table=${encodeURIComponent(t)}&page=${page}&size=${SIZE}`)).json();
+    if(d.error){ pane.innerHTML = `<div class="card">读取失败：${esc(d.error)}</div>`; return; }
+    const head = d.columns.map(c=>{
+      const cc = (d.columnComments||{})[c];
+      return `<th class="tip" data-tip="${esc(cc||'')}">${esc(c)}</th>`;
+    }).join('');
+    const body = d.rows.map(r=>`<tr>${d.columns.map(c=>{
+      const v=r[c];
+      if(v===null||v===undefined) return '<td style="color:#c0c4cc">NULL</td>';
+      const s=typeof v==='object'?JSON.stringify(v):String(v);
+      return `<td><div class="rowjson" title="${esc(s)}">${esc(s)}</div></td>`;
+    }).join('')}</tr>`).join('');
+    const pages = Math.max(1, Math.ceil(d.total/SIZE));
+    pane.innerHTML = `<div class="card"><table><thead><tr>${head}</tr></thead><tbody>${body||'<tr><td colspan="99">无数据</td></tr>'}</tbody></table>
+      <div class="pager">
+        <button id="pg-prev" ${page<=1?'disabled':''}>上一页</button>
+        <span>第 ${page} / ${pages} 页，共 ${d.total} 行</span>
+        <button id="pg-next" ${page>=pages?'disabled':''}>下一页</button>
+      </div></div>`;
+    const pre=document.getElementById('pg-prev'), nxt=document.getElementById('pg-next');
+    if(pre) pre.onclick=()=>showData(page-1);
+    if(nxt) nxt.onclick=()=>showData(page+1);
+  };
+
+  const showStruct = ()=>{
+    pane.innerHTML = `<div class="card"><h3>列定义与中文说明</h3><table>
+      <thead><tr><th style="width:26%">列名 / 说明</th><th style="width:16%">类型</th><th style="width:18%">约束</th><th>引用</th></tr></thead>
+      <tbody>${cols}</tbody></table></div>
+      ${outb.length?`<div class="card"><h3>本表外键（出向）</h3><div class="er">${outb.map(e=>`<span class="edge">${esc(e)}</span>`).join('')}</div></div>`:''}
+      ${inbound.length?`<div class="card"><h3>被引用（入向）</h3><div class="er">${inbound.map(e=>`<span class="edge">${esc(e)}</span>`).join('')}</div></div>`:''}`;
+  };
+
+  const showRel = ()=>{
+    const all=[...outb.map(e=>({s:'出',t:e})),...inbound.map(e=>({s:'入',t:e}))];
+    pane.innerHTML = `<div class="card"><h3>外键关系</h3>
+      <div class="er">${all.map(e=>`<span class="edge"><b>${e.s}</b> ${esc(e.t)}</span>`).join('')}</div></div>`;
+  };
+
+  const showSql = ()=>{
+    const managed = (window.MANAGED||[]);
+    const isManaged = managed.includes(t);
+    pane.innerHTML = `<div class="card"><h3>SQL 查询（仅允许 SELECT）</h3>
+      <textarea class="sqlbox" id="sqlq">SELECT * FROM \`${esc(t)}\` LIMIT 20</textarea>
+      <div class="pager"><button id="sql-run">执行查询</button><span id="sql-msg"></span></div>
+      <div id="sql-out" style="margin-top:12px"></div></div>
+
+      <div class="card"><h3>数据写入${window.WRITE_ON?'（已开启）':'（未开启）'}</h3>
+      ${window.WRITE_ON?`
+        ${isManaged
+          ? `<div class="notice err"><b>⚠「${esc(t)}」是托管表，禁止直写。</b><br>
+              该表由系统运行态数据单向镜像生成，同步器会以 <code>DELETE FROM</code> + 重建的方式整表刷新，
+              直写的内容会在秒级内被覆盖且无法找回。请改写非托管表，或通过业务接口写入。</div>`
+          : `<div class="notice ok">当前表 <code>${esc(t)}</code> <b>可写</b>（非托管表）。<br>
+              安全约束：仅允许 INSERT / UPDATE / DELETE / REPLACE；UPDATE 与 DELETE 必须带 WHERE；
+              无 DDL 权限（无法 DROP / ALTER / TRUNCATE）。</div>`}
+        <textarea class="sqlbox" id="sqlw" placeholder="INSERT INTO \`${esc(t)}\` (\`列名\`) VALUES ('值')">${isManaged?'':`INSERT INTO \`${esc(t)}\` (\`id\`) VALUES ('demo_001')`}</textarea>
+        <div class="pager">
+          <button id="w-run" ${isManaged?'disabled':''}>执行写入</button>
+          <span id="w-msg"></span>
+        </div>
+        <div id="w-out" style="margin-top:12px"></div>`
+        : `<div class="notice">写入功能当前<b>未开启</b>。若需开启，请在库机上以 <code>--write</code> 参数重启数据库浏览器。</div>`}
+      </div>`;
+
+    document.getElementById('sql-run').onclick = async ()=>{
+      const sql = document.getElementById('sqlq').value.trim();
+      const msg = document.getElementById('sql-msg'), out = document.getElementById('sql-out');
+      msg.textContent='查询中…'; out.innerHTML='';
+      try{
+        const r = await (await fetch('/api/sql?q='+encodeURIComponent(sql))).json();
+        if(r.error){ msg.textContent='出错：'+r.error; return; }
+        msg.textContent = r.rows.length+' 行';
+        if(!r.rows.length){ out.innerHTML='<div class="empty">无结果</div>'; return; }
+        const cols = Object.keys(r.rows[0]);
+        out.innerHTML = `<table><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead>
+          <tbody>${r.rows.map(row=>`<tr>${cols.map(c=>{
+            const v=row[c];
+            const s = (v===null||v===undefined)?'NULL':(typeof v==='object'?JSON.stringify(v):String(v));
+            return `<td><div class="rowjson" title="${esc(s)}">${esc(s)}</div></td>`;
+          }).join('')}</tr>`).join('')}</tbody></table>`;
+      }catch(e){ msg.textContent='请求失败：'+e.message; }
+    };
+
+    const wRun = document.getElementById('w-run');
+    if(wRun) wRun.onclick = async ()=>{
+      const sql = document.getElementById('sqlw').value.trim();
+      const msg = document.getElementById('w-msg'), out = document.getElementById('w-out');
+      if(!sql){ msg.textContent='请输入 SQL'; return; }
+      if(!confirm('确认执行写入？\n\n'+sql+'\n\n注意：此操作会立即生效（UPDATE/DELETE 不可撤销）。')) return;
+      msg.textContent='执行中…'; out.innerHTML='';
+      try{
+        const r = await (await fetch('/api/write',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sql})})).json();
+        if(r.error){ msg.textContent='被拒绝：'+r.error; out.innerHTML=''; return; }
+        const aff = (r.affectedRows===null||r.affectedRows===undefined)?'':`，影响 ${r.affectedRows} 行`;
+        msg.textContent = r.op+' 执行成功'+aff;
+        let extra='';
+        if(r.totalRows!==null&&r.totalRows!==undefined) extra = `，该表现有 ${r.totalRows} 行`;
+        out.innerHTML = `<div class="notice ok">✅ ${esc(r.op||'')} 成功${aff}${esc(extra)}。可在「数据」页刷新查看。</div>`;
+        setTimeout(()=>showData(PAGE), 400);
+      }catch(e){ msg.textContent='请求失败：'+e.message; }
+    };
+  };
+
+  await showData(1);
+  document.querySelectorAll('.tabs button').forEach(b=>{
+    b.onclick=()=>{
+      document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      if(b.dataset.v==='d') showData(PAGE);
+      else if(b.dataset.v==='s') showStruct();
+      else if(b.dataset.v==='e') showRel();
+      else showSql();
+    };
+  });
+}
+
+document.getElementById('q').oninput=tree;
+boot();
+</script>
+</body>
+</html>

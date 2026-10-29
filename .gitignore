@@ -1,0 +1,23 @@
+# IDE
+.idea/
+.vscode/
+*.sw?
+*.suo
+
+# 依赖与构建产物
+node_modules/
+dist/
+unpackage/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+npm-debug.log*
+
+# 子目录另有更具体的规则（server/.gitignore：data/db.json 运行时快照等）
+
+# 测试临时数据（隔离测试用的独立 db.json / 校验库）
+server/tmp/

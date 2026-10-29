@@ -1,0 +1,774 @@
+{
+  "run": "fast-drill-2026-10-29T06-35-17-255Z",
+  "startedAt": "2026-10-29T06:35:17.255Z",
+  "node": "v24.22.0",
+  "executable": "D:\\nvm\\v24.22.0\\node.exe",
+  "target": "127.0.0.1:3307/naoshang",
+  "originalSqlFilesModified": false,
+  "events": [
+    {
+      "phase": "A-forward-001",
+      "file": "A_skus.up.sql",
+      "sha256": "40168614943ca3ee00a53db33f702ca09787d408736eb0cbb606a6c3f1752140",
+      "sql": "ALTER TABLE `skus`\n  ADD COLUMN `list_price_cents` BIGINT NULL,\n  ADD COLUMN `currency` CHAR(3) NULL;",
+      "status": "passed"
+    },
+    {
+      "phase": "A-forward-002",
+      "file": "A_activity_prices.up.sql",
+      "sha256": "d993799e927cb5c1aa5818acb39f2ef8a7669c0ddb0a5950ef076fe449592165",
+      "sql": "ALTER TABLE `activity_prices`\n  ADD COLUMN `activity_price_cents` BIGINT NULL,\n  ADD COLUMN `currency` CHAR(3) NULL;",
+      "status": "passed"
+    },
+    {
+      "phase": "A-forward-003",
+      "file": "A_columns.up.sql",
+      "sha256": "b6867805f28f567132f1a57ea79b9b62620172eb2856db525205df51f17a4367",
+      "sql": "ALTER TABLE `columns`\n  ADD COLUMN `price_cents` BIGINT NULL,\n  ADD COLUMN `currency` CHAR(3) NULL;",
+      "status": "passed"
+    },
+    {
+      "phase": "A-forward-004",
+      "file": "A_quotes.up.sql",
+      "sha256": "7fe990e05cc3ce92f77f1ebef0e87e5770d7074b08533d3d08f57a2b74e933e9",
+      "sql": "ALTER TABLE `quotes`\n  ADD COLUMN `payable_amount_cents` BIGINT NULL,\n  ADD COLUMN `goods_amount_cents` BIGINT NULL,\n  ADD COLUMN `discount_amount_cents` BIGINT NULL,\n  ADD COLUMN `list_amount_cents` BIGINT NULL,\n  ADD COLUMN `currency` CHAR(3) NULL;",
+      "status": "passed"
+    },
+    {
+      "phase": "A-raw-idempotency-rerun",
+      "file": "A_skus.up.sql",
+      "sha256": "40168614943ca3ee00a53db33f702ca09787d408736eb0cbb606a6c3f1752140",
+      "sql": "ALTER TABLE `skus`\n  ADD COLUMN `list_price_cents` BIGINT NULL,\n  ADD COLUMN `currency` CHAR(3) NULL;",
+      "status": "failed",
+      "error": {
+        "code": "ER_DUP_FIELDNAME",
+        "errno": 1060,
+        "sqlState": "42S21",
+        "message": "Duplicate column name 'list_price_cents'"
+      }
+    }
+  ],
+  "batches": {
+    "A": "failed-stopped-preserved",
+    "B": "not-run",
+    "C": "not-run",
+    "D": "not-run"
+  },
+  "backup": {
+    "path": "E:\\mysql\\stage3-backups\\fast-drill-2026-10-29T06-35-17-255Z\\naoshang-before-fast-drill.sql",
+    "bytes": 137342,
+    "sha256": "3ba18c200e6259b31fb5b00b6768d1cc61f96dd494877f8f417bf5e3bc731d71",
+    "executable": "E:/mysql/server/bin/mysqldump.exe",
+    "args": [
+      "--host=127.0.0.1",
+      "--port=3307",
+      "--user=naoshang",
+      "--single-transaction",
+      "--quick",
+      "--no-tablespaces",
+      "--set-gtid-purged=OFF",
+      "--result-file=E:\\mysql\\stage3-backups\\fast-drill-2026-10-29T06-35-17-255Z\\naoshang-before-fast-drill.sql",
+      "naoshang"
+    ],
+    "completedAt": "2026-10-29T06:35:17.469Z",
+    "restoreTest": "not-requested"
+  },
+  "identity": {
+    "version": "8.4.9",
+    "user": "naoshang@127.0.0.1"
+  },
+  "viewerSourceSha256": "29d64edd9b8f1c4c45462db81ebcba552959fdead5efa62f665ff34e35539203",
+  "viewerConnection": [
+    {
+      "ID": 24,
+      "USER": "naoshang",
+      "HOST": "localhost:49172",
+      "DB": "naoshang",
+      "COMMAND": "Sleep",
+      "TIME": 563,
+      "INFO": null
+    }
+  ],
+  "before": {
+    "skus": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "MUL",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "label",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "list_price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "stock",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 18
+    },
+    "activity_prices": {
+      "columns": [
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "note",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 6
+    },
+    "columns": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "title",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "summary",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "cover_url",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "fulfillment_type",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "ACTIVATION_CODE",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "requires_member",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "price_presentation",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "single",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "checkout_notice",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "content",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "chapters",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 2
+    },
+    "quotes": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "scene",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "user_id",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "breakdown",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "items",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "meta",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "rule_version",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "1",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "issued_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "expires_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed_ref",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 34
+    }
+  },
+  "afterFirstForward": {
+    "skus": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "MUL",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "label",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "list_price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "stock",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "list_price_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "currency",
+          "COLUMN_TYPE": "char(3)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 18
+    },
+    "activity_prices": {
+      "columns": [
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "note",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "activity_price_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "currency",
+          "COLUMN_TYPE": "char(3)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 6
+    },
+    "columns": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "title",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "summary",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "cover_url",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "fulfillment_type",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "ACTIVATION_CODE",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "requires_member",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "price_presentation",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "single",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "checkout_notice",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "content",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "chapters",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "price_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "currency",
+          "COLUMN_TYPE": "char(3)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 2
+    },
+    "quotes": {
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "PRI",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "scene",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "user_id",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "breakdown",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "items",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "meta",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "rule_version",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "1",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "issued_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "expires_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0",
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "consumed_ref",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "payable_amount_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "goods_amount_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "discount_amount_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "list_amount_cents",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        },
+        {
+          "COLUMN_NAME": "currency",
+          "COLUMN_TYPE": "char(3)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null,
+          "COLUMN_KEY": "",
+          "EXTRA": ""
+        }
+      ],
+      "count": 34
+    }
+  },
+  "failure": {
+    "code": "ER_DUP_FIELDNAME",
+    "errno": 1060,
+    "message": "Duplicate column name 'list_price_cents'"
+  },
+  "finishedAt": "2026-10-29T06:35:17.540Z"
+}

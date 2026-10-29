@@ -1,0 +1,545 @@
+{
+  "startedAt": "2026-10-29T06:27:34.463Z",
+  "node": "v24.22.0",
+  "nodeExecutable": "D:\\nvm\\v24.22.0\\node.exe",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 3307,
+    "database": "naoshang",
+    "user": "naoshang"
+  },
+  "temporarySchema": "naoshang_restore_check",
+  "originalSchemaWrites": false,
+  "batchAExecuted": false,
+  "backupDirectory": "E:\\mysql\\stage3-backups\\backup-restore-20261029T062639155Z",
+  "restoreStatus": "failed-stopped-no-further-ddl",
+  "temporarySchemaCreatedByThisRun": false,
+  "identity": {
+    "currentUser": "naoshang@127.0.0.1",
+    "mysqlVersion": "8.4.9"
+  },
+  "viewerConnection": [
+    {
+      "ID": "24",
+      "USER": "naoshang",
+      "HOST": "localhost:49172",
+      "DB": "naoshang",
+      "COMMAND": "Sleep",
+      "TIME": 100,
+      "INFO": null
+    }
+  ],
+  "viewerAttributesError": "ER_TABLEACCESS_DENIED_ERROR",
+  "sourceBefore": {
+    "skus": {
+      "ddl": "CREATE TABLE `skus` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'SKU ID',\n  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '所属商品 ID（productId）',\n  `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '规格名（如「智能变速，一档」）',\n  `list_price` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '该规格标价（元）',\n  `stock` bigint NOT NULL DEFAULT '0' COMMENT '当前可售库存',\n  `updated_at` bigint NOT NULL DEFAULT '0' COMMENT '更新时间（毫秒时间戳）',\n  PRIMARY KEY (`id`),\n  KEY `ix_skus_idx_sku_product` (`product_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='商城 SKU 目录（按规格细分的价格与库存）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "label",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "list_price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "stock",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        }
+      ],
+      "count": "14",
+      "sampleCount": 5,
+      "sampleSha256": "5412b1e0ad81f14330c1eb09e1b6902a799715c25f665d0604db0a2539b7ac6d"
+    },
+    "activity_prices": {
+      "ddl": "CREATE TABLE `activity_prices` (\n  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '商品 ID（主键）',\n  `amount` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '活动价（元）',\n  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '活动说明',\n  `updated_at` bigint NOT NULL DEFAULT '0' COMMENT '更新时间（毫秒时间戳）',\n  PRIMARY KEY (`product_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='商品活动价（每个商品一条；未配置则无记录，前端显示「—」）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "note",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        }
+      ],
+      "count": "6",
+      "sampleCount": 5,
+      "sampleSha256": "c4995fafd58a454f2f8cbd52b0e0677c8c50de79dd930f8757ef8c8bc2637855"
+    },
+    "columns": {
+      "ddl": "CREATE TABLE `columns` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）',\n  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '专栏标题',\n  `summary` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '专栏简介',\n  `cover_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '封面图地址',\n  `price` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '标价（元）',\n  `fulfillment_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'ACTIVATION_CODE' COMMENT '履约方式：ACTIVATION_CODE=通过激活码发货 等',\n  `requires_member` bigint NOT NULL DEFAULT '0' COMMENT '是否要求会员身份才能购买（1=是 / 0=否）',\n  `price_presentation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'single' COMMENT '价格展示方式：single=单一口径 / tiered=按档位分档价',\n  `checkout_notice` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '下单提示语（如「下单后联系门店获取激活码」）',\n  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '富文本正文（JSON，nodes 结构，见 src/richContent.js）',\n  `chapters` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '章节数组（JSON：[{id,title,type,content,videoUrl}]）',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='专栏（可激活内容包；章节与正文以 JSON 保存，结构见 src/columns.js）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "title",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "summary",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "cover_url",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "fulfillment_type",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "ACTIVATION_CODE"
+        },
+        {
+          "COLUMN_NAME": "requires_member",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "price_presentation",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "single"
+        },
+        {
+          "COLUMN_NAME": "checkout_notice",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "content",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "chapters",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        }
+      ],
+      "count": "2",
+      "sampleCount": 2,
+      "sampleSha256": "f251e96e5c6fbb67dba919a326694ec332b4ba28efcd8a6839c794b3f379851f"
+    },
+    "quotes": {
+      "ddl": "CREATE TABLE `quotes` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报价 ID（quoteId，提交时凭此校验价格）',\n  `scene` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报价场景：checkout=商城下单 / entitlement=开通权益 / upgrade=合伙人升级 / quota_purchase=购买名额 等',\n  `user_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '报价所属用户 ID（未登录报价可为空或 anonymous）',\n  `amount` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '报价总金额（元）',\n  `breakdown` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '费用明细（JSON：goodsAmount 商品额 / discountAmount 优惠额 / listAmount 原价额）',\n  `items` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '商品明细（JSON：[{key,qty,skuId}]）',\n  `meta` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '业务上下文（JSON：{productKey,level,memberId,skuId}）',\n  `rule_version` bigint NOT NULL DEFAULT '1' COMMENT '计价规则版本号（规则升级后旧报价可识别失效）',\n  `issued_at` bigint NOT NULL DEFAULT '0' COMMENT '报价生成时间（毫秒时间戳）',\n  `expires_at` bigint NOT NULL DEFAULT '0' COMMENT '报价过期时间（毫秒时间戳）',\n  `consumed` bigint NOT NULL DEFAULT '0' COMMENT '是否已消费（1=已被订单占用，防止重复下单）',\n  `consumed_at` bigint DEFAULT NULL COMMENT '消费时间（毫秒时间戳）',\n  `consumed_ref` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '消费方引用（如订单 ID）',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='报价单（商城结算/权益开通/升级档位共用；默认 10 分钟有效、一次性消费）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "scene",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "user_id",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "breakdown",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "items",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "meta",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "rule_version",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "1"
+        },
+        {
+          "COLUMN_NAME": "issued_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "expires_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "consumed",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "consumed_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "consumed_ref",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        }
+      ],
+      "count": "8",
+      "sampleCount": 5,
+      "sampleSha256": "259f683eccbd43ec330f39e5135e940e16ab92667ee9c21ba68fedac0dfed96c"
+    }
+  },
+  "backupCommand": {
+    "executable": "E:/mysql/server/bin/mysqldump.exe",
+    "args": [
+      "--host=127.0.0.1",
+      "--port=3307",
+      "--user=naoshang",
+      "--single-transaction",
+      "--quick",
+      "--no-tablespaces",
+      "--set-gtid-purged=OFF",
+      "--result-file=E:\\mysql\\stage3-backups\\backup-restore-20261029T062639155Z\\naoshang-full.sql",
+      "naoshang"
+    ],
+    "credentialTransport": "MYSQL_PWD child-process environment; value omitted"
+  },
+  "backup": {
+    "path": "E:\\mysql\\stage3-backups\\backup-restore-20261029T062639155Z\\naoshang-full.sql",
+    "bytes": 134829,
+    "sha256": "2b531fe8cee50de4d8179be6ea13ddf2ec5ebe30679c70b5bd21e77abdd81357",
+    "completedAt": "2026-10-29T06:27:35.015Z",
+    "scope": "single schema table DDL/data; default triggers; routines/events not requested"
+  },
+  "structureBackup": {
+    "path": "E:\\mysql\\stage3-backups\\backup-restore-20261029T062639155Z\\four-target-tables.schema.sql",
+    "bytes": 5070,
+    "sha256": "3786e6c1a12cec93dceb95a9c22538aa94cd691e26e3806166eb76ff73bf688b"
+  },
+  "sourceAfter": {
+    "skus": {
+      "ddl": "CREATE TABLE `skus` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'SKU ID',\n  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '所属商品 ID（productId）',\n  `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '规格名（如「智能变速，一档」）',\n  `list_price` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '该规格标价（元）',\n  `stock` bigint NOT NULL DEFAULT '0' COMMENT '当前可售库存',\n  `updated_at` bigint NOT NULL DEFAULT '0' COMMENT '更新时间（毫秒时间戳）',\n  PRIMARY KEY (`id`),\n  KEY `ix_skus_idx_sku_product` (`product_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='商城 SKU 目录（按规格细分的价格与库存）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "label",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "list_price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "stock",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        }
+      ],
+      "count": "14",
+      "sampleCount": 5,
+      "sampleSha256": "5412b1e0ad81f14330c1eb09e1b6902a799715c25f665d0604db0a2539b7ac6d"
+    },
+    "activity_prices": {
+      "ddl": "CREATE TABLE `activity_prices` (\n  `product_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '商品 ID（主键）',\n  `amount` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '活动价（元）',\n  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '活动说明',\n  `updated_at` bigint NOT NULL DEFAULT '0' COMMENT '更新时间（毫秒时间戳）',\n  PRIMARY KEY (`product_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='商品活动价（每个商品一条；未配置则无记录，前端显示「—」）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "product_id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "note",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "updated_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        }
+      ],
+      "count": "6",
+      "sampleCount": 5,
+      "sampleSha256": "c4995fafd58a454f2f8cbd52b0e0677c8c50de79dd930f8757ef8c8bc2637855"
+    },
+    "columns": {
+      "ddl": "CREATE TABLE `columns` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）',\n  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '专栏标题',\n  `summary` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '专栏简介',\n  `cover_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '封面图地址',\n  `price` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '标价（元）',\n  `fulfillment_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'ACTIVATION_CODE' COMMENT '履约方式：ACTIVATION_CODE=通过激活码发货 等',\n  `requires_member` bigint NOT NULL DEFAULT '0' COMMENT '是否要求会员身份才能购买（1=是 / 0=否）',\n  `price_presentation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'single' COMMENT '价格展示方式：single=单一口径 / tiered=按档位分档价',\n  `checkout_notice` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '下单提示语（如「下单后联系门店获取激活码」）',\n  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '富文本正文（JSON，nodes 结构，见 src/richContent.js）',\n  `chapters` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '章节数组（JSON：[{id,title,type,content,videoUrl}]）',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='专栏（可激活内容包；章节与正文以 JSON 保存，结构见 src/columns.js）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "title",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "summary",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": ""
+        },
+        {
+          "COLUMN_NAME": "cover_url",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "price",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "fulfillment_type",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "ACTIVATION_CODE"
+        },
+        {
+          "COLUMN_NAME": "requires_member",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "price_presentation",
+          "COLUMN_TYPE": "varchar(255)",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": "single"
+        },
+        {
+          "COLUMN_NAME": "checkout_notice",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "content",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "chapters",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        }
+      ],
+      "count": "2",
+      "sampleCount": 2,
+      "sampleSha256": "f251e96e5c6fbb67dba919a326694ec332b4ba28efcd8a6839c794b3f379851f"
+    },
+    "quotes": {
+      "ddl": "CREATE TABLE `quotes` (\n  `id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报价 ID（quoteId，提交时凭此校验价格）',\n  `scene` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '报价场景：checkout=商城下单 / entitlement=开通权益 / upgrade=合伙人升级 / quota_purchase=购买名额 等',\n  `user_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '报价所属用户 ID（未登录报价可为空或 anonymous）',\n  `amount` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '报价总金额（元）',\n  `breakdown` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '费用明细（JSON：goodsAmount 商品额 / discountAmount 优惠额 / listAmount 原价额）',\n  `items` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '商品明细（JSON：[{key,qty,skuId}]）',\n  `meta` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '业务上下文（JSON：{productKey,level,memberId,skuId}）',\n  `rule_version` bigint NOT NULL DEFAULT '1' COMMENT '计价规则版本号（规则升级后旧报价可识别失效）',\n  `issued_at` bigint NOT NULL DEFAULT '0' COMMENT '报价生成时间（毫秒时间戳）',\n  `expires_at` bigint NOT NULL DEFAULT '0' COMMENT '报价过期时间（毫秒时间戳）',\n  `consumed` bigint NOT NULL DEFAULT '0' COMMENT '是否已消费（1=已被订单占用，防止重复下单）',\n  `consumed_at` bigint DEFAULT NULL COMMENT '消费时间（毫秒时间戳）',\n  `consumed_ref` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '消费方引用（如订单 ID）',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='报价单（商城结算/权益开通/升级档位共用；默认 10 分钟有效、一次性消费）'",
+      "columns": [
+        {
+          "COLUMN_NAME": "id",
+          "COLUMN_TYPE": "varchar(191)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "scene",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "user_id",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "amount",
+          "COLUMN_TYPE": "decimal(18,2)",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0.00"
+        },
+        {
+          "COLUMN_NAME": "breakdown",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "items",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "meta",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "rule_version",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "1"
+        },
+        {
+          "COLUMN_NAME": "issued_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "expires_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "consumed",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "NO",
+          "COLUMN_DEFAULT": "0"
+        },
+        {
+          "COLUMN_NAME": "consumed_at",
+          "COLUMN_TYPE": "bigint",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        },
+        {
+          "COLUMN_NAME": "consumed_ref",
+          "COLUMN_TYPE": "text",
+          "IS_NULLABLE": "YES",
+          "COLUMN_DEFAULT": null
+        }
+      ],
+      "count": "8",
+      "sampleCount": 5,
+      "sampleSha256": "259f683eccbd43ec330f39e5135e940e16ab92667ee9c21ba68fedac0dfed96c"
+    }
+  },
+  "restoreCreateSql": "CREATE DATABASE `naoshang_restore_check` CHARACTER SET utf8mb4",
+  "failure": {
+    "stage": "creating-temporary-schema",
+    "code": "ER_DBACCESS_DENIED_ERROR",
+    "sqlState": "42000",
+    "commandCode": null,
+    "diagnostic": null
+  },
+  "finishedAt": "2026-10-29T06:27:35.024Z"
+}

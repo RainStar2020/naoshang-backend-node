@@ -1,0 +1,5 @@
+-- BLOCKED: checkout-only scope leaves non-checkout currency NULL.
+-- Whole-table NOT NULL DEFAULT CNY would broaden scope. Requires separate decision.
+-- All statements below are intentionally non-executable proposals.
+-- ALTER TABLE `quotes` ADD CONSTRAINT `ck_s3_quotes_checkout` CHECK (`scene`<>'checkout' OR (`payable_amount_cents` IS NOT NULL AND `payable_amount_cents` BETWEEN 0 AND 9007199254740991 AND `currency` IS NOT NULL AND `currency`='CNY' AND (`goods_amount_cents` IS NULL OR `goods_amount_cents` BETWEEN 0 AND 9007199254740991) AND (`discount_amount_cents` IS NULL OR `discount_amount_cents` BETWEEN 0 AND 9007199254740991) AND (`list_amount_cents` IS NULL OR `list_amount_cents` BETWEEN 0 AND 9007199254740991)));
+-- Whole-table currency NOT NULL DEFAULT 'CNY': not authorized for non-checkout rows.

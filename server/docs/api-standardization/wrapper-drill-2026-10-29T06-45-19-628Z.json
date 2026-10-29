@@ -1,0 +1,3824 @@
+{
+  "run": "wrapper-drill-2026-10-29T06-45-19-628Z",
+  "node": "v24.22.0",
+  "executable": "D:\\nvm\\v24.22.0\\node.exe",
+  "target": "127.0.0.1:3307/naoshang",
+  "stage": "C",
+  "A": {
+    "before": {
+      "skus": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "SKU ID"
+          },
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "MUL",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "所属商品 ID（productId）"
+          },
+          {
+            "Field": "label",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "规格名（如「智能变速，一档」）"
+          },
+          {
+            "Field": "list_price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "该规格标价（元）"
+          },
+          {
+            "Field": "stock",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "当前可售库存"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          },
+          {
+            "Field": "list_price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "18"
+      },
+      "activity_prices": {
+        "columns": [
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品 ID（主键）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动价（元）"
+          },
+          {
+            "Field": "note",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动说明"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          },
+          {
+            "Field": "activity_price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "6"
+      },
+      "columns": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）"
+          },
+          {
+            "Field": "title",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏标题"
+          },
+          {
+            "Field": "summary",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏简介"
+          },
+          {
+            "Field": "cover_url",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "封面图地址"
+          },
+          {
+            "Field": "price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "标价（元）"
+          },
+          {
+            "Field": "fulfillment_type",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "ACTIVATION_CODE",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "履约方式：ACTIVATION_CODE=通过激活码发货 等"
+          },
+          {
+            "Field": "requires_member",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否要求会员身份才能购买（1=是 / 0=否）"
+          },
+          {
+            "Field": "price_presentation",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "single",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "价格展示方式：single=单一口径 / tiered=按档位分档价"
+          },
+          {
+            "Field": "checkout_notice",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "下单提示语（如「下单后联系门店获取激活码」）"
+          },
+          {
+            "Field": "content",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "富文本正文（JSON，nodes 结构，见 src/richContent.js）"
+          },
+          {
+            "Field": "chapters",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "章节数组（JSON：[{id,title,type,content,videoUrl}]）"
+          },
+          {
+            "Field": "price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "2"
+      },
+      "quotes": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价 ID（quoteId，提交时凭此校验价格）"
+          },
+          {
+            "Field": "scene",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价场景：checkout=商城下单 / entitlement=开通权益 / upgrade=合伙人升级 / quota_purchase=购买名额 等"
+          },
+          {
+            "Field": "user_id",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价所属用户 ID（未登录报价可为空或 anonymous）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价总金额（元）"
+          },
+          {
+            "Field": "breakdown",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "费用明细（JSON：goodsAmount 商品额 / discountAmount 优惠额 / listAmount 原价额）"
+          },
+          {
+            "Field": "items",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品明细（JSON：[{key,qty,skuId}]）"
+          },
+          {
+            "Field": "meta",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "业务上下文（JSON：{productKey,level,memberId,skuId}）"
+          },
+          {
+            "Field": "rule_version",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "1",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "计价规则版本号（规则升级后旧报价可识别失效）"
+          },
+          {
+            "Field": "issued_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价生成时间（毫秒时间戳）"
+          },
+          {
+            "Field": "expires_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价过期时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否已消费（1=已被订单占用，防止重复下单）"
+          },
+          {
+            "Field": "consumed_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed_ref",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费方引用（如订单 ID）"
+          },
+          {
+            "Field": "payable_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "goods_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "discount_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "list_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "39"
+      }
+    },
+    "rerun": [
+      {
+        "table": "skus",
+        "column": "list_price_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "skus",
+        "column": "currency",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "activity_prices",
+        "column": "activity_price_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "activity_prices",
+        "column": "currency",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "columns",
+        "column": "price_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "columns",
+        "column": "currency",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "quotes",
+        "column": "payable_amount_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "quotes",
+        "column": "goods_amount_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "quotes",
+        "column": "discount_amount_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "quotes",
+        "column": "list_amount_cents",
+        "action": "ADD",
+        "status": "skipped-matching"
+      },
+      {
+        "table": "quotes",
+        "column": "currency",
+        "action": "ADD",
+        "status": "skipped-matching"
+      }
+    ],
+    "down": [
+      {
+        "table": "quotes",
+        "column": "payable_amount_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `quotes` DROP COLUMN `payable_amount_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "goods_amount_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `quotes` DROP COLUMN `goods_amount_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "discount_amount_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `quotes` DROP COLUMN `discount_amount_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "list_amount_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `quotes` DROP COLUMN `list_amount_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "currency",
+        "action": "DROP",
+        "sql": "ALTER TABLE `quotes` DROP COLUMN `currency`",
+        "status": "executed"
+      },
+      {
+        "table": "columns",
+        "column": "price_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `columns` DROP COLUMN `price_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "columns",
+        "column": "currency",
+        "action": "DROP",
+        "sql": "ALTER TABLE `columns` DROP COLUMN `currency`",
+        "status": "executed"
+      },
+      {
+        "table": "activity_prices",
+        "column": "activity_price_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `activity_prices` DROP COLUMN `activity_price_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "activity_prices",
+        "column": "currency",
+        "action": "DROP",
+        "sql": "ALTER TABLE `activity_prices` DROP COLUMN `currency`",
+        "status": "executed"
+      },
+      {
+        "table": "skus",
+        "column": "list_price_cents",
+        "action": "DROP",
+        "sql": "ALTER TABLE `skus` DROP COLUMN `list_price_cents`",
+        "status": "executed"
+      },
+      {
+        "table": "skus",
+        "column": "currency",
+        "action": "DROP",
+        "sql": "ALTER TABLE `skus` DROP COLUMN `currency`",
+        "status": "executed"
+      }
+    ],
+    "afterDown": {
+      "skus": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "SKU ID"
+          },
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "MUL",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "所属商品 ID（productId）"
+          },
+          {
+            "Field": "label",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "规格名（如「智能变速，一档」）"
+          },
+          {
+            "Field": "list_price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "该规格标价（元）"
+          },
+          {
+            "Field": "stock",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "当前可售库存"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          }
+        ],
+        "count": "18"
+      },
+      "activity_prices": {
+        "columns": [
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品 ID（主键）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动价（元）"
+          },
+          {
+            "Field": "note",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动说明"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          }
+        ],
+        "count": "6"
+      },
+      "columns": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）"
+          },
+          {
+            "Field": "title",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏标题"
+          },
+          {
+            "Field": "summary",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏简介"
+          },
+          {
+            "Field": "cover_url",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "封面图地址"
+          },
+          {
+            "Field": "price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "标价（元）"
+          },
+          {
+            "Field": "fulfillment_type",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "ACTIVATION_CODE",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "履约方式：ACTIVATION_CODE=通过激活码发货 等"
+          },
+          {
+            "Field": "requires_member",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否要求会员身份才能购买（1=是 / 0=否）"
+          },
+          {
+            "Field": "price_presentation",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "single",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "价格展示方式：single=单一口径 / tiered=按档位分档价"
+          },
+          {
+            "Field": "checkout_notice",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "下单提示语（如「下单后联系门店获取激活码」）"
+          },
+          {
+            "Field": "content",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "富文本正文（JSON，nodes 结构，见 src/richContent.js）"
+          },
+          {
+            "Field": "chapters",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "章节数组（JSON：[{id,title,type,content,videoUrl}]）"
+          }
+        ],
+        "count": "2"
+      },
+      "quotes": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价 ID（quoteId，提交时凭此校验价格）"
+          },
+          {
+            "Field": "scene",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价场景：checkout=商城下单 / entitlement=开通权益 / upgrade=合伙人升级 / quota_purchase=购买名额 等"
+          },
+          {
+            "Field": "user_id",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价所属用户 ID（未登录报价可为空或 anonymous）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价总金额（元）"
+          },
+          {
+            "Field": "breakdown",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "费用明细（JSON：goodsAmount 商品额 / discountAmount 优惠额 / listAmount 原价额）"
+          },
+          {
+            "Field": "items",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品明细（JSON：[{key,qty,skuId}]）"
+          },
+          {
+            "Field": "meta",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "业务上下文（JSON：{productKey,level,memberId,skuId}）"
+          },
+          {
+            "Field": "rule_version",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "1",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "计价规则版本号（规则升级后旧报价可识别失效）"
+          },
+          {
+            "Field": "issued_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价生成时间（毫秒时间戳）"
+          },
+          {
+            "Field": "expires_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价过期时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否已消费（1=已被订单占用，防止重复下单）"
+          },
+          {
+            "Field": "consumed_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed_ref",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费方引用（如订单 ID）"
+          }
+        ],
+        "count": "39"
+      }
+    },
+    "dropRerun": [
+      {
+        "table": "skus",
+        "column": "list_price_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "skus",
+        "column": "currency",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "activity_prices",
+        "column": "activity_price_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "activity_prices",
+        "column": "currency",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "columns",
+        "column": "price_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "columns",
+        "column": "currency",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "quotes",
+        "column": "payable_amount_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "quotes",
+        "column": "goods_amount_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "quotes",
+        "column": "discount_amount_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "quotes",
+        "column": "list_amount_cents",
+        "action": "DROP",
+        "status": "skipped-absent"
+      },
+      {
+        "table": "quotes",
+        "column": "currency",
+        "action": "DROP",
+        "status": "skipped-absent"
+      }
+    ],
+    "restore": [
+      {
+        "table": "skus",
+        "column": "list_price_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `skus` ADD COLUMN `list_price_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "skus",
+        "column": "currency",
+        "action": "ADD",
+        "sql": "ALTER TABLE `skus` ADD COLUMN `currency` CHAR(3) NULL",
+        "status": "executed"
+      },
+      {
+        "table": "activity_prices",
+        "column": "activity_price_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `activity_prices` ADD COLUMN `activity_price_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "activity_prices",
+        "column": "currency",
+        "action": "ADD",
+        "sql": "ALTER TABLE `activity_prices` ADD COLUMN `currency` CHAR(3) NULL",
+        "status": "executed"
+      },
+      {
+        "table": "columns",
+        "column": "price_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `columns` ADD COLUMN `price_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "columns",
+        "column": "currency",
+        "action": "ADD",
+        "sql": "ALTER TABLE `columns` ADD COLUMN `currency` CHAR(3) NULL",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "payable_amount_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `quotes` ADD COLUMN `payable_amount_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "goods_amount_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `quotes` ADD COLUMN `goods_amount_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "discount_amount_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `quotes` ADD COLUMN `discount_amount_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "list_amount_cents",
+        "action": "ADD",
+        "sql": "ALTER TABLE `quotes` ADD COLUMN `list_amount_cents` BIGINT NULL",
+        "status": "executed"
+      },
+      {
+        "table": "quotes",
+        "column": "currency",
+        "action": "ADD",
+        "sql": "ALTER TABLE `quotes` ADD COLUMN `currency` CHAR(3) NULL",
+        "status": "executed"
+      }
+    ],
+    "afterRestore": {
+      "skus": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "SKU ID"
+          },
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "MUL",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "所属商品 ID（productId）"
+          },
+          {
+            "Field": "label",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "规格名（如「智能变速，一档」）"
+          },
+          {
+            "Field": "list_price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "该规格标价（元）"
+          },
+          {
+            "Field": "stock",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "当前可售库存"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          },
+          {
+            "Field": "list_price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "18"
+      },
+      "activity_prices": {
+        "columns": [
+          {
+            "Field": "product_id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品 ID（主键）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动价（元）"
+          },
+          {
+            "Field": "note",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "活动说明"
+          },
+          {
+            "Field": "updated_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "更新时间（毫秒时间戳）"
+          },
+          {
+            "Field": "activity_price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "6"
+      },
+      "columns": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）"
+          },
+          {
+            "Field": "title",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏标题"
+          },
+          {
+            "Field": "summary",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "专栏简介"
+          },
+          {
+            "Field": "cover_url",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "封面图地址"
+          },
+          {
+            "Field": "price",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "标价（元）"
+          },
+          {
+            "Field": "fulfillment_type",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "ACTIVATION_CODE",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "履约方式：ACTIVATION_CODE=通过激活码发货 等"
+          },
+          {
+            "Field": "requires_member",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否要求会员身份才能购买（1=是 / 0=否）"
+          },
+          {
+            "Field": "price_presentation",
+            "Type": "varchar(255)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": "single",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "价格展示方式：single=单一口径 / tiered=按档位分档价"
+          },
+          {
+            "Field": "checkout_notice",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "下单提示语（如「下单后联系门店获取激活码」）"
+          },
+          {
+            "Field": "content",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "富文本正文（JSON，nodes 结构，见 src/richContent.js）"
+          },
+          {
+            "Field": "chapters",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "章节数组（JSON：[{id,title,type,content,videoUrl}]）"
+          },
+          {
+            "Field": "price_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "2"
+      },
+      "quotes": {
+        "columns": [
+          {
+            "Field": "id",
+            "Type": "varchar(191)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "PRI",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价 ID（quoteId，提交时凭此校验价格）"
+          },
+          {
+            "Field": "scene",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "NO",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价场景：checkout=商城下单 / entitlement=开通权益 / upgrade=合伙人升级 / quota_purchase=购买名额 等"
+          },
+          {
+            "Field": "user_id",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价所属用户 ID（未登录报价可为空或 anonymous）"
+          },
+          {
+            "Field": "amount",
+            "Type": "decimal(18,2)",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0.00",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价总金额（元）"
+          },
+          {
+            "Field": "breakdown",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "费用明细（JSON：goodsAmount 商品额 / discountAmount 优惠额 / listAmount 原价额）"
+          },
+          {
+            "Field": "items",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "商品明细（JSON：[{key,qty,skuId}]）"
+          },
+          {
+            "Field": "meta",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "业务上下文（JSON：{productKey,level,memberId,skuId}）"
+          },
+          {
+            "Field": "rule_version",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "1",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "计价规则版本号（规则升级后旧报价可识别失效）"
+          },
+          {
+            "Field": "issued_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价生成时间（毫秒时间戳）"
+          },
+          {
+            "Field": "expires_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "报价过期时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "NO",
+            "Key": "",
+            "Default": "0",
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "是否已消费（1=已被订单占用，防止重复下单）"
+          },
+          {
+            "Field": "consumed_at",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费时间（毫秒时间戳）"
+          },
+          {
+            "Field": "consumed_ref",
+            "Type": "text",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": "消费方引用（如订单 ID）"
+          },
+          {
+            "Field": "payable_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "goods_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "discount_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "list_amount_cents",
+            "Type": "bigint",
+            "Collation": null,
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          },
+          {
+            "Field": "currency",
+            "Type": "char(3)",
+            "Collation": "utf8mb4_general_ci",
+            "Null": "YES",
+            "Key": "",
+            "Default": null,
+            "Extra": "",
+            "Privileges": "select,insert,update,references",
+            "Comment": ""
+          }
+        ],
+        "count": "39"
+      }
+    },
+    "status": "passed-wrapper-reentrant-original-sql-not-idempotent"
+  },
+  "B": {
+    "dualWrite": {
+      "id": "sku-adminFee-1",
+      "list_price": "19.90",
+      "list_price_cents": "1990",
+      "currency": "CNY"
+    },
+    "failureNonBlocking": {
+      "failed": 1,
+      "stopped": true,
+      "events": [
+        {
+          "type": "SHADOW_WRITE_FAILED",
+          "kind": "skus",
+          "id": "sku-adminFee-1",
+          "code": "CURRENCY_MISMATCH",
+          "batchId": "real-B"
+        },
+        {
+          "type": "SHADOW_BATCH_STOPPED",
+          "kind": "skus",
+          "attempted": 2,
+          "failed": 1,
+          "batchId": "real-B"
+        },
+        "[MONEY_SYNC_TABLE_SKIPPED] {\"table\":\"skus\",\"issues\":[{\"id\":\"sku-adminFee-1\",\"field\":\"listPrice\",\"code\":\"PRECISION_EXCEEDED\",\"blocking\":true}]}"
+      ]
+    },
+    "failedTableQueries": [
+      "SHOW COLUMNS FROM `skus`"
+    ],
+    "otherTableQueries": [
+      "SHOW COLUMNS FROM `activity_prices`",
+      "SELECT `product_id`,`activity_price_cents`,`currency` FROM `activity_prices`",
+      "DELETE FROM `activity_prices`",
+      "INSERT INTO `activity_prices` (`product_id`,`amount`,`note`,`updated_at`,`activity_price_cents`,`currency`) VALUES (?,?,?,?,?,?),(?,?,?,?,?,?),(?,?,?,?,?,?),(?,?,?,?,?,?),(?,?,?,?,?,?),(?,?,?,?,?,?)"
+    ],
+    "disabled": "disabled",
+    "status": "passed-real-db-rolled-back"
+  },
+  "C": {
+    "before": {
+      "scanned": 65,
+      "skipped": 0,
+      "blocking": 0,
+      "missing": 247,
+      "differences": [
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 0,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-adminFee-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-adminFee-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 200000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-coachCard-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-coachCard-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 200000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-coachCard-2"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-coachCard-2"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 29900,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-col_1-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-col_1-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 19900,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-col_2-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-col_2-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 130000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-featured-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-featured-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 1000000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-featuredCamp-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-featuredCamp-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-memoryCard-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-memoryCard-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-memoryCard-2"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-memoryCard-2"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-1"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-2"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-2"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-3"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-3"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-4"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-4"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-5"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-5"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-6"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-6"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-7"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-7"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-8"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-8"
+        },
+        {
+          "field": "listPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-9"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "skus",
+          "id": "sku-pad-9"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 100000,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-coaching"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-coaching"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 7900,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-column"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-column"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 8000,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-featured"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-featured"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 158000,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-physical"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-physical"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 30000,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-software"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-software"
+        },
+        {
+          "field": "activityPriceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 108000,
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-special"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "activityPrices",
+          "id": "product-special"
+        },
+        {
+          "field": "priceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 29900,
+          "blocking": false,
+          "kind": "columns",
+          "id": "col_1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "columns",
+          "id": "col_1"
+        },
+        {
+          "field": "priceCents",
+          "code": "MISSING_SHADOW",
+          "expected": 19900,
+          "blocking": false,
+          "kind": "columns",
+          "id": "col_2"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "columns",
+          "id": "col_2"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_17gicw9l71tm"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_17gicw9l71tm"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_17gicw9l71tm"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_17gicw9l71tm"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_17gicw9l71tm"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2c3j71upugha"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2c3j71upugha"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2c3j71upugha"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2c3j71upugha"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2c3j71upugha"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2mgx6740x20o"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2mgx6740x20o"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 84800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2mgx6740x20o"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2mgx6740x20o"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_2mgx6740x20o"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_3woh715c5eh6"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_3woh715c5eh6"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_3woh715c5eh6"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_3woh715c5eh6"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_3woh715c5eh6"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4k91zppsyhy7"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4k91zppsyhy7"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4k91zppsyhy7"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4k91zppsyhy7"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4k91zppsyhy7"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4tuutj5i4i4j"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4tuutj5i4i4j"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4tuutj5i4i4j"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4tuutj5i4i4j"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_4tuutj5i4i4j"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5m8crlgn5tfs"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5m8crlgn5tfs"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5m8crlgn5tfs"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5m8crlgn5tfs"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5m8crlgn5tfs"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5nh6ypxeessx"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5nh6ypxeessx"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 84800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5nh6ypxeessx"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5nh6ypxeessx"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_5nh6ypxeessx"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_6ib9x5lctvmm"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_6ib9x5lctvmm"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_6ib9x5lctvmm"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_6ib9x5lctvmm"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_6ib9x5lctvmm"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_9q68lbln0bal"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_9q68lbln0bal"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_9q68lbln0bal"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_9q68lbln0bal"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_9q68lbln0bal"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_aphnsvp0fowm"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_aphnsvp0fowm"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_aphnsvp0fowm"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_aphnsvp0fowm"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_aphnsvp0fowm"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_b3bl9yyddhsd"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_b3bl9yyddhsd"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_b3bl9yyddhsd"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_b3bl9yyddhsd"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_b3bl9yyddhsd"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bapezts17tta"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bapezts17tta"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bapezts17tta"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bapezts17tta"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bapezts17tta"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bg0y1ekcaim1"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bg0y1ekcaim1"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bg0y1ekcaim1"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bg0y1ekcaim1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_bg0y1ekcaim1"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eja5jw0hexpy"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eja5jw0hexpy"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 84800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eja5jw0hexpy"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eja5jw0hexpy"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eja5jw0hexpy"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eqstqvnhan2l"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eqstqvnhan2l"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eqstqvnhan2l"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eqstqvnhan2l"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_eqstqvnhan2l"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_f8pldytkh204"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_f8pldytkh204"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 84800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_f8pldytkh204"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_f8pldytkh204"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_f8pldytkh204"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_fwdxvjtrfix5"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_fwdxvjtrfix5"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_fwdxvjtrfix5"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_fwdxvjtrfix5"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_fwdxvjtrfix5"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ghpbsu00adv7"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ghpbsu00adv7"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ghpbsu00adv7"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ghpbsu00adv7"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ghpbsu00adv7"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h56t9ybvxy1c"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h56t9ybvxy1c"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h56t9ybvxy1c"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h56t9ybvxy1c"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h56t9ybvxy1c"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h8p84ekzydb3"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h8p84ekzydb3"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h8p84ekzydb3"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h8p84ekzydb3"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_h8p84ekzydb3"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_hxwecw3u5ogd"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_hxwecw3u5ogd"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_hxwecw3u5ogd"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_hxwecw3u5ogd"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_hxwecw3u5ogd"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jv8swkmc05mq"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jv8swkmc05mq"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jv8swkmc05mq"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jv8swkmc05mq"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jv8swkmc05mq"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jxokfsbc4h5f"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jxokfsbc4h5f"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jxokfsbc4h5f"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jxokfsbc4h5f"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_jxokfsbc4h5f"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_kbyvbbazg97a"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 15000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_kbyvbbazg97a"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 84800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_kbyvbbazg97a"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 99800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_kbyvbbazg97a"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_kbyvbbazg97a"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_lqeolgnxy5s1"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_lqeolgnxy5s1"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_lqeolgnxy5s1"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_lqeolgnxy5s1"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_lqeolgnxy5s1"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_op8dio9t4cx3"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_op8dio9t4cx3"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_op8dio9t4cx3"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_op8dio9t4cx3"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_op8dio9t4cx3"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_qmg11bwr7exy"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_qmg11bwr7exy"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_qmg11bwr7exy"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_qmg11bwr7exy"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_qmg11bwr7exy"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_r9zq9k8aya7l"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_r9zq9k8aya7l"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_r9zq9k8aya7l"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_r9zq9k8aya7l"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_r9zq9k8aya7l"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ssw3xh3jdimi"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ssw3xh3jdimi"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ssw3xh3jdimi"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ssw3xh3jdimi"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ssw3xh3jdimi"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_u93lmutgdtgb"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_u93lmutgdtgb"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_u93lmutgdtgb"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_u93lmutgdtgb"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_u93lmutgdtgb"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ue0bz96s0ah7"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ue0bz96s0ah7"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ue0bz96s0ah7"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ue0bz96s0ah7"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ue0bz96s0ah7"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ux0ala7nyeyb"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ux0ala7nyeyb"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ux0ala7nyeyb"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ux0ala7nyeyb"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ux0ala7nyeyb"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_wm279xmr3woh"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_wm279xmr3woh"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_wm279xmr3woh"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_wm279xmr3woh"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_wm279xmr3woh"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_xlokgm7xx2an"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_xlokgm7xx2an"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_xlokgm7xx2an"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_xlokgm7xx2an"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_xlokgm7xx2an"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_yk3848t74ld3"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_yk3848t74ld3"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_yk3848t74ld3"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_yk3848t74ld3"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_yk3848t74ld3"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ymr5mv4y5qqt"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ymr5mv4y5qqt"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ymr5mv4y5qqt"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ymr5mv4y5qqt"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_ymr5mv4y5qqt"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_z7tq0dnyx8ly"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 209400,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_z7tq0dnyx8ly"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 488600,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_z7tq0dnyx8ly"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_z7tq0dnyx8ly"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_z7tq0dnyx8ly"
+        },
+        {
+          "field": "payableAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_zaw900suxgbq"
+        },
+        {
+          "field": "breakdown.goodsAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 279200,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_zaw900suxgbq"
+        },
+        {
+          "field": "breakdown.discountAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 418800,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_zaw900suxgbq"
+        },
+        {
+          "field": "breakdown.listAmountCents",
+          "code": "MISSING_SHADOW",
+          "expected": 698000,
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_zaw900suxgbq"
+        },
+        {
+          "field": "currency",
+          "code": "MISSING_SHADOW",
+          "expected": "CNY",
+          "blocking": false,
+          "kind": "quotes",
+          "id": "q_zaw900suxgbq"
+        }
+      ]
+    }
+  },
+  "D": {},
+  "sqlHashes": {
+    "000_backup_before_A.template.sql": "932e41393b230836fdc51c031d7bf5d58bfa5abe2bdc685ad28b54f7511cac06",
+    "000_backup_before_C.template.sql": "d167b47030b526db2f98b88a60e4eefd6c15d5367eb6f0761af73ac689dbe222",
+    "A_activity_prices.down.sql": "f5411c9b5d45517a379dd7a259fb0a441b942994d175dd633657d2efa2dc4eb9",
+    "A_activity_prices.up.sql": "d993799e927cb5c1aa5818acb39f2ef8a7669c0ddb0a5950ef076fe449592165",
+    "A_columns.down.sql": "6a272ec07d7667bb91510079655a152bfde9acabd8d37ca722de58483be0780c",
+    "A_columns.up.sql": "b6867805f28f567132f1a57ea79b9b62620172eb2856db525205df51f17a4367",
+    "A_quotes.down.sql": "5b3384cd77235f3d27fea8ff208bb58b1a52401c866b6389a80ebfffe0099796",
+    "A_quotes.up.sql": "7fe990e05cc3ce92f77f1ebef0e87e5770d7074b08533d3d08f57a2b74e933e9",
+    "A_skus.down.sql": "ba4c59cffc264da4eb8b9705a7b70cf3e4eeff5545f1517924fcf59efedfc32f",
+    "A_skus.up.sql": "40168614943ca3ee00a53db33f702ca09787d408736eb0cbb606a6c3f1752140",
+    "B_shadow_writers.down.sql": "ec53e486a9e471cd5814f162b3087ed92281d0dcd2341b880b34197fa77fd34a",
+    "B_shadow_writers.up.sql": "e70bda902495f253fccd3d8b0c390c37ceda3e0196d408392d5288b7ea349708",
+    "C_activity_prices.down.template.sql": "0458fdc69a02fe61d5d1f19f4fef6a8d46ce13f483bd65ee01dc87be5ffbf8a9",
+    "C_activity_prices.up.template.sql": "1b5d23f0b9da0573f7272c3a1cb74042a2747810cdca15121d8881e2b3d2abca",
+    "C_columns.down.template.sql": "99976b9803799828af5fe95fbe561ab23b08bf7f31bd485fe1c2b701ccf7aeaa",
+    "C_columns.up.template.sql": "31f56ff90f703e7ae3ac0d1bf3c025822f86fb370bd8bb0c1115f0d7fd07bb8c",
+    "C_quotes.down.template.sql": "43f1b9626fb6dbaedc8b2e2c80dc537c4cc7473a0704c313dc2fcdd10f211b4f",
+    "C_quotes.up.template.sql": "dc389225528cbd0400de752de68f41f5fc2673146909099061eadad0f9d69e49",
+    "C_skus.down.template.sql": "b4dbfdc9193381f3de0d72ac28a4088b44681f8cf28e8b785382969d049cc6a6",
+    "C_skus.up.template.sql": "6b2dced2800dc90d682ef0d9d330c58857ede46cb58e0b013c27848246f742f2",
+    "D_activity_prices.down.sql": "07539c4ed0957e99cf60cf7dbf79c6075a7712e323e21e6966b4e013340d9b78",
+    "D_activity_prices.up.sql": "a69e8cb2174362f3c85708bf40ddcd75426f8f4a73badd2eb519d6dd3f4bdd67",
+    "D_columns.down.sql": "f2313a3b08ff7103d0703770ecb1e085158ab6d818ff49733097a0104b6fde94",
+    "D_columns.up.sql": "08f9e630111d6138daa4eefbe2e5df33acfab6dc5e2fc0f976268640034a3d73",
+    "D_quotes.down.BLOCKED.sql": "2578c35f130ada2443a8cc7d6f29dfea1c40cab22b4d7b0539582d4a53432179",
+    "D_quotes.up.BLOCKED.sql": "67bd464a971fbbad72dfa064ca5d6367c2bd5bdd3d7513c2fbd94d722166fa50",
+    "D_skus.down.sql": "ac5bd2bc92b9bdcbde0115b5e86e5dbca594007cba3f0d24c96ea7d95dcc3684",
+    "D_skus.up.sql": "b2c96c37f98e82c3f87155fe732d41e65d66ae6486043ef8d12282094cf9196f"
+  },
+  "mysql": "8.4.9",
+  "viewer": [
+    {
+      "ID": "24",
+      "COMMAND": "Sleep",
+      "TIME": 338,
+      "INFO": null
+    }
+  ],
+  "backup": {
+    "path": "E:\\mysql\\stage3-backups\\wrapper-drill-2026-10-29T06-45-19-628Z\\before-wrapper-drill.sql",
+    "size": 140697,
+    "sha256": "1d0c541025890928303daf5bce6315c2a20aad0b0a2405c72683c0e91cf3c38c",
+    "args": [
+      "--host=127.0.0.1",
+      "--port=3307",
+      "--user=naoshang",
+      "--single-transaction",
+      "--quick",
+      "--no-tablespaces",
+      "--set-gtid-purged=OFF",
+      "--result-file=E:\\mysql\\stage3-backups\\wrapper-drill-2026-10-29T06-45-19-628Z\\before-wrapper-drill.sql",
+      "naoshang"
+    ]
+  },
+  "failure": {
+    "stage": "C",
+    "code": "ER_CANT_AGGREGATE_2COLLATIONS",
+    "errno": 1267,
+    "message": "Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='"
+  },
+  "sqlFilesUnchanged": true,
+  "finishedAt": "2026-10-29T06:45:20.134Z"
+}

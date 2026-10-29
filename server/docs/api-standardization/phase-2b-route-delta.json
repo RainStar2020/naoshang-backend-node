@@ -1,0 +1,45 @@
+{
+  "historicalDenominator": 334,
+  "addedRoutes": 1,
+  "currentDenominator": 335,
+  "cumulativeDtoPilots": 5,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/hq/support/profile",
+      "handler": {
+        "file": "server/src/routes/hq/modules/support.js",
+        "line": 55
+      },
+      "newRoute": true,
+      "moduleSwitch": "API_STANDARD_SUPPORT_PILOT",
+      "exceptions": [],
+      "pendingMigration": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/support/tickets",
+      "handler": {
+        "file": "server/src/routes/hq/modules/support.js",
+        "line": 70
+      },
+      "newRoute": false,
+      "moduleSwitch": "API_STANDARD_SUPPORT_PILOT",
+      "exceptions": [],
+      "pendingMigration": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/hq/support/tickets/:ticketId",
+      "handler": {
+        "file": "server/src/routes/hq/modules/support.js",
+        "line": 124
+      },
+      "newRoute": false,
+      "moduleSwitch": "API_STANDARD_SUPPORT_PILOT",
+      "exceptions": [],
+      "pendingMigration": false
+    }
+  ],
+  "note": "Historical phase-1 register remains unchanged. This is an additive route delta, not a rewrite of its evidence."
+}

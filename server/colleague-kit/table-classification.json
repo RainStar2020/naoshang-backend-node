@@ -1,0 +1,194 @@
+{
+  "generatedAt": "2026-10-28T04:19:26.441Z",
+  "note": "托管表 = 会被 db.json→MySQL 同步器 DELETE+重建的表，禁止直写；其余为可写表。判定为声明式，与数据量无关。",
+  "managed": {
+    "count": 38,
+    "tables": [
+      {
+        "name": "activation_codes",
+        "comment": "激活码（level=学习等级单开 / column=专栏 / fs·jy·cj·xn·ys=孩子会员等级）"
+      },
+      {
+        "name": "activity_prices",
+        "comment": "商品活动价（每个商品一条；未配置则无记录，前端显示「—」）"
+      },
+      {
+        "name": "allocation_quotes",
+        "comment": "分配意愿报价单（巡查 5% / 销售 5% 的分配方案快照，提交时据此校验）"
+      },
+      {
+        "name": "allocations",
+        "comment": "收益分配（门店服务费/合店分红指向具体受益人；巡查 5% 与销售 5% 可自选分配）"
+      },
+      {
+        "name": "applications",
+        "comment": "申请单（合伙人/健脑官/合店/代理/转店 统一申请流）"
+      },
+      {
+        "name": "assets",
+        "comment": "上传资源（直传占位；状态机 PENDING→READY/FAILED）"
+      },
+      {
+        "name": "co_store_owners",
+        "comment": "合店老板名单（一个合店可有多名老板，1:N 拆表）"
+      },
+      {
+        "name": "co_stores",
+        "comment": "合店 / 门店表（合店是 users 的角色；含合店老板名单 1:N 关系）"
+      },
+      {
+        "name": "coaches",
+        "comment": "健脑官（门店独立登录账号；与家长账号体系分离）"
+      },
+      {
+        "name": "columns",
+        "comment": "专栏（可激活内容包；章节与正文以 JSON 保存，结构见 src/columns.js）"
+      },
+      {
+        "name": "commissions",
+        "comment": "收益明细（佣金台账；全球奖/直推奖/复购奖/创始奖/代理奖/合店分配全类型统一落此表）"
+      },
+      {
+        "name": "counters",
+        "comment": "全局 ID 计数器（内部 id 与对外编号的序号来源）"
+      },
+      {
+        "name": "coupons",
+        "comment": "优惠券（用户券包；下单时核销）"
+      },
+      {
+        "name": "entitlement_orders",
+        "comment": "权益收益费订单（200 元门禁；幂等键保证重复提交不重复扣费）"
+      },
+      {
+        "name": "experience_ledger",
+        "comment": "经验值流水（1 元 = 1 经验值；纯记账，不参与资金分账）"
+      },
+      {
+        "name": "free_upgrade_log",
+        "comment": "拉人免费升档日志（规则A 按人数 / 规则B 按业绩，取进度较高者）"
+      },
+      {
+        "name": "invite_codes",
+        "comment": "邀请码流水（两套互不混用：register 注册拉新码 / agent 代理归属码；R 开头=注册，A 开头=代理）"
+      },
+      {
+        "name": "jobs",
+        "comment": "异步任务（海报合成等；queued→running→succeeded/failed）"
+      },
+      {
+        "name": "learning_progress",
+        "comment": "学习进度（会员 × 学习等级 × 章节 三元组记录）"
+      },
+      {
+        "name": "members",
+        "comment": "家庭会员（孩子档案；六级会员等级 normal<fs<jy<cj<xn<ys 决定板块权益解锁）"
+      },
+      {
+        "name": "orders",
+        "comment": "订单 / 销售记录（一切收益的计算来源）"
+      },
+      {
+        "name": "password_resets",
+        "comment": "密码重置凭据（ticket 为一次性令牌，10 分钟有效）"
+      },
+      {
+        "name": "payments",
+        "comment": "支付单（微信/支付宝/银行卡 + 银联；权益费、合伙人年费、商城商品、升档共用）"
+      },
+      {
+        "name": "promotion_tasks",
+        "comment": "晋升任务（推广达标免费晋升通道；默认 1 年有效期）"
+      },
+      {
+        "name": "quota_activity_batches",
+        "comment": "活动名额批次（每笔活动名额发放一条，带 1 年有效期）"
+      },
+      {
+        "name": "quota_ledger",
+        "comment": "VIP 名额余额台账（标准名额与活动名额两桶分开记账）"
+      },
+      {
+        "name": "quota_transactions",
+        "comment": "VIP 名额流水（发放/消耗双向审计）"
+      },
+      {
+        "name": "quotes",
+        "comment": "报价单（商城结算/权益开通/升级档位共用；默认 10 分钟有效、一次性消费）"
+      },
+      {
+        "name": "regional_agents",
+        "comment": "区域代理表（省代/市代/县区代/门店代理；代理是 users 的角色，故为关联表）"
+      },
+      {
+        "name": "skus",
+        "comment": "商城 SKU 目录（按规格细分的价格与库存）"
+      },
+      {
+        "name": "sms_codes",
+        "comment": "短信验证码（按 purpose 场景隔离：register 与 reset-password 互不混用）"
+      },
+      {
+        "name": "stock_ledger",
+        "comment": "SKU 库存台账（每次出入库一条流水，可回溯库存变化）"
+      },
+      {
+        "name": "store_transfers",
+        "comment": "转店申请（会员在门店之间转移）"
+      },
+      {
+        "name": "training_feedback",
+        "comment": "训练反馈（家长/健脑官针对会员提交的课后反馈）"
+      },
+      {
+        "name": "upline_history",
+        "comment": "上下级关系变更历史（解绑/重绑/改名留痕）"
+      },
+      {
+        "name": "users",
+        "comment": "用户主表（人；所有人的主档，代理/合店老板等身份是身上的角色而非独立表）"
+      },
+      {
+        "name": "wechat_tickets",
+        "comment": "微信授权票据（一次一换；live / mock 双模式）"
+      },
+      {
+        "name": "withdrawals",
+        "comment": "提现单（手续费 0.6%、最低 1 元；审核流目前未接正式打款通道）"
+      }
+    ]
+  },
+  "safe": {
+    "count": 7,
+    "tables": [
+      {
+        "name": "addresses",
+        "comment": "收货地址"
+      },
+      {
+        "name": "app_settings",
+        "comment": "后台可调配置（JSON 单行存储；与 store.js DEFAULT_SETTINGS 对齐）"
+      },
+      {
+        "name": "material_renders",
+        "comment": "素材渲染记录（海报合成幂等键，防止重复渲染）"
+      },
+      {
+        "name": "pay_accounts",
+        "comment": "收款账户（提现打款目标；完整卡号仅存本表，对外只返回脱敏值）"
+      },
+      {
+        "name": "settings",
+        "comment": "后台可调配置（键值对 + JSON 值，与 store.js DEFAULT_SETTINGS 对齐）"
+      },
+      {
+        "name": "settlements",
+        "comment": "月度结算批次（每次跑批归档一份结果）"
+      },
+      {
+        "name": "support_feedback",
+        "comment": "客服反馈（用户提交的问题与建议）"
+      }
+    ]
+  }
+}

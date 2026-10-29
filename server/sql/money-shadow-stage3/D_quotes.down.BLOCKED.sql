@@ -1,0 +1,4 @@
+-- BLOCKED: checkout-only scope leaves non-checkout currency NULL.
+-- Whole-table NOT NULL DEFAULT CNY would broaden scope. Requires separate decision.
+-- All statements below are intentionally non-executable proposals.
+-- ALTER TABLE `quotes` DROP CHECK `ck_s3_quotes_checkout`;

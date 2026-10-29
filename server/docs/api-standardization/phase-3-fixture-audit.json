@@ -1,0 +1,120 @@
+{
+  "source": "synthetic isolated fixtures; not historical or database data",
+  "before": {
+    "scanned": 4,
+    "skipped": 1,
+    "blocking": 0,
+    "patches": 4,
+    "differences": [
+      {
+        "field": "listPriceCents",
+        "code": "MISSING_SHADOW",
+        "expected": 1990,
+        "blocking": false,
+        "kind": "skus",
+        "id": "s1"
+      },
+      {
+        "field": "currency",
+        "code": "MISSING_SHADOW",
+        "expected": "CNY",
+        "blocking": false,
+        "kind": "skus",
+        "id": "s1"
+      },
+      {
+        "field": "activityPriceCents",
+        "code": "MISSING_SHADOW",
+        "expected": 0,
+        "blocking": false,
+        "kind": "activityPrices",
+        "id": "p1"
+      },
+      {
+        "field": "currency",
+        "code": "MISSING_SHADOW",
+        "expected": "CNY",
+        "blocking": false,
+        "kind": "activityPrices",
+        "id": "p1"
+      },
+      {
+        "field": "priceCents",
+        "code": "MISSING_SHADOW",
+        "expected": 29900,
+        "blocking": false,
+        "kind": "columns",
+        "id": "c1"
+      },
+      {
+        "field": "currency",
+        "code": "MISSING_SHADOW",
+        "expected": "CNY",
+        "blocking": false,
+        "kind": "columns",
+        "id": "c1"
+      },
+      {
+        "field": "payableAmountCents",
+        "code": "MISSING_SHADOW",
+        "expected": 1990,
+        "blocking": false,
+        "kind": "quotes",
+        "id": "q1"
+      },
+      {
+        "field": "breakdown.goodsAmountCents",
+        "code": "MISSING_SHADOW",
+        "expected": 1990,
+        "blocking": false,
+        "kind": "quotes",
+        "id": "q1"
+      },
+      {
+        "field": "breakdown.discountAmountCents",
+        "code": "MISSING_SHADOW",
+        "expected": 0,
+        "blocking": false,
+        "kind": "quotes",
+        "id": "q1"
+      },
+      {
+        "field": "breakdown.listAmountCents",
+        "code": "MISSING_SHADOW",
+        "expected": 1990,
+        "blocking": false,
+        "kind": "quotes",
+        "id": "q1"
+      },
+      {
+        "field": "currency",
+        "code": "MISSING_SHADOW",
+        "expected": "CNY",
+        "blocking": false,
+        "kind": "quotes",
+        "id": "q1"
+      }
+    ]
+  },
+  "after": {
+    "scanned": 4,
+    "skipped": 1,
+    "blocking": 0,
+    "differences": []
+  },
+  "conflict": {
+    "blocking": 1,
+    "differences": [
+      {
+        "field": "listPriceCents",
+        "code": "VALUE_MISMATCH",
+        "expected": 1990,
+        "actual": 1,
+        "blocking": true,
+        "kind": "skus",
+        "id": "conflict"
+      }
+    ]
+  },
+  "rollbackRoundTrip": true
+}

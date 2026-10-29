@@ -1,0 +1,51 @@
+{
+  "openapi":"3.1.0",
+  "info":{"title":"HQ users API v2 pilot","version":"2.0.0-pilot","description":"Only two read endpoints. Opt in with X-API-Version: 2. API_STANDARD_V2=0 or API_STANDARD_USERS_PILOT=0 restores legacy for these endpoints. Legacy contract remains default."},
+  "security":[{"bearerAuth":[]}],
+  "paths":{
+    "/api/hq/users":{
+      "get":{"operationId":"listUsersPilot","summary":"Account list (v2 pilot)","parameters":[
+        {"$ref":"#/components/parameters/ApiVersion"},{"$ref":"#/components/parameters/TraceId"},
+        {"name":"pageNum","in":"query","schema":{"type":"integer","minimum":1,"maximum":1000000,"default":1}},
+        {"name":"pageSize","in":"query","schema":{"type":"integer","minimum":1,"maximum":100,"default":20}},
+        {"name":"sortBy","in":"query","schema":{"type":"string","enum":["accountId","nickname","createdAt"],"default":"accountId"}},
+        {"name":"sortOrder","in":"query","schema":{"type":"string","enum":["asc","desc"],"default":"asc"}},
+        {"name":"keyword","in":"query","schema":{"type":"string"}},
+        {"name":"frozen","in":"query","schema":{"type":"string","enum":["true","false","1","0"]}},
+        {"name":"tier","in":"query","schema":{"type":"string"}}
+      ],"responses":{
+        "200":{"description":"v2 page, no message. Without opt-in: legacy {code:0,message:'ok',data:{items,total,page,pageSize,summary}}; page parameter remains legacy-only.","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/PageSuccess"},"example":{"status":1,"response":{"pageNum":1,"pageSize":20,"total":0,"totalPages":0,"list":[]}}}}},
+        "400":{"$ref":"#/components/responses/Validation"},"401":{"$ref":"#/components/responses/Unauthorized"},"403":{"$ref":"#/components/responses/Forbidden"},"500":{"$ref":"#/components/responses/Internal"}
+      }}
+    },
+    "/api/hq/users/{accountId}":{
+      "get":{"operationId":"getUserPilot","summary":"Account profile (v2 pilot)","parameters":[{"$ref":"#/components/parameters/ApiVersion"},{"$ref":"#/components/parameters/TraceId"},{"name":"accountId","in":"path","required":true,"schema":{"type":"string"}}],"responses":{
+        "200":{"description":"v2 explicit profile and members; legacy keeps full phone, note and audit.","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/DetailSuccess"},"example":{"status":1,"response":{"profile":{"accountId":"9007199254740993","displayId":"QZ1","nickname":"138****5678","phone":"138****5678","tier":"vip","tierLabel":"VIP合伙人","isFrozen":false,"entitlementState":null,"createdAt":"2026-10-29T00:00:00.000Z","lastLoginAt":null,"version":1,"allowedActions":["freeze","update-note"]},"members":[]}}}}},
+        "401":{"$ref":"#/components/responses/Unauthorized"},"403":{"$ref":"#/components/responses/Forbidden"},"404":{"$ref":"#/components/responses/NotFound"},"500":{"$ref":"#/components/responses/Internal"}
+      }}
+    }
+  },
+  "components":{
+    "securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer"}},
+    "parameters":{
+      "ApiVersion":{"name":"X-API-Version","in":"header","description":"Exactly 2 opts in; omission keeps legacy.","required":true,"schema":{"type":"string","const":"2"}},
+      "TraceId":{"name":"X-Trace-Id","in":"header","schema":{"type":"string","pattern":"^[A-Za-z0-9._-]{1,128}$"}}
+    },
+    "schemas":{
+      "Profile":{"type":"object","additionalProperties":false,"required":["accountId","displayId","nickname","phone","tier","tierLabel","isFrozen","entitlementState","createdAt","lastLoginAt","version","allowedActions"],"properties":{
+        "accountId":{"type":["string","null"],"example":"9007199254740993"},"displayId":{"type":["string","null"]},"nickname":{"type":"string","example":"s***@example.com"},"phone":{"type":"string","example":"138****5678"},"tier":{"type":"string"},"tierLabel":{"type":"string"},"isFrozen":{"type":"boolean"},"entitlementState":{"type":["string","null"]},"createdAt":{"type":["string","null"],"format":"date-time"},"lastLoginAt":{"type":["string","null"],"format":"date-time"},"version":{"type":"number"},"allowedActions":{"type":"array","items":{"type":"string"}}
+      }},
+      "Member":{"type":"object","additionalProperties":false,"required":["memberId","displayName","memberLevel","displayId","storeId"],"properties":{"memberId":{"type":["string","null"]},"displayName":{"type":"string"},"memberLevel":{"type":["string","null"]},"displayId":{"type":["string","null"]},"storeId":{"type":["string","null"]}}},
+      "PageSuccess":{"type":"object","additionalProperties":false,"required":["status","response"],"properties":{"status":{"const":1},"response":{"type":"object","additionalProperties":false,"required":["pageNum","pageSize","total","totalPages","list"],"properties":{"pageNum":{"type":"integer"},"pageSize":{"type":"integer"},"total":{"type":"integer"},"totalPages":{"type":"integer"},"list":{"type":"array","items":{"$ref":"#/components/schemas/Profile"}}}}}},
+      "DetailSuccess":{"type":"object","additionalProperties":false,"required":["status","response"],"properties":{"status":{"const":1},"response":{"type":"object","additionalProperties":false,"required":["profile","members"],"properties":{"profile":{"$ref":"#/components/schemas/Profile"},"members":{"type":"array","items":{"$ref":"#/components/schemas/Member"}}}}}},
+      "Error":{"type":"object","additionalProperties":false,"required":["status","code","message","response"],"properties":{"status":{"const":0},"code":{"type":"string","enum":["VALIDATION_ERROR","UNAUTHENTICATED","FORBIDDEN","NOT_FOUND","INTERNAL_ERROR"]},"message":{"type":"string"},"response":{"type":"null"},"errors":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["field","message"],"properties":{"field":{"type":"string"},"message":{"type":"string"}}}}}}
+    },
+    "responses":{
+      "Validation":{"description":"40000 -> VALIDATION_ERROR; field errors required for pagination/sorting","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"status":0,"code":"VALIDATION_ERROR","message":"分页参数不合法","response":null,"errors":[{"field":"pageSize","message":"必须为1至100的整数"}]}}}},
+      "Unauthorized":{"description":"40100 -> UNAUTHENTICATED","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"status":0,"code":"UNAUTHENTICATED","message":"未登录或 token 已失效","response":null}}}},
+      "Forbidden":{"description":"40300 -> FORBIDDEN; authenticated non-admin. Legacy dispatcher still reports 40100 for that session.","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"status":0,"code":"FORBIDDEN","message":"需要总部后台管理员权限","response":null}}}},
+      "NotFound":{"description":"40400 -> NOT_FOUND","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"status":0,"code":"NOT_FOUND","message":"账号不存在：missing","response":null}}}},
+      "Internal":{"description":"50000 -> INTERNAL_ERROR; fixed public message","headers":{"X-Trace-Id":{"schema":{"type":"string"}}},"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"status":0,"code":"INTERNAL_ERROR","message":"服务器内部错误，请稍后重试","response":null}}}}
+    }
+  }
+}

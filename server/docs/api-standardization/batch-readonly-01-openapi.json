@@ -1,0 +1,1913 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Read-only envelope batch 01",
+    "version": "1.0.0",
+    "description": "Default legacy. X-API-Version:2 AND per-module flag=1 required. Inner data unchanged; no new validation or pagination rules."
+  },
+  "paths": {
+    "/api/hq/materials": {
+      "get": {
+        "summary": "materials read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_MATERIALS_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "items": [
+                      {
+                        "materialId": "m1",
+                        "title": "Guide",
+                        "category": "general",
+                        "fileUrl": null,
+                        "assetId": null,
+                        "status": "online",
+                        "size": 0,
+                        "mimeType": null,
+                        "version": 1,
+                        "createdAt": "2026-01-01T00:00:00.000Z",
+                        "allowedActions": [
+                          "offline",
+                          "save",
+                          "delete"
+                        ]
+                      }
+                    ],
+                    "total": 1,
+                    "page": 1,
+                    "pageSize": 20,
+                    "summary": {
+                      "total": 1,
+                      "online": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_MATERIALS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "items": [
+              {
+                "materialId": "m1",
+                "title": "Guide",
+                "category": "general",
+                "fileUrl": null,
+                "assetId": null,
+                "status": "online",
+                "size": 0,
+                "mimeType": null,
+                "version": 1,
+                "createdAt": "2026-01-01T00:00:00.000Z",
+                "allowedActions": [
+                  "offline",
+                  "save",
+                  "delete"
+                ]
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "pageSize": 20,
+            "summary": {
+              "total": 1,
+              "online": 1
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/materials/catalog": {
+      "get": {
+        "summary": "materials read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_MATERIALS_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "categories": [
+                      {
+                        "value": "general",
+                        "label": "general",
+                        "count": 1
+                      }
+                    ],
+                    "statuses": [
+                      {
+                        "value": "online",
+                        "label": "已上架"
+                      },
+                      {
+                        "value": "offline",
+                        "label": "已下架"
+                      }
+                    ],
+                    "audit": [],
+                    "summary": {
+                      "total": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_MATERIALS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "categories": [
+              {
+                "value": "general",
+                "label": "general",
+                "count": 1
+              }
+            ],
+            "statuses": [
+              {
+                "value": "online",
+                "label": "已上架"
+              },
+              {
+                "value": "offline",
+                "label": "已下架"
+              }
+            ],
+            "audit": [],
+            "summary": {
+              "total": 1
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/materials/{materialId}": {
+      "get": {
+        "summary": "materials read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_MATERIALS_PILOT=1. Otherwise legacy HQ envelope."
+          },
+          {
+            "name": "materialId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "material": {
+                      "materialId": "m1",
+                      "title": "Guide",
+                      "category": "general",
+                      "fileUrl": null,
+                      "assetId": null,
+                      "status": "online",
+                      "size": 0,
+                      "mimeType": null,
+                      "version": 1,
+                      "createdAt": "2026-01-01T00:00:00.000Z",
+                      "allowedActions": [
+                        "offline",
+                        "save",
+                        "delete"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "NOT_FOUND",
+                  "message": "资源不存在",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_MATERIALS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "material": {
+              "materialId": "m1",
+              "title": "Guide",
+              "category": "general",
+              "fileUrl": null,
+              "assetId": null,
+              "status": "online",
+              "size": 0,
+              "mimeType": null,
+              "version": 1,
+              "createdAt": "2026-01-01T00:00:00.000Z",
+              "allowedActions": [
+                "offline",
+                "save",
+                "delete"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/announcements": {
+      "get": {
+        "summary": "announcements read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_ANNOUNCEMENTS_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "items": [
+                      {
+                        "announcementId": "a1",
+                        "title": "Notice",
+                        "summary": "",
+                        "content": null,
+                        "status": "draft",
+                        "publishedAt": null,
+                        "audience": null,
+                        "version": 1,
+                        "allowedActions": [
+                          "save",
+                          "publish"
+                        ]
+                      }
+                    ],
+                    "total": 1,
+                    "page": 1,
+                    "pageSize": 20,
+                    "summary": {
+                      "total": 1,
+                      "published": 0,
+                      "draft": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "items": [
+              {
+                "announcementId": "a1",
+                "title": "Notice",
+                "summary": "",
+                "content": null,
+                "status": "draft",
+                "publishedAt": null,
+                "audience": null,
+                "version": 1,
+                "allowedActions": [
+                  "save",
+                  "publish"
+                ]
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "pageSize": 20,
+            "summary": {
+              "total": 1,
+              "published": 0,
+              "draft": 1
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/announcements/catalog": {
+      "get": {
+        "summary": "announcements read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_ANNOUNCEMENTS_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "statuses": [
+                      {
+                        "value": "draft",
+                        "label": "draft"
+                      },
+                      {
+                        "value": "published",
+                        "label": "published"
+                      },
+                      {
+                        "value": "offline",
+                        "label": "offline"
+                      }
+                    ],
+                    "audit": [],
+                    "summary": {
+                      "total": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "statuses": [
+              {
+                "value": "draft",
+                "label": "draft"
+              },
+              {
+                "value": "published",
+                "label": "published"
+              },
+              {
+                "value": "offline",
+                "label": "offline"
+              }
+            ],
+            "audit": [],
+            "summary": {
+              "total": 1
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/announcements/{announcementId}": {
+      "get": {
+        "summary": "announcements read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_ANNOUNCEMENTS_PILOT=1. Otherwise legacy HQ envelope."
+          },
+          {
+            "name": "announcementId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "announcement": {
+                      "announcementId": "a1",
+                      "title": "Notice",
+                      "summary": "",
+                      "content": null,
+                      "status": "draft",
+                      "publishedAt": null,
+                      "audience": null,
+                      "version": 1,
+                      "allowedActions": [
+                        "save",
+                        "publish"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "NOT_FOUND",
+                  "message": "资源不存在",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_ANNOUNCEMENTS_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "announcement": {
+              "announcementId": "a1",
+              "title": "Notice",
+              "summary": "",
+              "content": null,
+              "status": "draft",
+              "publishedAt": null,
+              "audience": null,
+              "version": 1,
+              "allowedActions": [
+                "save",
+                "publish"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/course/entitlements": {
+      "get": {
+        "summary": "course read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_COURSE_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "items": [
+                      {
+                        "entitlementId": "e1",
+                        "accountId": null,
+                        "memberId": null,
+                        "productId": null,
+                        "title": "Course",
+                        "status": "ACTIVE",
+                        "validFrom": null,
+                        "validUntil": "2099-01-01T00:00:00.000Z",
+                        "version": 1,
+                        "allowedActions": [
+                          "extend",
+                          "freeze",
+                          "unfreeze",
+                          "revoke"
+                        ]
+                      }
+                    ],
+                    "total": 1,
+                    "page": 1,
+                    "pageSize": 20,
+                    "summary": {
+                      "total": 1,
+                      "active": 1,
+                      "expired": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_COURSE_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "items": [
+              {
+                "entitlementId": "e1",
+                "accountId": null,
+                "memberId": null,
+                "productId": null,
+                "title": "Course",
+                "status": "ACTIVE",
+                "validFrom": null,
+                "validUntil": "2099-01-01T00:00:00.000Z",
+                "version": 1,
+                "allowedActions": [
+                  "extend",
+                  "freeze",
+                  "unfreeze",
+                  "revoke"
+                ]
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "pageSize": 20,
+            "summary": {
+              "total": 1,
+              "active": 1,
+              "expired": 0
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/course/catalog": {
+      "get": {
+        "summary": "course read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_COURSE_PILOT=1. Otherwise legacy HQ envelope."
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "products": [],
+                    "statuses": [
+                      {
+                        "value": "ACTIVE",
+                        "label": "ACTIVE"
+                      },
+                      {
+                        "value": "FROZEN",
+                        "label": "FROZEN"
+                      },
+                      {
+                        "value": "EXPIRED",
+                        "label": "EXPIRED"
+                      },
+                      {
+                        "value": "REVOKED",
+                        "label": "REVOKED"
+                      }
+                    ],
+                    "summary": {
+                      "total": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_COURSE_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "products": [],
+            "statuses": [
+              {
+                "value": "ACTIVE",
+                "label": "ACTIVE"
+              },
+              {
+                "value": "FROZEN",
+                "label": "FROZEN"
+              },
+              {
+                "value": "EXPIRED",
+                "label": "EXPIRED"
+              },
+              {
+                "value": "REVOKED",
+                "label": "REVOKED"
+              }
+            ],
+            "summary": {
+              "total": 1
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/course/entitlements/{entitlementId}": {
+      "get": {
+        "summary": "course read envelope pilot",
+        "description": "Default switch OFF. Existing business handler called once. No money/DB/catch changes.",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            },
+            "description": "Additionally requires API_STANDARD_COURSE_PILOT=1. Otherwise legacy HQ envelope."
+          },
+          {
+            "name": "entitlementId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unified envelope; inner data and legacy pagination are unchanged.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "entitlement": {
+                      "entitlementId": "e1",
+                      "accountId": null,
+                      "memberId": null,
+                      "productId": null,
+                      "title": "Course",
+                      "status": "ACTIVE",
+                      "validFrom": null,
+                      "validUntil": "2099-01-01T00:00:00.000Z",
+                      "version": 1,
+                      "allowedActions": [
+                        "extend",
+                        "freeze",
+                        "unfreeze",
+                        "revoke"
+                      ]
+                    },
+                    "audit": []
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Common validation contract; fixture tested. This batch adds no parameter validation rules.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "request",
+                      "message": "参数不合法"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "NOT_FOUND",
+                  "message": "资源不存在",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        },
+        "x-module-switch": "API_STANDARD_COURSE_PILOT",
+        "x-legacy-success-example": {
+          "code": 0,
+          "message": "ok",
+          "data": {
+            "entitlement": {
+              "entitlementId": "e1",
+              "accountId": null,
+              "memberId": null,
+              "productId": null,
+              "title": "Course",
+              "status": "ACTIVE",
+              "validFrom": null,
+              "validUntil": "2099-01-01T00:00:00.000Z",
+              "version": 1,
+              "allowedActions": [
+                "extend",
+                "freeze",
+                "unfreeze",
+                "revoke"
+              ]
+            },
+            "audit": []
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Success": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 1
+          },
+          "response": {}
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "code",
+          "message",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 0
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "null"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "message"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-validation-note": "VALIDATION_ERROR includes errors; no known field -> request."
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+-- CODE/CONFIG STEP ONLY: set MONEY_SHADOW_WRITE_PRODUCTS=0 and MONEY_SHADOW_WRITE_CHECKOUT_QUOTES=0.
+-- Keep legacy and shadow data; no recomputation, DELETE, or UPDATE.

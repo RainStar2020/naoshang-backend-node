@@ -1,0 +1,823 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HQ Support read pilot",
+    "version": "2b-pilot",
+    "description": "Opt in with X-API-Version:2; default remains legacy HQ. API_STANDARD_SUPPORT_PILOT=0 restores legacy for this module. Error RESOURCE_NOT_FOUND is scoped to support pilot."
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/hq/support/profile": {
+      "get": {
+        "operationId": "supportProfilePilot",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Optional current administrator profile. No record -> {status:1,response:null}; never seed. Legacy for this new endpoint: {code:0,message:\"ok\",data:profile|null}.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileSuccess"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "adminId": "9007199254740993",
+                    "displayName": "客服管理员",
+                    "phone": "138****5678",
+                    "email": "s***@example.com",
+                    "createdAt": "2026-10-29T00:00:00.000Z",
+                    "updatedAt": null,
+                    "isActive": true
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/support/tickets": {
+      "get": {
+        "operationId": "supportListPilot",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            }
+          },
+          {
+            "name": "pageNum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000000,
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ticketId",
+                "createdAt",
+                "status"
+              ],
+              "default": "ticketId"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "desc"
+            }
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty list is []; legacy retains items/page/summary.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageSuccess"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "pageNum": 1,
+                    "pageSize": 20,
+                    "total": 0,
+                    "totalPages": 0,
+                    "list": []
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "VALIDATION_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "VALIDATION_ERROR",
+                  "message": "分页参数不合法",
+                  "response": null,
+                  "errors": [
+                    {
+                      "field": "pageSize",
+                      "message": "必须为1至100的整数"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/hq/support/tickets/{ticketId}": {
+      "get": {
+        "operationId": "supportDetailPilot",
+        "parameters": [
+          {
+            "name": "X-API-Version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "const": "2"
+            }
+          },
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "String identifiers, ISO dates and masked free text.",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailSuccess"
+                },
+                "example": {
+                  "status": 1,
+                  "response": {
+                    "ticket": {
+                      "ticketId": "9007199254740993",
+                      "accountId": null,
+                      "category": "general",
+                      "status": "OPEN",
+                      "subject": "查询",
+                      "assigneeId": null,
+                      "createdAt": "2026-10-29T00:00:00.000Z",
+                      "updatedAt": "2026-10-29T00:00:00.000Z",
+                      "version": 1,
+                      "allowedActions": [
+                        "reply",
+                        "change-status",
+                        "assign",
+                        "close"
+                      ]
+                    },
+                    "messages": []
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "UNAUTHENTICATED",
+                  "message": "未登录或 token 已失效",
+                  "response": null
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "FORBIDDEN",
+                  "message": "需要总部后台管理员权限",
+                  "response": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "RESOURCE_NOT_FOUND",
+                  "message": "请求的资源不存在",
+                  "response": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR",
+            "headers": {
+              "X-Trace-Id": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "status": 0,
+                  "code": "INTERNAL_ERROR",
+                  "message": "服务器内部错误，请稍后重试",
+                  "response": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Profile": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "adminId",
+          "displayName",
+          "phone",
+          "email",
+          "createdAt",
+          "updatedAt",
+          "isActive"
+        ],
+        "properties": {
+          "adminId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Ticket": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ticketId",
+          "accountId",
+          "category",
+          "status",
+          "subject",
+          "assigneeId",
+          "createdAt",
+          "updatedAt",
+          "version",
+          "allowedActions"
+        ],
+        "properties": {
+          "ticketId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accountId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "assigneeId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "version": {
+            "type": "number"
+          },
+          "allowedActions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "messageId",
+          "ticketId",
+          "senderRole",
+          "senderId",
+          "content",
+          "createdAt"
+        ],
+        "properties": {
+          "messageId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ticketId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "senderRole": {
+            "type": "string"
+          },
+          "senderId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "code",
+          "message",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 0
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "VALIDATION_ERROR",
+              "UNAUTHENTICATED",
+              "FORBIDDEN",
+              "RESOURCE_NOT_FOUND",
+              "INTERNAL_ERROR"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "null"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "field",
+                "message"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProfileSuccess": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 1
+          },
+          "response": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Profile"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "PageSuccess": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 1
+          },
+          "response": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "pageNum",
+              "pageSize",
+              "total",
+              "totalPages",
+              "list"
+            ],
+            "properties": {
+              "pageNum": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              },
+              "total": {
+                "type": "integer"
+              },
+              "totalPages": {
+                "type": "integer"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              }
+            }
+          }
+        }
+      },
+      "DetailSuccess": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "response"
+        ],
+        "properties": {
+          "status": {
+            "const": 1
+          },
+          "response": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ticket",
+              "messages"
+            ],
+            "properties": {
+              "ticket": {
+                "$ref": "#/components/schemas/Ticket"
+              },
+              "messages": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

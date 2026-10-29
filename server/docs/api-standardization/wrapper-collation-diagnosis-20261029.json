@@ -1,0 +1,105 @@
+{
+  "readOnlyDiagnosis": true,
+  "session": {
+    "charset": "utf8mb4",
+    "connectionCollation": "utf8mb4_unicode_ci",
+    "databaseCollation": "utf8mb4_unicode_ci",
+    "mysqlVersion": "8.4.9"
+  },
+  "columns": [
+    {
+      "TABLE_NAME": "activity_prices",
+      "COLUMN_NAME": "product_id",
+      "COLUMN_TYPE": "varchar(191)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "activity_prices",
+      "COLUMN_NAME": "currency",
+      "COLUMN_TYPE": "char(3)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "columns",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "varchar(191)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "columns",
+      "COLUMN_NAME": "currency",
+      "COLUMN_TYPE": "char(3)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "quotes",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "varchar(191)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "quotes",
+      "COLUMN_NAME": "currency",
+      "COLUMN_TYPE": "char(3)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "skus",
+      "COLUMN_NAME": "id",
+      "COLUMN_TYPE": "varchar(191)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "skus",
+      "COLUMN_NAME": "product_id",
+      "COLUMN_TYPE": "varchar(191)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    },
+    {
+      "TABLE_NAME": "skus",
+      "COLUMN_NAME": "currency",
+      "COLUMN_TYPE": "char(3)",
+      "COLLATION_NAME": "utf8mb4_general_ci"
+    }
+  ],
+  "remaining": {
+    "skus": {
+      "total": 18,
+      "nonNullCurrency": "0"
+    },
+    "activity_prices": {
+      "total": 6,
+      "nonNullCurrency": "0"
+    },
+    "columns": {
+      "total": 2,
+      "nonNullCurrency": "0"
+    },
+    "quotes": {
+      "total": 39,
+      "nonNullCurrency": "0"
+    }
+  },
+  "node": "v24.22.0",
+  "remainingNonNullShadowCounts": {
+    "skus": {
+      "list_price_cents": "0",
+      "currency": "0"
+    },
+    "activity_prices": {
+      "activity_price_cents": "0",
+      "currency": "0"
+    },
+    "columns": {
+      "price_cents": "0",
+      "currency": "0"
+    },
+    "quotes": {
+      "payable_amount_cents": "0",
+      "goods_amount_cents": "0",
+      "discount_amount_cents": "0",
+      "list_amount_cents": "0",
+      "currency": "0"
+    }
+  }
+}

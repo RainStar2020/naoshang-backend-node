@@ -1,0 +1,3078 @@
+{
+  "database": "brain_biz_view.db",
+  "exportedAt": "2026-10-27T07:47:21.645Z",
+  "tables": [
+    {
+      "table": "_db_notes",
+      "rows": 6,
+      "columns": [
+        {
+          "name": "key",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "activation_codes",
+      "rows": 9,
+      "columns": [
+        {
+          "name": "code",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "target_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "target_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "max_uses",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "uses",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used_by",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "channel",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "issued_by",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "issued_to",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "batch_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "issued_to",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "activity_prices",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "addresses",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "recipient",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "phone",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "region_codes",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "region_names",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "detail",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "is_default",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "allocation_quotes",
+      "rows": 1,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "entry_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "kind",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "targets",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "entry_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "rows",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "total_percent",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "total_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "allocations",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "entry_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "target_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "beneficiary_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "kind",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "percent",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "operation_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "target_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "app_settings",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "payload",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "applications",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "application_status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "payment_status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "contract_status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "entitlement_status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "member_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_agent_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "target_store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "agency_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "payable_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "store",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "assets",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "purpose",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "file_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "mime_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "size",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "preview_url",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "fail_reason",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "co_store_owners",
+      "rows": 1,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "co_store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "performance",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "co_store_id",
+          "table": "co_stores",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "co_stores",
+      "rows": 1,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "owner_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "promoter_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_manager_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "monthly_fee",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "owner_count",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "join_date",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "store_manager_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "promoter_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "owner_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "coaches",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "login_account",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "invitation_status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "columns",
+      "rows": 2,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "cover_url",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "price",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "fulfillment_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "requires_member",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "price_presentation",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "checkout_notice",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "content",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "chapters",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "commissions",
+      "rows": 8,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "owner_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "identity",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "subtype",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "period",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "base_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "rate",
+          "type": "REAL",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "ref_order_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "formula",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "ref_order_id",
+          "table": "orders",
+          "to": "id"
+        },
+        {
+          "from": "owner_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "counters",
+      "rows": 2,
+      "columns": [
+        {
+          "name": "name",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "value",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "coupons",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "discount_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "threshold_text",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "scope_label",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "entitlement_orders",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "operation_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "experience_ledger",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "tab",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "event",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "points",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "price",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "ref_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "meta",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "occurred_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "free_upgrade_log",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "from_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "to_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "rule",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "trigger_ref",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "invite_codes",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "code",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "owner_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "max_use",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used_by",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "jobs",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "material_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "qr_asset_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "message",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "download_url",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "share_url",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "learning_progress",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "member_id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": true
+        },
+        {
+          "name": "level_id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": true
+        },
+        {
+          "name": "chapter_id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": true
+        },
+        {
+          "name": "position_seconds",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "duration_seconds",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "completed",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "material_renders",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "material_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "qr_asset_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "members",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "grade_code",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "grade_label",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "gender_code",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "gender_label",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "avatar_asset_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "avatar_url",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "activated",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "member_level",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "member_seq",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "display_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "unlocked_levels",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "unlocked_columns",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "training",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "orders",
+      "rows": 4,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "buyer_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "seller_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "package_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "old_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "quota_count",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "vip_credit",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "actual_paid",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "seller_cost",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "supply_spread",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "store_fee",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "hq_fee",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "region_code",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "channel",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "seller_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "buyer_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "password_resets",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "ticket",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "phone",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "pay_accounts",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "token",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "account_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "bank_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "bank_number",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "masked_bank_number",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "payments",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "biz_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "biz_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "channel",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "subject",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "transaction_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "pay_params",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "meta",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "notify_raw",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "note",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "paid_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "promotion_tasks",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "start_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "valid_until",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "valid_months",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "targets",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "achieved_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "granted_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "claimed_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "quota_activity_batches",
+      "rows": 1,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "qty",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "obtained_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expire_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "quota_ledger",
+      "rows": 7,
+      "columns": [
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "standard",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "quota_transactions",
+      "rows": 4,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "op",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "kind",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "used_standard",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used_activity",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "ref",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "operator_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "quotes",
+      "rows": 42,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "scene",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "breakdown",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "items",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "meta",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "rule_version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "issued_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "consumed",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "consumed_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "consumed_ref",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "regional_agents",
+      "rows": 4,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "region_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "region_code",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "price_tier",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "referrer_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "granted_tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "appointed_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "referrer_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "settings",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "settlements",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "period",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "run_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "skus",
+      "rows": 18,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "product_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "list_price",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "stock",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "updated_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "sms_codes",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "phone",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "code",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "purpose",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "stock_ledger",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "sku_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "delta",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "order_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "operator_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "balance_after",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "operator_id",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "sku_id",
+          "table": "skus",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "store_transfers",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "member_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "from_store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "target_store_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "reason",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "store_agent_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "support_feedback",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "content",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "image_asset_ids",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "training_feedback",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "member_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "kind",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "text",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "coach_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "coach_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "image_asset_ids",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "attachment_asset_ids",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "upline_history",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "old_upline",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "new_upline",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "action",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "new_upline",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "old_upline",
+          "table": "users",
+          "to": "id"
+        },
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "users",
+      "rows": 10,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "seq",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "display_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "phone",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "password",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "password_migrated_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "tier",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "is_founding",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "upline_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "team_vip",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "annual_fee_paid",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "entitlement_state",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "entitlement_paid_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "entitlement_expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "role",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "avatar",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "wechat_openid",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "upline_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "table": "wechat_tickets",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "openid",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "ticket",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "mode",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "used",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "expires_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "created_at",
+          "type": "INTEGER",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "table": "withdrawals",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "pk": true,
+          "notnull": false
+        },
+        {
+          "name": "user_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "fee",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "net_amount",
+          "type": "REAL",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "account_type",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "account_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "bank_name",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "masked_bank_number",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "operation_id",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        },
+        {
+          "name": "idempotency_key",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "reject_reason",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": false
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "pk": false,
+          "notnull": true
+        }
+      ],
+      "foreignKeys": [
+        {
+          "from": "user_id",
+          "table": "users",
+          "to": "id"
+        }
+      ]
+    }
+  ]
+}

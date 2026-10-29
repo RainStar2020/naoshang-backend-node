@@ -1,0 +1,40 @@
+# 依赖
+node_modules/
+
+# 运行时数据快照（每次写库都会覆盖；权威种子在 server.js DEFAULT_SEED 与 src/columns.js DEFAULT_COLUMNS）
+data/db.json
+data/*.db
+# 端口自动避让时生成的调试数据副本（第二实例专用，不应入库）
+data/db.debug-*.json
+# 单实例锁（记录正在写该库的进程 PID）
+data/*.lock
+data/*.json.lock
+
+# 会话持久化（加密后的登录态，绝不入库）
+data/sessions*.json
+# 会话加密密钥（与密文同入库＝形同明文）
+data/.session_key
+
+# 运行期进程记录（PID / 监听端口，随机器变化）
+.run.pids.json
+# Windows 保留设备名，shell 重定向误建的垃圾文件
+nul
+
+# 环境与密钥
+.env
+.env.local
+.env.*.local
+
+# 同事专用数据库账号凭据（含明文口令，绝不入库）
+colleague-kit/colleague-credentials.txt
+
+# 日志与系统文件
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.idea
+.vscode
+*.sw?

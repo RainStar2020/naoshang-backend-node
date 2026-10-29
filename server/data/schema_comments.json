@@ -1,0 +1,645 @@
+{
+  "counters": {
+    "table": "全局计数器",
+    "columns": {
+      "name": "计数器名称（userSeq=用户注册序号 / seq=内部 id / memberSeq=孩子添加序号）",
+      "value": "当前计数值（下一个分配的序号）"
+    }
+  },
+  "users": {
+    "table": "用户主表（人；原 partners 表，v2 更名）",
+    "columns": {
+      "id": "内部 ID（如 p1 / u_xxx）",
+      "seq": "全局注册序号（1,2,3…；第 10000 名即 10000）",
+      "display_id": "对外编号：前缀+seq（QZ/YH/VIP/TS/SD/LC 六前缀）",
+      "name": "用户姓名",
+      "phone": "注册手机号（应用层 409 唯一校验，此处兜底）",
+      "password": "登录口令（自 2026年10月26 起存 scrypt 哈希串 scrypt$salt$hash；历史明文由启动迁移自动升级）",
+      "password_migrated_at": "明文→哈希的迁移时间（毫秒时间戳）",
+      "tier": "none/vip/angel/private/cofounder（能力档位）",
+      "is_founding": "'founding'（持创始奖）/ 'none'",
+      "upline_id": "直接上级（推荐链）",
+      "team_vip": "团队 VIP 计数（缓存）",
+      "annual_fee_paid": "年费是否已缴",
+      "entitlement_state": "权益收益费三态：never_paid=未开通 / active=生效中 / expired=已过期（过期后佣金引擎全部停算，仅可导出历史账单）",
+      "entitlement_paid_at": "权益实付时间（毫秒时间戳，与运行时一致）",
+      "entitlement_expires_at": "权益到期时间（毫秒；惰性判定：< now 即 expired）",
+      "role": "登录通道角色：user/parent/coach/admin（缺省由 tier 推导）",
+      "avatar": "头像（assets.id 或 URL）",
+      "wechat_openid": "微信授权 Mock 占位",
+      "created_at": "注册时间"
+    }
+  },
+  "orders": {
+    "table": "订单 / 销售（收益销售来源）",
+    "columns": {
+      "id": "订单 ID（内部唯一标识）",
+      "buyer_id": "购买方（升档者）",
+      "seller_id": "供货方（推荐人/上级）",
+      "package_tier": "vip/angel/private/cofounder",
+      "old_tier": "升档前档（null=原始名额售卖）",
+      "quota_count": "消耗名额",
+      "vip_credit": "计入全球奖的 VIP 增量",
+      "actual_paid": "客户实付",
+      "seller_cost": "卖方拿货成本",
+      "supply_spread": "供货差价（≤0 不落账）",
+      "store_fee": "门店服务费（仅门店渠道；月度结算拆四级）",
+      "hq_fee": "总部产品费（含全球/创始奖）",
+      "region_code": "归属区域（门店费按区域码精确匹配）",
+      "channel": "成交渠道：store=门店老板售出 / partner=合伙人售卖",
+      "store_id": "成交门店（channel=store 时记录）",
+      "status": "订单状态（已支付/已取消/已退款等）",
+      "created_at": "下单时间"
+    }
+  },
+  "commissions": {
+    "table": "收益明细（佣金；全球奖/直推奖/复购奖/创始奖/代理奖/合店分配全类型）",
+    "columns": {
+      "id": "收益流水 ID",
+      "owner_id": "收益归属人",
+      "identity": "收益归属身份：partner=合伙人 / costore=合店 / agent=代理（三身份分账口径，互不混算）",
+      "type": "supply/parity/global/founding/agent/costore/product",
+      "subtype": "如 agent_direct/agent_biz/storeService/businessDirect/partner_product",
+      "period": "结算月 YYYY-MM",
+      "base_amount": "计佣基数（元）",
+      "rate": "比例（可为 null，如定额拆分）",
+      "amount": "实际收益金额",
+      "ref_order_id": "关联订单（可空）",
+      "status": "pending/settled",
+      "note": "备注（人工说明或自动生成的计算说明）",
+      "formula": "计算公式快照（便于复核金额来源）",
+      "created_at": "收益生成时间"
+    }
+  },
+  "quota_ledger": {
+    "table": "名额台账（余额 + 流水）",
+    "columns": {
+      "user_id": "持有人 ID（每人一行）",
+      "standard": "标准 VIP 名额余额（可划拨、可用于任意升级）"
+    }
+  },
+  "quota_activity_batches": {
+    "table": "",
+    "columns": {
+      "id": "批次 ID（自增主键）",
+      "user_id": "持有人 ID",
+      "qty": "本批次发放的活动名额数量",
+      "obtained_at": "发放时间",
+      "expire_at": "活动名额到期时间（先过期先扣）"
+    }
+  },
+  "quota_transactions": {
+    "table": "",
+    "columns": {
+      "id": "流水 ID（自增主键）",
+      "user_id": "操作对象 ID",
+      "op": "issue（发放）/ consume（消耗）",
+      "kind": "standard / activity（发放类型；消耗时为混合来源）",
+      "used_standard": "本次扣减的标准名额数",
+      "used_activity": "本次扣减的活动名额数",
+      "amount": "兼容旧语义：额度变动量",
+      "ref": "关联订单号 / 发放来源 / 操作备注",
+      "operator_id": "操作人（后台发放人或下单用户）",
+      "created_at": "操作时间"
+    }
+  },
+  "regional_agents": {
+    "table": "区域代理（省/市/县区/门店；关联表 = 角色）",
+    "columns": {
+      "id": "代理记录 ID",
+      "user_id": "代理身份归属人",
+      "region_type": "province/city/district/store",
+      "region_code": "区域码（门店费精确匹配键）",
+      "price_tier": "新价格表人数档位",
+      "referrer_id": "开发人（推荐人）",
+      "granted_tier": "开通时赠予身份（门店代理为 null）",
+      "appointed_at": "任命时间"
+    }
+  },
+  "co_stores": {
+    "table": "合店 / 门店（含合店老板名单 1:N）",
+    "columns": {
+      "id": "合店记录 ID",
+      "owner_id": "缴纳合店费者（合店老板）",
+      "promoter_id": "推荐人（可能为合店老板）",
+      "store_manager_id": "门店店长/门店股东（拿 40% 服务）",
+      "store_id": "所属门店标识（单店分红分组键）",
+      "monthly_fee": "合店费月费",
+      "owner_count": "门店老板人数",
+      "join_date": "入股年月（无责分红首月判定）",
+      "created_at": "创建时间"
+    }
+  },
+  "co_store_owners": {
+    "table": "",
+    "columns": {
+      "id": "记录 ID（自增主键）",
+      "co_store_id": "所属合店",
+      "user_id": "合店老板（本店）",
+      "performance": "本人当月销售业绩（分红用，不含合店费）",
+      "created_at": "加入时间"
+    }
+  },
+  "upline_history": {
+    "table": "关系变更历史",
+    "columns": {
+      "id": "记录 ID（自增主键）",
+      "user_id": "被变更人 ID",
+      "old_upline": "变更前的直接上级 ID",
+      "new_upline": "变更后的直接上级 ID",
+      "action": "unbind/rebind/rename...",
+      "at": "变更时间"
+    }
+  },
+  "settings": {
+    "table": "后台配置",
+    "columns": {
+      "id": "记录 ID（自增主键）",
+      "key": "配置键名（唯一，如 costore / order / dividend / quota / ladder 等）",
+      "value": "JSON 字符串（costore 配置等）"
+    }
+  },
+  "settlements": {
+    "table": "结算批次",
+    "columns": {
+      "id": "结算批次 ID（自增主键）",
+      "period": "结算月 YYYY-MM",
+      "run_at": "跑批执行时间",
+      "summary": "JSON 汇总（byType/total/agentBreakdown...）"
+    }
+  },
+  "sms_codes": {
+    "table": "短信验证码（scene 隔离：register/reset-password 互不混用）",
+    "columns": {
+      "id": "验证码记录 ID（自增主键）",
+      "phone": "接收手机号",
+      "code": "验证码明文",
+      "purpose": "register / reset-password",
+      "expires_at": "毫秒时间戳",
+      "used": "是否已使用（1=已用 / 0=未用）",
+      "created_at": "发送时间"
+    }
+  },
+  "password_resets": {
+    "table": "密码重置凭据",
+    "columns": {
+      "ticket": "重置票据（一次性令牌，主键）",
+      "phone": "目标账号手机号",
+      "expires_at": "毫秒时间戳（10 分钟）",
+      "used": "是否已使用（1=已用 / 0=未用）",
+      "created_at": "创建时间"
+    }
+  },
+  "entitlement_orders": {
+    "table": "权益收益费订单（200 元门禁；幂等键 + 三段式）",
+    "columns": {
+      "id": "订单 ID（自增主键）",
+      "idempotency_key": "幂等键（重复提交返回同一结果）",
+      "operation_id": "操作流水号 op_xxx",
+      "user_id": "开通人 ID",
+      "amount": "权益收益费金额（元）",
+      "status": "当前为免支付直通占位；正式收银台接入后三段式",
+      "note": "备注",
+      "at": "毫秒时间戳",
+      "created_at": "记录创建时间"
+    }
+  },
+  "pay_accounts": {
+    "table": "收款账户（提现打款目标；卡号脱敏存储）",
+    "columns": {
+      "token": "payee_xxx（对外凭据，不暴露库内主键）",
+      "user_id": "账户所属人 ID",
+      "account_type": "账户类型（银行卡/支付宝/微信…）",
+      "name": "户名",
+      "bank_name": "开户行",
+      "bank_number": "完整账号（仅本表；接口只回 masked）",
+      "masked_bank_number": "脱敏账号 ****1234",
+      "created_at": "创建时间"
+    }
+  },
+  "withdrawals": {
+    "table": "提现单（手续费 0.6% 最低 1 元；审核流未接正式打款）",
+    "columns": {
+      "id": "提现单 ID",
+      "user_id": "申请人 ID",
+      "title": "提现标题（如「余额提现」）",
+      "amount": "提现金额（元）",
+      "fee": "手续费（0.6%，最低 1 元）",
+      "net_amount": "实际到账 = amount − fee",
+      "status": "状态：PENDING_REVIEW=待审核 / APPROVED=已通过 / REJECTED=已驳回 / PAID=已打款 / FAILED=打款失败",
+      "account_type": "收款账户类型（快照）",
+      "account_name": "收款户名（快照）",
+      "bank_name": "开户行（快照）",
+      "masked_bank_number": "脱敏账号（快照）",
+      "operation_id": "op_xxx",
+      "idempotency_key": "幂等键（重复提交只生成一单）",
+      "reject_reason": "驳回原因（审核不通过时填写）",
+      "created_at": "申请时间"
+    }
+  },
+  "applications": {
+    "table": "申请单（合伙人/健脑官/合店/代理/转店 统一流）",
+    "columns": {
+      "id": "申请单 ID",
+      "type": "COSTORE/TRANSFER/AGENT/PARTNER/COACH...",
+      "title": "申请标题（列表展示）",
+      "application_status": "审批状态：PENDING_REVIEW=待审核 / APPROVED=已通过 / REJECTED=已驳回 / CANCELLED=已取消",
+      "payment_status": "支付状态：NOT_STARTED=未支付 / PAID=已支付 / REFUNDED=已退款",
+      "contract_status": "合同状态：NOT_SIGNED=未签 / SIGNED=已签",
+      "entitlement_status": "权益状态：NOT_OPEN=未开通 / OPEN=已开通 / EXPIRED=已过期",
+      "user_id": "申请人（家长账号）",
+      "member_id": "关联会员（转店场景）",
+      "store_id": "目标门店（regional_agents.store 或门店标识）",
+      "store_agent_id": "门店代理记录",
+      "target_store_id": "转店目标门店",
+      "agency_type": "代理类型（省代/市代/县区代…）",
+      "payable_amount": "应付金额（元）",
+      "store": "门店快照 JSON",
+      "idempotency_key": "幂等键（重复提交只生成一单）",
+      "created_at": "申请时间",
+      "version": "乐观锁版本号（每次更新 +1，防并发覆盖）"
+    }
+  },
+  "store_transfers": {
+    "table": "转店申请",
+    "columns": {
+      "id": "转店单 ID",
+      "member_id": "转店会员（members.id）",
+      "from_store_id": "原门店",
+      "target_store_id": "目标门店",
+      "reason": "转店原因",
+      "status": "状态：PENDING=待审核 / APPROVED=已通过 / REJECTED=已驳回 / CANCELLED=已取消",
+      "user_id": "发起人 ID（家长账号）",
+      "store_agent_id": "目标门店代理记录 ID",
+      "idempotency_key": "幂等键（重复提交只生成一单）",
+      "created_at": "申请时间",
+      "version": "乐观锁版本号"
+    }
+  },
+  "members": {
+    "table": "家庭会员（孩子档案；六级会员等级 + 板块权益）",
+    "columns": {
+      "id": "会员 ID（孩子档案唯一标识）",
+      "user_id": "家长账号",
+      "name": "孩子姓名",
+      "grade_code": "K1/K2/K3/G1..G6",
+      "grade_label": "年级名称（如「三年级」）",
+      "gender_code": "性别代码",
+      "gender_label": "性别名称",
+      "avatar_asset_id": "头像资源（assets.id）",
+      "avatar_url": "头像地址（冗余，读时免关联）",
+      "store_id": "绑入门店（健脑官归属）",
+      "activated": "是否已激活会员身份（1=已激活 / 0=未激活）",
+      "member_level": "孩子会员等级：normal=普通游客 / fs=粉丝 / jy=一阶菁英 / cj=一阶超级 / xn=二阶行能 / ys=三阶羿烁",
+      "member_seq": "孩子全局添加序号（第几个添加第几）",
+      "display_id": "孩子对外编号：等级前缀+member_seq",
+      "unlocked_levels": "JSON：历史 level 激活码单开的等级（兼容）",
+      "unlocked_columns": "JSON：已解锁栏目 id 数组",
+      "training": "JSON：培训额度（trainingTotal/Used/special…）",
+      "idempotency_key": "幂等键（重复提交只创建一条档案）",
+      "created_at": "创建时间",
+      "version": "乐观锁版本号"
+    }
+  },
+  "activation_codes": {
+    "table": "激活码（level=学习等级单开 / column=栏目 / fs·jy·cj·xn·ys=孩子会员等级）",
+    "columns": {
+      "code": "激活码明文（主键）",
+      "target_type": "level/column/fs/jy/cj/xn/ys（兼容旧 member=fs）",
+      "target_id": "目标 id（会员等级码为 null）",
+      "max_uses": "最大可用次数（1=一次性）",
+      "uses": "已使用次数",
+      "status": "状态：active=可用 / void=作废",
+      "expires_at": "毫秒时间戳",
+      "used_by": "JSON：核销台账 [{memberId, at, channel, issuedBy}]",
+      "channel": "发放渠道",
+      "store_id": "门店发码：代理区域码（agency 渠道）",
+      "issued_by": "发放人（userId；admin 渠道为 'admin'）",
+      "issued_to": "绑定家长（赠码）：仅此人可激活",
+      "batch_id": "批量发放批次号",
+      "note": "备注",
+      "created_at": "发放时间"
+    }
+  },
+  "coaches": {
+    "table": "健脑官（门店独立登录账号）",
+    "columns": {
+      "id": "健脑官 ID",
+      "store_id": "所属门店",
+      "name": "姓名",
+      "login_account": "登录账号（手机号）",
+      "status": "账号状态：ACTIVE=启用 / DISABLED=禁用",
+      "invitation_status": "邀请状态：PENDING=待接受 / ACCEPTED=已接受 / REJECTED=已拒绝",
+      "idempotency_key": "幂等键（重复提交只建一个账号）",
+      "created_at": "创建时间",
+      "version": "乐观锁版本号"
+    }
+  },
+  "addresses": {
+    "table": "收货地址",
+    "columns": {
+      "id": "地址 ID",
+      "user_id": "所属用户 ID",
+      "recipient": "收货人姓名",
+      "phone": "收货人电话",
+      "region_codes": "JSON：行政区划码数组",
+      "region_names": "JSON：行政区划名数组",
+      "detail": "详细地址（街道门牌）",
+      "is_default": "是否默认地址（1=是 / 0=否）",
+      "created_at": "创建时间",
+      "version": "乐观锁版本号"
+    }
+  },
+  "coupons": {
+    "table": "优惠券",
+    "columns": {
+      "id": "优惠券 ID",
+      "user_id": "所属用户 ID",
+      "title": "优惠券名称",
+      "discount_amount": "优惠金额（元）",
+      "threshold_text": "门槛文案（满 X 元可用）",
+      "scope_label": "适用范围文案",
+      "status": "状态：available=未使用 / used=已使用 / void=已作废",
+      "expires_at": "毫秒时间戳",
+      "created_at": "发放时间"
+    }
+  },
+  "support_feedback": {
+    "table": "客服反馈",
+    "columns": {
+      "id": "反馈 ID",
+      "user_id": "提交人 ID",
+      "content": "反馈正文",
+      "image_asset_ids": "JSON：图片资源 id 数组",
+      "idempotency_key": "幂等键（重复提交只留一条）",
+      "created_at": "提交时间"
+    }
+  },
+  "learning_progress": {
+    "table": "学习进度（会员 × 等级 × 章节）",
+    "columns": {
+      "member_id": "会员 ID（孩子）",
+      "level_id": "学习等级 ID",
+      "chapter_id": "章节 ID",
+      "position_seconds": "当前播放/学习位置（秒，断点续学用）",
+      "duration_seconds": "该章节总时长（秒）",
+      "completed": "是否已完成（1=完成 / 0=未完成）",
+      "updated_at": "毫秒时间戳"
+    }
+  },
+  "allocations": {
+    "table": "收益分配（门店服务费/合店分红 指向具体受益人）",
+    "columns": {
+      "id": "分配记录 ID",
+      "entry_id": "关联收益条目（commissions.id）",
+      "user_id": "操作人（店长/老板）",
+      "target_id": "受益人",
+      "beneficiary_name": "受益人姓名（冗余快照）",
+      "kind": "销售/巡检 分配",
+      "percent": "分配比例（百分比，如 5 表示 5%）",
+      "amount": "分配金额（元）",
+      "status": "状态：PENDING_SETTLEMENT=待结算 / SETTLED=已结算 / CANCELLED=已取消",
+      "operation_id": "操作流水号（op_xxx，对账用）",
+      "idempotency_key": "幂等键（重复提交只分配一次）",
+      "created_at": "创建时间"
+    }
+  },
+  "training_feedback": {
+    "table": "训练反馈（家长/健脑官 → 会员）",
+    "columns": {
+      "id": "反馈 ID",
+      "member_id": "members.id",
+      "kind": "反馈类型（训练记录/身体状况等）",
+      "title": "反馈标题",
+      "text": "反馈正文",
+      "coach_id": "健脑官（coaches.id）",
+      "coach_name": "健脑官姓名（冗余快照）",
+      "image_asset_ids": "JSON",
+      "attachment_asset_ids": "JSON",
+      "idempotency_key": "幂等键（重复提交只留一条）",
+      "created_at": "提交时间"
+    }
+  },
+  "assets": {
+    "table": "上传资源（直传占位；状态机 PENDING→READY/FAILED）",
+    "columns": {
+      "id": "资源 ID",
+      "user_id": "上传人 ID",
+      "purpose": "avatar/material-qr/feedback-image...",
+      "file_name": "原始文件名",
+      "mime_type": "MIME 类型（如 image/png）",
+      "size": "字节",
+      "status": "状态：PENDING=上传中 / READY=可用 / FAILED=失败",
+      "preview_url": "Mock CDN 地址",
+      "fail_reason": "失败原因",
+      "created_at": "上传时间"
+    }
+  },
+  "material_renders": {
+    "table": "素材渲染记录（海报合成幂等键）",
+    "columns": {
+      "id": "渲染记录 ID",
+      "material_id": "素材 ID（待渲染的原始素材）",
+      "qr_asset_id": "二维码资源 ID（assets.id）",
+      "user_id": "发起渲染的用户 ID",
+      "idempotency_key": "幂等键（同一素材重复提交只渲染一次）",
+      "created_at": "创建时间"
+    }
+  },
+  "payments": {
+    "table": "支付单（2026-10-24 用户拍板：微信/支付宝/银行卡 + 银联）",
+    "columns": {
+      "id": "支付单 ID",
+      "biz_type": "业务类型：entitlement=开通权益 / annual_fee=合伙人年费 / quota_purchase=购买名额 / product_order=商城商品订单 / upgrade=合伙人升档",
+      "biz_id": "关联业务单 id（可选）",
+      "user_id": "付款人 ID",
+      "amount": "元",
+      "channel": "支付渠道：wechat=微信 / alipay=支付宝 / bank_card=银行卡 / unionpay=银联",
+      "subject": "支付标题（收银台展示）",
+      "status": "支付状态：CREATED=已创建 / PAID=已支付 / SUCCEEDED=支付成功 / PROCESSING=处理中 / FAILED=失败 / CLOSED=已关闭 / CANCELLED=已取消",
+      "transaction_id": "渠道流水号",
+      "idempotency_key": "幂等键（重复下单返回原单）",
+      "pay_params": "JSON：渠道调起参数（live）",
+      "meta": "JSON：业务参数（如 quantity）",
+      "notify_raw": "JSON：渠道通知原文（留痕）",
+      "note": "备注",
+      "created_at": "下单时间",
+      "paid_at": "毫秒时间戳"
+    }
+  },
+  "jobs": {
+    "table": "",
+    "columns": {
+      "id": "任务 ID",
+      "type": "任务类型：POSTER_RENDER=海报合成 等",
+      "material_id": "关联素材 ID",
+      "qr_asset_id": "关联二维码资源 ID",
+      "user_id": "任务发起人 ID",
+      "status": "任务状态：queued=排队中 / running=执行中 / succeeded=成功 / failed=失败",
+      "message": "执行结果消息（失败时为错误原因）",
+      "download_url": "产物下载地址",
+      "share_url": "产物分享链接",
+      "idempotency_key": "幂等键（重复提交只建一个任务）",
+      "created_at": "创建时间"
+    }
+  },
+  "invite_codes": {
+    "table": "",
+    "columns": {
+      "code": "邀请码（R+8位BASE36=注册码 / A+8位BASE36=代理码）",
+      "type": "类型：register=拉新注册码（绑定推荐人 upline） / agent=代理归属码（绑定推荐代理 referrer）",
+      "owner_id": "邀请码持有人 ID",
+      "created_at": "生成时间（毫秒时间戳）",
+      "expires_at": "过期时间（毫秒时间戳，默认 30 天）",
+      "max_use": "最大使用次数（0=不限次）",
+      "used_by": "使用记录（JSON 数组，记录每个使用者）",
+      "status": "状态：active=可用 / void=作废"
+    }
+  },
+  "app_settings": {
+    "table": "",
+    "columns": {
+      "id": "配置 ID（单行固定值）",
+      "payload": "配置内容（JSON 对象，含 costore/order/dividend/quota/ladder 等全部可调参数）"
+    }
+  },
+  "experience_ledger": {
+    "table": "",
+    "columns": {
+      "id": "流水 ID",
+      "user_id": "获得人 ID",
+      "tab": "promotion（业务推广） / product（购买产品）",
+      "event": "事件类型：upgrade=升档 / costore=合店 / agent=代理 / product=购买产品",
+      "title": "事件标题（列表展示）",
+      "points": "经验值增量（按「1 元 = 1 经验值」折算）",
+      "price": "对应金额（元）",
+      "ref_id": "关联业务 ID（用于防重复记账）",
+      "meta": "附加信息（JSON）",
+      "occurred_at": "发生时间（毫秒时间戳）"
+    }
+  },
+  "promotion_tasks": {
+    "table": "",
+    "columns": {
+      "id": "任务 ID",
+      "user_id": "任务归属人 ID",
+      "start_tier": "任务发起时所在档位",
+      "valid_until": "任务失效时间（毫秒时间戳）",
+      "valid_months": "有效月数（默认 12 个月）",
+      "targets": "JSON: [{key,label,required}]",
+      "status": "任务状态：ONGOING=进行中 / ACHIEVED=已达标 / CLAIMED=已领取 / EXPIRED=已过期",
+      "achieved_at": "达标时间（毫秒时间戳）",
+      "granted_tier": "实际授予的档位",
+      "claimed_at": "领取时间（毫秒时间戳）",
+      "created_at": "创建时间（毫秒时间戳）"
+    }
+  },
+  "free_upgrade_log": {
+    "table": "",
+    "columns": {
+      "id": "日志 ID",
+      "user_id": "被升档人 ID",
+      "from_tier": "升档前档位",
+      "to_tier": "升档后档位",
+      "rule": "count / performance",
+      "trigger_ref": "触发来源引用（如达标下级 ID）",
+      "note": "备注",
+      "created_at": "发生时间（毫秒时间戳）"
+    }
+  },
+  "wechat_tickets": {
+    "table": "",
+    "columns": {
+      "id": "票据记录 ID",
+      "openid": "用户 OpenID",
+      "ticket": "微信票据凭证（主查询键）",
+      "mode": "模式：mock=模拟 / live=真实微信",
+      "used": "是否已核销（1=已用 / 0=未用，一次一换）",
+      "expires_at": "过期时间（毫秒时间戳）",
+      "created_at": "创建时间（毫秒时间戳）"
+    }
+  },
+  "skus": {
+    "table": "",
+    "columns": {
+      "id": "SKU ID",
+      "product_id": "所属商品（productId）",
+      "label": "规格名（如「智能变速，一档」）",
+      "list_price": "标价（元）",
+      "stock": "当前库存",
+      "updated_at": "毫秒时间戳"
+    }
+  },
+  "stock_ledger": {
+    "table": "",
+    "columns": {
+      "id": "流水 ID",
+      "sku_id": "SKU ID",
+      "delta": "正=入库，负=出库",
+      "reason": "ORDER_CREATE / ORDER_CANCEL_RESTORE / ADMIN_ADJUST ...",
+      "order_id": "关联订单（无则 null）",
+      "operator_id": "操作人 ID（用户或后台管理员）",
+      "at": "毫秒时间戳",
+      "balance_after": "该笔之后的结存库存"
+    }
+  },
+  "columns": {
+    "table": "",
+    "columns": {
+      "id": "专栏 ID（col_1 等；与激活码种子、商城商品同名，三处必须一致）",
+      "title": "专栏标题",
+      "summary": "专栏简介",
+      "cover_url": "封面图地址",
+      "price": "标价（元）",
+      "fulfillment_type": "履约方式：ACTIVATION_CODE=通过激活码发货 等",
+      "requires_member": "是否要求会员身份才能购买（1=是 / 0=否）",
+      "price_presentation": "价格展示方式：single=单一口径 / tiered=按档位分档价",
+      "checkout_notice": "下单提示语（如「下单后联系门店获取激活码」）",
+      "content": "JSON：富文本正文（nodes）",
+      "chapters": "JSON：章节数组"
+    }
+  },
+  "activity_prices": {
+    "table": "",
+    "columns": {
+      "product_id": "商品 ID（主键）",
+      "amount": "活动价（元）",
+      "note": "活动说明",
+      "updated_at": "更新时间（毫秒时间戳）"
+    }
+  },
+  "quotes": {
+    "table": "",
+    "columns": {
+      "id": "报价 ID（quoteId，提交时凭此校验价格）",
+      "scene": "checkout / entitlement / upgrade ...",
+      "user_id": "报价所属用户 ID（未登录报价可为空或 anonymous）",
+      "amount": "报价总金额（元）",
+      "breakdown": "JSON：goodsAmount/discountAmount/listAmount",
+      "items": "JSON：[{key,qty,skuId}]",
+      "meta": "JSON：{productKey,level,memberId,skuId}",
+      "rule_version": "计价规则版本号（规则升级后旧报价可识别失效）",
+      "issued_at": "报价生成时间（毫秒时间戳）",
+      "expires_at": "报价过期时间（毫秒时间戳）",
+      "consumed": "是否已消费（1=已被订单占用，防止重复下单）",
+      "consumed_at": "消费时间（毫秒时间戳）",
+      "consumed_ref": "消费方（订单 id 等）"
+    }
+  },
+  "allocation_quotes": {
+    "table": "",
+    "columns": {
+      "id": "报价单 ID",
+      "entry_id": "被分配的收益条目",
+      "user_id": "报价人 ID",
+      "kind": "inspect / sales",
+      "targets": "JSON：分配目标（语义键 + 比例）",
+      "entry_amount": "被分配条目的总金额（元）",
+      "rows": "JSON：解析后的收款人明细",
+      "total_percent": "分配比例合计（百分比）",
+      "total_amount": "分配金额合计（元）",
+      "expires_at": "报价过期时间（毫秒时间戳）",
+      "created_at": "报价生成时间（毫秒时间戳）"
+    }
+  }
+}
