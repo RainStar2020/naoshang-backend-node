@@ -204,6 +204,136 @@ function flatDownline(tree, acc = []) {
   return acc;
 }
 
+/** 联营首页兼容字段：保留脱敏号码，同时为授权的团队视图提供原始号码。 */
+function maskPhone(phone) {
+  const value = String(phone || '');
+  if (!value) return null;
+  return value.length >= 8 ? value.slice(0, 3) + '****' + value.slice(-4) : '****';
+}
+
+function isoTime(value) {
+  if (value == null) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+}
+
+/**
+ * 联营首页一次加载的补充数据。
+ * 只聚合既有的组织、全球奖和名额账本数据，不参与结算或修改任何余额。
+ */
+function buildWholesaleBootstrap(db, userId, entitlementState) {
+  const user = db.users[userId] || {};
+  const tierLabel = (tier) => EXP.TIER_CN[tier] || tier || '普通用户';
+  const childrenByUpline = new Map();
+  for (const candidate of Object.values(db.users || {})) {
+    if (!candidate.upline_id) continue;
+    const list = childrenByUpline.get(candidate.upline_id) || [];
+    list.push(candidate);
+    childrenByUpline.set(candidate.upline_id, list);
+  }
+  const vipCreditsByBuyer = new Map();
+  for (const order of db.orders || []) {
+    if (!order.buyer_id || order.status === 'cancelled') continue;
+    const credit = order.vipCredit != null ? Number(order.vipCredit) : C.vipCredit(order.oldTier, order.packageTier);
+    vipCreditsByBuyer.set(order.buyer_id, (vipCreditsByBuyer.get(order.buyer_id) || 0) + (Number.isFinite(credit) ? credit : 0));
+  }
+  const members = [];
+  const visited = new Set([userId]);
+  const walk = (parentId, depth) => {
+    let descendantVipCount = 0;
+    for (const member of (childrenByUpline.get(parentId) || [])) {
+      // 脏数据出现循环推荐关系时，bootstrap 仍应可返回，且不泄露循环节点。
+      if (visited.has(member.id)) continue;
+      visited.add(member.id);
+      const item = {
+        id: String(member.id),
+        displayId: String(member.display_id || member.id),
+        name: member.name || null,
+        phone: member.phone || null,
+        phoneMasked: maskPhone(member.phone),
+        tier: member.tier || 'none',
+        tierLabel: tierLabel(member.tier),
+        depth,
+        isDirect: depth === 1,
+        teamVipCount: 0,
+      };
+      members.push(item);
+      const childVipCount = walk(member.id, depth + 1);
+      item.teamVipCount = C.round2(childVipCount);
+      descendantVipCount += (vipCreditsByBuyer.get(member.id) || 0) + childVipCount;
+    }
+    return descendantVipCount;
+  };
+  const teamVipCount = C.round2(walk(userId, 1));
+  const directMemberCount = members.filter((member) => member.isDirect).length;
+
+  const globalStats = S.annotateCofounders(db, [userId])[0] || {
+    ownVip: 0, teamVip: S.subtreeVip(db, userId), daysSinceCofounder: null, directPushedVip: 0,
+  };
+  const isCofounder = user.tier === 'cofounder';
+  const withinGracePeriod = isCofounder && Number(globalStats.daysSinceCofounder) <= 90;
+  const hasDirectPush = Number(globalStats.directPushedVip || 0) >= 1;
+  const entitlementActive = entitlementState === 'active';
+  const eligible = isCofounder && entitlementActive && (withinGracePeriod || hasDirectPush);
+  const eligibilityReason = !isCofounder
+    ? '当前非联创合伙人'
+    : !entitlementActive
+      ? '权益未处于有效状态'
+      : withinGracePeriod
+        ? '联创无责期内'
+        : hasDirectPush
+          ? '当月已直推 VIP'
+          : '当月需至少直推 1 名 VIP';
+
+  const superiorUser = user.upline_id ? db.users[user.upline_id] : null;
+  const activityBatches = Q.activityBatches(db.quotaLedger, userId).map((batch) => ({
+    quantity: Number(batch.qty || 0),
+    obtainedAt: isoTime(batch.obtainedAt),
+    expiresAt: isoTime(batch.expireAt),
+  }));
+  const standardRemaining = Q.getStandard(db.quotaLedger, userId);
+  const activityRemaining = Q.getActivity(db.quotaLedger, userId);
+
+  return {
+    globalAwardEligibility: {
+      eligible,
+      tierEligible: isCofounder,
+      entitlementEligible: entitlementActive,
+      currentPeriod: periodOf(),
+      withinGracePeriod,
+      daysSinceCofounder: isCofounder ? Number(globalStats.daysSinceCofounder || 0) : null,
+      directPushedVipCount: Number(globalStats.directPushedVip || 0),
+      ownVipCount: Number(globalStats.ownVip || 0),
+      teamVipCount: Number(globalStats.teamVip || 0),
+      reason: eligibilityReason,
+    },
+    superior: superiorUser ? {
+      id: String(superiorUser.id),
+      displayId: String(superiorUser.display_id || superiorUser.id),
+      name: superiorUser.name || null,
+      phone: superiorUser.phone || null,
+      phoneMasked: maskPhone(superiorUser.phone),
+      tier: superiorUser.tier || 'none',
+      tierLabel: tierLabel(superiorUser.tier),
+    } : null,
+    team: {
+      summary: {
+        memberCount: members.length,
+        directMemberCount,
+        teamVipCount,
+      },
+      members,
+    },
+    vipDetails: {
+      remainingCount: Number(standardRemaining || 0) + Number(activityRemaining || 0),
+      standardRemaining: Number(standardRemaining || 0),
+      activityRemaining: Number(activityRemaining || 0),
+      activityBatches,
+      teamVipMembers: members.filter((member) => member.tier !== 'none'),
+    },
+  };
+}
+
 /**
  * 路由别名表（《后端API需求文档》§16「联调命名与现有适配差异」）
  *
@@ -477,6 +607,7 @@ async function handle(db, req, res, url, { readBody, sendJSON, sessions, persist
       displayId: u.display_id,
       entitlement: { state: ent, amount: IZ.ENTITLEMENT_AMOUNT, expiresAt: u.entitlement_expires_at || null, frozen: ent === 'expired', canExportBills: ent === 'expired' },
       contexts, businessContexts,
+      ...buildWholesaleBootstrap(db, userId, ent),
     });
   }
   // 权益收益费开通/续费（周期制；当前免支付占位，正式收银台接入后替换）
@@ -1933,4 +2064,4 @@ async function handle(db, req, res, url, { readBody, sendJSON, sessions, persist
   return false;
 }
 
-module.exports = { handle, resolveContext, resetBiz: B.resetBiz };
+module.exports = { handle, resolveContext, buildWholesaleBootstrap, resetBiz: B.resetBiz };

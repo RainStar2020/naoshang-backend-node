@@ -1,0 +1,1001 @@
+{
+  "users": {
+    "p1": {
+      "id": "p1",
+      "name": "总部联创-甲",
+      "phone": "13800000001",
+      "tier": "cofounder",
+      "password": "scrypt$e392f0d9fc8e2d7c65a65025ff3e7da5$65f773e202418d33995e857d4e8ccf20d609f4a82340605c447648bf5d474db31f24d734492916333d6096621edf7c125fe09baf66875859dc674a3b115487b1",
+      "principal_tier": "cofounder",
+      "referral_upline_tier": null,
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": null,
+      "is_founding": "founding",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 1,
+      "entitlement_state": "active",
+      "display_id": "LC0001"
+    },
+    "p2": {
+      "id": "p2",
+      "name": "私董-乙",
+      "phone": "13800000002",
+      "tier": "private",
+      "password": "scrypt$b58d8e5f438939feb860cefedf18214e$68812cf5f622a5393523dfcb76a5100a0cda7acbefd05a8cb58aba0b97f93fc755ef745f77e3c580c55b72a343a800c513689d9f34bacbb32b92d61a62d916c7",
+      "principal_tier": "private",
+      "referral_upline_tier": "cofounder",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p1",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 2,
+      "entitlement_state": "active",
+      "display_id": "SD0002"
+    },
+    "p3": {
+      "id": "p3",
+      "name": "天使-丙",
+      "phone": "13800000003",
+      "tier": "angel",
+      "password": "scrypt$e70f33cd582f6743426e3be4ebc73e7a$94fbd264f7e2db3f8f686f3d76aa4370a7c488fa5975098fff90cf38b1dc65d6a71bef237c091b364bf5073ffc5a867b2795982cabfcdf3be0aca8025e886bf8",
+      "principal_tier": "angel",
+      "referral_upline_tier": "private",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p2",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 3,
+      "entitlement_state": "active",
+      "display_id": "TS0003"
+    },
+    "p4": {
+      "id": "p4",
+      "name": "VIP-丁",
+      "phone": "13800000004",
+      "tier": "vip",
+      "password": "scrypt$06aefc866b198726b2bf885182ee816d$64bcfd022f219247f9c599f48a1f3dc3d442dc1c7cf377f6ecb9c836c842005517a4c9e058b69007036c08941764a008e3d721098fbbed891c634822ddad5685",
+      "principal_tier": "vip",
+      "referral_upline_tier": "angel",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p3",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 4,
+      "entitlement_state": "active",
+      "display_id": "VIP0004"
+    },
+    "p5": {
+      "id": "p5",
+      "name": "区县代-戊(私董)",
+      "phone": "13800000005",
+      "tier": "private",
+      "password": "scrypt$bfa0a930f365e3908db49f4c32a1b019$a1054410ed13e7b8bff939f07e03aaecdb8f3f6940312843cc5b8e477d030ecbbaa8a1937737a0db5cf75e03c390f53ef6ac5a8a27243dd433d3384efcc6c329",
+      "principal_tier": "private",
+      "referral_upline_tier": "cofounder",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p1",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 5,
+      "entitlement_state": "active",
+      "display_id": "SD0005"
+    },
+    "p6": {
+      "id": "p6",
+      "name": "门店老板-己(天使/单店)",
+      "phone": "13800000006",
+      "tier": "angel",
+      "password": "scrypt$a506833d48dab86354d8d53c615e50f1$f0eebc1cc1cc8a9dfd87ff405ec5a2c5c9479dd4dd9e533e99405c48e7275700ef2d3f0d6debd61888f0b9118678d2c0acec1ff5e40f1ff1268b853a03c24f3e",
+      "principal_tier": "angel",
+      "referral_upline_tier": "private",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p5",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 6,
+      "entitlement_state": "active",
+      "display_id": "TS0006"
+    },
+    "p7": {
+      "id": "p7",
+      "name": "合店老板-庚(天使)",
+      "phone": "13800000007",
+      "tier": "angel",
+      "password": "scrypt$f06a272f7a5ed2c67c4c95813c3dc122$1b0a20974288b36b22ab0131a77fc6de4615af002c8571e2814584b48cfefd6f102b7b1f7438a345e80f91bd925a2ba83002f9696e22cf2bd967aff14130aa17",
+      "principal_tier": "angel",
+      "referral_upline_tier": "angel",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p3",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 7,
+      "entitlement_state": "active",
+      "display_id": "TS0007"
+    }
+  },
+  "orders": [
+    {
+      "id": "o_1",
+      "buyer_id": "p4",
+      "seller_id": "p3",
+      "packageTier": "vip",
+      "oldTier": "vip",
+      "quotaCount": 1,
+      "vipCredit": 1,
+      "actual_paid": 7980,
+      "sellerCost": 7500,
+      "supply_spread": 480,
+      "service_fee": 0,
+      "quota_used_standard": 1,
+      "quota_used_activity": 0,
+      "total_payable": 7980,
+      "store_fee": 0,
+      "hq_fee": 6500,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570139
+    },
+    {
+      "id": "o_5",
+      "buyer_id": "p6",
+      "seller_id": "p5",
+      "packageTier": "angel",
+      "oldTier": "angel",
+      "quotaCount": 3,
+      "vipCredit": 3,
+      "actual_paid": 22500,
+      "sellerCost": 20940,
+      "supply_spread": 1560,
+      "service_fee": 0,
+      "quota_used_standard": 3,
+      "quota_used_activity": 0,
+      "total_payable": 22500,
+      "store_fee": 0,
+      "hq_fee": 19500,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570140
+    },
+    {
+      "id": "o_8",
+      "buyer_id": "p7",
+      "seller_id": "p3",
+      "packageTier": "angel",
+      "oldTier": "angel",
+      "quotaCount": 2,
+      "vipCredit": 2,
+      "actual_paid": 15000,
+      "sellerCost": 15000,
+      "supply_spread": 0,
+      "service_fee": 0,
+      "quota_used_standard": 2,
+      "quota_used_activity": 0,
+      "total_payable": 15000,
+      "store_fee": 0,
+      "hq_fee": 13000,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570140
+    }
+  ],
+  "commissions": [
+    {
+      "owner_id": "p3",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 480,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "实付 7980 − 拿货成本 7500 = 差价 480",
+      "seller_cost": 7500,
+      "actual_paid": 7980,
+      "id": "c_2"
+    },
+    {
+      "owner_id": "p2",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 520,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "供货链级差 (7500 − 6980) × 1 名额 = 520",
+      "id": "c_3"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 480,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 1 名额 = 480",
+      "id": "c_4"
+    },
+    {
+      "owner_id": "p5",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 22500,
+      "rate": null,
+      "amount": 1560,
+      "ref_order_id": "o_5",
+      "status": "pending",
+      "formula": "实付 22500 − 拿货成本 20940 = 差价 1560",
+      "seller_cost": 20940,
+      "actual_paid": 22500,
+      "id": "c_6"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 22500,
+      "rate": null,
+      "amount": 1440,
+      "ref_order_id": "o_5",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 3 名额 = 1440",
+      "id": "c_7"
+    },
+    {
+      "owner_id": "p2",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 15000,
+      "rate": null,
+      "amount": 760.8,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "供货链级差 (7500 − 6980) × 2 名额 − 平级奖 279.2 = 760.8",
+      "id": "c_9"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 15000,
+      "rate": null,
+      "amount": 960,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 2 名额 = 960",
+      "id": "c_10"
+    },
+    {
+      "owner_id": "p3",
+      "type": "parity",
+      "period": "2026-10",
+      "base_amount": 6980,
+      "rate": 0.02,
+      "amount": 279.2,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "平级奖 供货上级(private)拿货价 6980 × 2% × 2 名额 = 279.2（已从 p2 级差扣）",
+      "id": "c_11"
+    }
+  ],
+  "quotaLedger": {
+    "p1": {
+      "standard": 500,
+      "activity": []
+    },
+    "p2": {
+      "standard": 200,
+      "activity": []
+    },
+    "p3": {
+      "standard": 97,
+      "activity": [
+        {
+          "qty": 4,
+          "obtainedAt": 1793244570057,
+          "expireAt": 1824780570057
+        }
+      ]
+    },
+    "p4": {
+      "standard": 51,
+      "activity": []
+    },
+    "p5": {
+      "standard": 197,
+      "activity": []
+    },
+    "p6": {
+      "standard": 103,
+      "activity": []
+    },
+    "p7": {
+      "standard": 102,
+      "activity": []
+    }
+  },
+  "quota_transactions": [
+    {
+      "id": "qt_fr0fs5ix",
+      "type": "issue",
+      "partnerId": "p3",
+      "kind": "activity",
+      "qty": 4,
+      "operatorId": null,
+      "ref": "seed",
+      "at": 1793244570057,
+      "expireAt": 1824780570057
+    },
+    {
+      "id": "qt_9fvk0el6",
+      "type": "consume",
+      "partnerId": "p3",
+      "usedStandard": 1,
+      "usedActivity": 0,
+      "ref": "o_1",
+      "operatorId": null,
+      "at": 1793244570139
+    },
+    {
+      "id": "qt_66ttqlu2",
+      "type": "consume",
+      "partnerId": "p5",
+      "usedStandard": 3,
+      "usedActivity": 0,
+      "ref": "o_5",
+      "operatorId": null,
+      "at": 1793244570140
+    },
+    {
+      "id": "qt_eusq4u7q",
+      "type": "consume",
+      "partnerId": "p3",
+      "usedStandard": 2,
+      "usedActivity": 0,
+      "ref": "o_8",
+      "operatorId": null,
+      "at": 1793244570140
+    }
+  ],
+  "regionalAgents": [
+    {
+      "id": "ra_12",
+      "partner_id": "p1",
+      "region_type": "province",
+      "region_code": "33",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_13",
+      "partner_id": "p1",
+      "region_type": "city",
+      "region_code": "3301",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_14",
+      "partner_id": "p5",
+      "region_type": "district",
+      "region_code": "330110",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "private",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_15",
+      "partner_id": "p6",
+      "region_type": "store",
+      "region_code": "330110-S1",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": null,
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    }
+  ],
+  "coStores": [
+    {
+      "owner_id": "p7",
+      "promoter_id": "p6",
+      "storeManagerId": "p6",
+      "store_id": "330110-S1",
+      "monthly_fee": 698,
+      "ownerCount": 1,
+      "joinDate": "2026-10",
+      "owners": [
+        {
+          "id": "p7",
+          "performance": 500
+        }
+      ],
+      "id": "cs_16",
+      "referrer": "other",
+      "partners": [
+        {
+          "id": "p7",
+          "performance": 500
+        }
+      ]
+    }
+  ],
+  "uplineHistory": [],
+  "freeUpgradeLog": [],
+  "experience": [],
+  "promotionTasks": [],
+  "inviteCodes": [],
+  "payments": [],
+  "wechatTickets": [],
+  "skus": [
+    {
+      "id": "sku-pad-1",
+      "productId": "pad",
+      "label": "智能变速，一档",
+      "listPrice": 6980,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-2",
+      "productId": "pad",
+      "label": "智能变速，二档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-3",
+      "productId": "pad",
+      "label": "智能变速，三档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-4",
+      "productId": "pad",
+      "label": "无级变速，一档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-5",
+      "productId": "pad",
+      "label": "无级变速，二档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-6",
+      "productId": "pad",
+      "label": "无级变速，三档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-7",
+      "productId": "pad",
+      "label": "定速，无变速，一档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-8",
+      "productId": "pad",
+      "label": "定速，无变速，二档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-9",
+      "productId": "pad",
+      "label": "定速，无变速，三档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-memoryCard-1",
+      "productId": "memoryCard",
+      "label": "月卡",
+      "listPrice": 998,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-memoryCard-2",
+      "productId": "memoryCard",
+      "label": "年卡",
+      "listPrice": 998,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-coachCard-1",
+      "productId": "coachCard",
+      "label": "单次",
+      "listPrice": 2000,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-coachCard-2",
+      "productId": "coachCard",
+      "label": "10 次包",
+      "listPrice": 2000,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-featured-1",
+      "productId": "featured",
+      "label": "10 课时",
+      "listPrice": 1300,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-featuredCamp-1",
+      "productId": "featuredCamp",
+      "label": "假期营",
+      "listPrice": 10000,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-adminFee-1",
+      "productId": "adminFee",
+      "label": "默认规格",
+      "listPrice": 0,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-col_1-1",
+      "productId": "col_1",
+      "label": "默认规格",
+      "listPrice": 299,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-col_2-1",
+      "productId": "col_2",
+      "label": "默认规格",
+      "listPrice": 199,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    }
+  ],
+  "columns": [
+    {
+      "id": "col_1",
+      "title": "专注力特训专栏",
+      "summary": "21 天专注力提升计划，配套视频与练习，适合在家自主训练。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "price": 299,
+      "fulfillmentType": "ACTIVATION_CODE",
+      "requiresMember": false,
+      "pricePresentation": "tiered",
+      "checkoutNotice": "专栏课下单后联系门店获取激活码",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "专注力特训专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "这是一套面向 6–12 岁孩子的专注力训练方案，共 4 课，每课 10 分钟左右，含视频与练习。"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "建议每天固定一个时段陪孩子跟练一次，课后记录完成情况，下一课会自动带出上次的进度。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL1-C1",
+          "title": "开篇 · 专注力基线测评",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "专注力基线测评"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "先做一次基线测评，了解孩子当前的专注水平，后续对照进步。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C2",
+          "title": "第 1 周 · 呼吸与放松训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "呼吸与放松训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "每天 5 分钟呼吸训练，帮助快速进入专注状态。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C3",
+          "title": "第 2 周 · 番茄工作法",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "番茄工作法"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用番茄钟把学习任务切小，降低启动阻力。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C4",
+          "title": "第 3 周 · 干扰隔离训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c4.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c4.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "干扰隔离训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "识别并隔离干扰源，打造无干扰学习环境。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "col_2",
+      "title": "记忆大师专栏",
+      "summary": "从联想记忆到记忆宫殿，系统提升记忆效率。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "price": 199,
+      "fulfillmentType": "ACTIVATION_CODE",
+      "requiresMember": false,
+      "pricePresentation": "tiered",
+      "checkoutNotice": "专栏课下单后联系门店获取激活码",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "记忆大师专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "共 2 课，聚焦可迁移的记忆方法：先把零散信息用故事串起来，再用空间把故事固定下来。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL2-C1",
+          "title": "联想记忆入门",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "联想记忆入门"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用故事把零散信息串联起来，记得更牢。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL2-C2",
+          "title": "记忆宫殿实战",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col2-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col2-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "记忆宫殿实战"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "搭建你的第一座记忆宫殿，存放考试要点。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "activationCodes": [
+    {
+      "code": "NS-FS-0001",
+      "targetType": "fs",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-FS-0006",
+      "targetType": "fs",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-JY-0002",
+      "targetType": "jy",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-CJ-0003",
+      "targetType": "cj",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-XN-0004",
+      "targetType": "xn",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-YS-0005",
+      "targetType": "ys",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-L1-0001",
+      "targetType": "level",
+      "targetId": "L1",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-L2-0002",
+      "targetType": "level",
+      "targetId": "L2",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-COL-0001",
+      "targetType": "column",
+      "targetId": "col_1",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    }
+  ],
+  "hqAdmins": [
+    {
+      "adminId": "admin",
+      "username": "admin",
+      "displayName": "总部/后台",
+      "role": "admin",
+      "password": "scrypt$b0875565d1db17f8da2f6c705451f2ad$e9d53923867e10c85e425ee4af0e643b5102b3825b16b971e408eff1c093f495fa9c4266f611d19c9f2bcc1ce35f5ac2f31db63f90d672fb970430c551020b3e",
+      "hqPermissions": [],
+      "status": "ACTIVE",
+      "createdAt": "2026-10-29T03:29:30.161Z",
+      "version": 1
+    }
+  ],
+  "hqSessions": [],
+  "hqAuditLogs": [],
+  "hqAnnouncements": [],
+  "hqColumns": [],
+  "hqMaterials": [],
+  "hqProducts": [],
+  "hqSkus": [],
+  "hqSoftwareCards": [],
+  "hqSoftwareCardBatches": [],
+  "hqShipments": [],
+  "hqCouponTemplates": [],
+  "hqUserCoupons": [],
+  "hqQuotaAccounts": [],
+  "hqRevenueAccounts": [],
+  "hqRevenueLedgers": [],
+  "hqStaff": [],
+  "hqStores": [],
+  "hqTrainingBalances": [],
+  "hqTrainingFeedback": [],
+  "hqTransfers": [],
+  "hqPartnerContexts": [],
+  "hqPartnerBenefits": [],
+  "hqCostorePlans": [],
+  "hqCostoreApplications": [],
+  "hqSupportTickets": [],
+  "hqSupportMessages": [],
+  "hqPaymentsChannels": [],
+  "hqPaymentJobs": [],
+  "hqReconciliation": [],
+  "hqCourseEntitlements": [],
+  "hqIdempotency": {},
+  "seq": 17,
+  "userSeq": 8,
+  "memberSeq": 1
+}

@@ -1,0 +1,7225 @@
+{
+  "users": {
+    "p1": {
+      "id": "p1",
+      "name": "总部联创-甲",
+      "phone": "13800000001",
+      "tier": "cofounder",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "cofounder",
+      "referral_upline_tier": null,
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": null,
+      "is_founding": "founding",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 1,
+      "entitlement_state": "active",
+      "display_id": "LC0001",
+      "password_migrated_at": 1793245897714,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p2": {
+      "id": "p2",
+      "name": "私董-乙",
+      "phone": "13800000002",
+      "tier": "private",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "private",
+      "referral_upline_tier": "cofounder",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p1",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 2,
+      "entitlement_state": "active",
+      "display_id": "SD0002",
+      "password_migrated_at": 1793245897737,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p3": {
+      "id": "p3",
+      "name": "天使-丙",
+      "phone": "13800000003",
+      "tier": "angel",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "angel",
+      "referral_upline_tier": "private",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p2",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 3,
+      "entitlement_state": "active",
+      "display_id": "TS0003",
+      "password_migrated_at": 1793245897759,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p4": {
+      "id": "p4",
+      "name": "VIP-丁",
+      "phone": "13800000004",
+      "tier": "vip",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "vip",
+      "referral_upline_tier": "angel",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p3",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 4,
+      "entitlement_state": "active",
+      "display_id": "VIP0004",
+      "password_migrated_at": 1793245897780,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p5": {
+      "id": "p5",
+      "name": "区县代-戊(私董)",
+      "phone": "13800000005",
+      "tier": "private",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "private",
+      "referral_upline_tier": "cofounder",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p1",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 5,
+      "entitlement_state": "active",
+      "display_id": "SD0005",
+      "password_migrated_at": 1793245897805,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p6": {
+      "id": "p6",
+      "name": "门店老板-己(天使/单店)",
+      "phone": "13800000006",
+      "tier": "angel",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "angel",
+      "referral_upline_tier": "private",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p5",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 6,
+      "entitlement_state": "active",
+      "display_id": "TS0006",
+      "password_migrated_at": 1793245897833,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "p7": {
+      "id": "p7",
+      "name": "合店老板-庚(天使)",
+      "phone": "13800000007",
+      "tier": "angel",
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "principal_tier": "angel",
+      "referral_upline_tier": "angel",
+      "referral_tier": null,
+      "free_upgrade_applied": 0,
+      "upline_id": "p3",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "seq": 7,
+      "entitlement_state": "active",
+      "display_id": "TS0007",
+      "password_migrated_at": 1793245897856,
+      "_password_note": "set to Test123 hash for local联调"
+    },
+    "HQ": {
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "password_migrated_at": 1793250000000,
+      "_password_note": "demo placeholder hash (同现网 db.json Test123 风格；正式导入请用 seed_demo.js 重写)",
+      "is_founding": "founding",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "HQ",
+      "name": "总部",
+      "phone": "10000000000",
+      "tier": "cofounder",
+      "upline_id": null,
+      "seq": 900001,
+      "display_id": "LC900001",
+      "referral_upline_tier": null,
+      "principal_tier": "cofounder"
+    },
+    "DIVIDEND": {
+      "password": "scrypt$bf4396a14e53445f587755e18465b960$b8951bc0782e988a889b73ec36be2efab7a3f53eea9c5133b735e0bfce498779d2799898a3ce68b5df3805514b5c512e983a2715893b40042e366e0adf6328d6",
+      "password_migrated_at": 1793250000000,
+      "_password_note": "demo placeholder hash (同现网 db.json Test123 风格；正式导入请用 seed_demo.js 重写)",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "DIVIDEND",
+      "name": "分红池",
+      "phone": "10000000001",
+      "tier": "none",
+      "upline_id": null,
+      "seq": 900002,
+      "display_id": "YH900002",
+      "referral_upline_tier": null,
+      "principal_tier": "none"
+    },
+    "demo_p1": {
+      "password": "scrypt$f586db19f21962e96d10fdac45fb09d8$2741d2fcee7f0563cbf2aa1ee5bf1a5fca0d8b9bad3ca0da0e90d73fc15ec265ad379dd84e15f61adb72992c2253802f97d3c6ab562fec8ed28de71fcb6e8d3f",
+      "password_migrated_at": 1793267518316,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "founding",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p1",
+      "name": "林启航",
+      "phone": "13910002001",
+      "tier": "cofounder",
+      "upline_id": null,
+      "seq": 2001,
+      "display_id": "LC2001",
+      "referral_upline_tier": null,
+      "principal_tier": "cofounder"
+    },
+    "demo_p2": {
+      "password": "scrypt$46ee111c0e39b784c34f11893f47d709$2cac4cf002967aed3b815e7edb7c2c7807e2fe2df15b6fdacd8de9ccf1f1817d702e909817e0072d488b43a3be7e97468ad82bb9fa56a32ccac7a601b6fe68fa",
+      "password_migrated_at": 1793267518337,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p2",
+      "name": "周明远",
+      "phone": "13910002002",
+      "tier": "private",
+      "upline_id": "demo_p1",
+      "seq": 2002,
+      "display_id": "SD2002",
+      "referral_upline_tier": "cofounder",
+      "principal_tier": "private"
+    },
+    "demo_p3": {
+      "password": "scrypt$0568ef6e673dd05bc88867405ab959f4$6fcde602f0b529d35590e96a63e09a6aebfe0a635d3515a841eb30e6766412517c6350a16aff6de4cac4792795cf652f33e626904f9b11437e4f2c283101dfac",
+      "password_migrated_at": 1793267518358,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p3",
+      "name": "陈小满",
+      "phone": "13910002003",
+      "tier": "angel",
+      "upline_id": "demo_p2",
+      "seq": 2003,
+      "display_id": "TS2003",
+      "referral_upline_tier": "private",
+      "principal_tier": "angel"
+    },
+    "demo_p4": {
+      "password": "scrypt$7dd9fa70717a3c3a0634f7626c0e2033$2f50f982a90c82cbe0b2d5b716e887c6b0f7bcba1533d63f3528a8623e7e65aea1d738d71e65e6a08b5e452d6838a1fc0b1af846d7670c1dd254b72d282858d3",
+      "password_migrated_at": 1793267518378,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p4",
+      "name": "王小鱼",
+      "phone": "13910002004",
+      "tier": "vip",
+      "upline_id": "demo_p3",
+      "seq": 2004,
+      "display_id": "VIP2004",
+      "referral_upline_tier": "angel",
+      "principal_tier": "vip"
+    },
+    "demo_p5": {
+      "password": "scrypt$05ebe06afeabb8f57ac9f6086da0d05b$ee00b52de9c78d98cadcf1899bcc70d170d73d49bf93a22a913f585dc7b9dc598334c71971f8949dec8285fbb15ca29da99900fa822a90de5328067dad982c0e",
+      "password_migrated_at": 1793267518400,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p5",
+      "name": "赵郡守",
+      "phone": "13910002005",
+      "tier": "private",
+      "upline_id": "demo_p1",
+      "seq": 2005,
+      "display_id": "SD2005",
+      "referral_upline_tier": "cofounder",
+      "principal_tier": "private"
+    },
+    "demo_p6": {
+      "password": "scrypt$915c93550852f69739a0d2081c3bdf93$af521ae7b9d0b650c674774e7c340281f0c047b074161d4fb9e9c9893afe8f82d4e078d35df7c7a588aa74a1b3cc3ecfc03db1ea4c3b748e826864928395cd25",
+      "password_migrated_at": 1793267518421,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p6",
+      "name": "孙店长",
+      "phone": "13910002006",
+      "tier": "angel",
+      "upline_id": "demo_p5",
+      "seq": 2006,
+      "display_id": "TS2006",
+      "referral_upline_tier": "private",
+      "principal_tier": "angel"
+    },
+    "demo_p7": {
+      "password": "scrypt$adad1aa17710d5274918a26f9804ff70$cedcba75466262108ccc2e6a443dbb0a9e8da6401e4cea4bba2c47f90007a1d0da4f64256ba8920e0577eb4e685f6597ec2322e19714786c53741f306f1fcd05",
+      "password_migrated_at": 1793267518441,
+      "_password_note": "set by seed_demo.js",
+      "is_founding": "none",
+      "teamVip": 0,
+      "annual_fee_paid": true,
+      "entitlement_state": "active",
+      "entitlement_paid_at": 1793163600000,
+      "entitlement_expires_at": 1824786000000,
+      "free_upgrade_applied": 0,
+      "referral_tier": null,
+      "id": "demo_p7",
+      "name": "钱合店",
+      "phone": "13910002007",
+      "tier": "angel",
+      "upline_id": "demo_p3",
+      "seq": 2007,
+      "display_id": "TS2007",
+      "referral_upline_tier": "angel",
+      "principal_tier": "angel"
+    }
+  },
+  "orders": [
+    {
+      "id": "o_1",
+      "buyer_id": "p4",
+      "seller_id": "p3",
+      "packageTier": "vip",
+      "oldTier": "vip",
+      "quotaCount": 1,
+      "vipCredit": 1,
+      "actual_paid": 7980,
+      "sellerCost": 7500,
+      "supply_spread": 480,
+      "service_fee": 0,
+      "quota_used_standard": 1,
+      "quota_used_activity": 0,
+      "total_payable": 7980,
+      "store_fee": 0,
+      "hq_fee": 6500,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570139,
+      "verify_code": "225672"
+    },
+    {
+      "id": "o_5",
+      "buyer_id": "p6",
+      "seller_id": "p5",
+      "packageTier": "angel",
+      "oldTier": "angel",
+      "quotaCount": 3,
+      "vipCredit": 3,
+      "actual_paid": 22500,
+      "sellerCost": 20940,
+      "supply_spread": 1560,
+      "service_fee": 0,
+      "quota_used_standard": 3,
+      "quota_used_activity": 0,
+      "total_payable": 22500,
+      "store_fee": 0,
+      "hq_fee": 19500,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570140,
+      "verify_code": "240396"
+    },
+    {
+      "id": "o_8",
+      "buyer_id": "p7",
+      "seller_id": "p3",
+      "packageTier": "angel",
+      "oldTier": "angel",
+      "quotaCount": 2,
+      "vipCredit": 2,
+      "actual_paid": 15000,
+      "sellerCost": 15000,
+      "supply_spread": 0,
+      "service_fee": 0,
+      "quota_used_standard": 2,
+      "quota_used_activity": 0,
+      "total_payable": 15000,
+      "store_fee": 0,
+      "hq_fee": 13000,
+      "regionCode": "330110",
+      "store_code": null,
+      "channel": "partner",
+      "status": "paid",
+      "created_at": 1793244570140,
+      "verify_code": "751439"
+    },
+    {
+      "id": "o_23",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": null,
+      "store_code": null,
+      "storeId": null,
+      "storeAgentId": null,
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259071658,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": null,
+      "verify_code": "833464",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_25",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": null,
+      "store_code": null,
+      "storeId": null,
+      "storeAgentId": null,
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259080212,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": null,
+      "verify_code": "840826",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_27",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259173819,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "848188",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_29",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259198452,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "855550",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_31",
+      "type": "product",
+      "productKey": "memoryCard",
+      "productName": "记忆卡",
+      "kind": "software",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 299.4,
+      "paid": 150,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-memoryCard-1",
+      "skuLabel": "月卡",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259205668,
+      "delivery_mode": "ACTIVATION",
+      "activation_mode": "CODE",
+      "tip_text": "下单后联系门店获取激活码",
+      "delivery_store": "330110-S1",
+      "verify_code": "440213",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_33",
+      "type": "product",
+      "productKey": "memoryCard",
+      "productName": "记忆卡",
+      "kind": "software",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 299.4,
+      "paid": 150,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-memoryCard-1",
+      "skuLabel": "月卡",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259217988,
+      "delivery_mode": "ACTIVATION",
+      "activation_mode": "CODE",
+      "tip_text": "下单后联系门店获取激活码",
+      "delivery_store": "330110-S1",
+      "verify_code": "447575",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_35",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259231876,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "454937",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_37",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-pad-2",
+      "skuLabel": "智能变速，二档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259246434,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "462299",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_39",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259369140,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "469661",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_42",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p1",
+      "qty": 1,
+      "level": "province",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2094,
+      "paid": 2094,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 0,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "CANCELLED",
+      "created_at": 1793259798171,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "558005",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793261598172,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_42-chain_hq_direct",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "chain_hq_direct",
+          "period": "2026-10",
+          "base_amount": 2094,
+          "rate": 1,
+          "amount": 2094,
+          "ref_order_id": "o_42",
+          "status": "pending",
+          "note": "总部直供（无上级代理）"
+        }
+      ],
+      "cancel_reason": "USER_CANCEL",
+      "cancelled_at": 1793259815317,
+      "cancelled_by": "p1",
+      "stock_restored": true
+    },
+    {
+      "id": "o_44",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793259819649,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "565367",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null
+    },
+    {
+      "id": "o_46",
+      "type": "product",
+      "productKey": "memoryCard",
+      "productName": "记忆卡",
+      "kind": "software",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 399.2,
+      "paid": 250,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 37.5,
+      "skuId": "sku-memoryCard-1",
+      "skuLabel": "月卡",
+      "skuQty": 1,
+      "status": "PENDING_PAYMENT",
+      "created_at": 1793259830948,
+      "delivery_mode": "ACTIVATION",
+      "activation_mode": "CODE",
+      "tip_text": "下单后联系门店获取激活码",
+      "delivery_store": "330110-S1",
+      "verify_code": "572729",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793261630949,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_46-card_city",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "card_city",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.17,
+          "amount": 42.5,
+          "ref_order_id": "o_46",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 市代（扣产品提成）"
+        },
+        {
+          "id": "po-o_46-card_province",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "card_province",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.08,
+          "amount": 20,
+          "ref_order_id": "o_46",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 省代"
+        },
+        {
+          "id": "po-o_46-card_hq",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "card_hq",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.6,
+          "amount": 150,
+          "ref_order_id": "o_46",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 总部"
+        },
+        {
+          "id": "po-o_46-partner_product",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "partner_product",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.15,
+          "amount": 37.5,
+          "ref_order_id": "o_46",
+          "status": "pending",
+          "note": "产品提成 | 实付 250 × 15%（cofounder 产品提成） = 37.5"
+        }
+      ]
+    },
+    {
+      "id": "o_48",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-9",
+      "skuLabel": "定速，无变速，三档",
+      "skuQty": 1,
+      "status": "PENDING_PAYMENT",
+      "created_at": 1793260376948,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "580091",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793262176948,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_48-chain_city",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_city",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0,
+          "amount": 0,
+          "ref_order_id": "o_48",
+          "status": "pending",
+          "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_48-chain_province",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_province",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.13,
+          "amount": 349,
+          "ref_order_id": "o_48",
+          "status": "pending",
+          "note": "固定链级差 省代 (0.35−0.3)×6980"
+        },
+        {
+          "id": "po-o_48-chain_hq",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "chain_hq",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.73,
+          "amount": 2024.2,
+          "ref_order_id": "o_48",
+          "status": "pending",
+          "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_48-partner_product",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "partner_product",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.15,
+          "amount": 418.8,
+          "ref_order_id": "o_48",
+          "status": "pending",
+          "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8"
+        }
+      ]
+    },
+    {
+      "id": "o_50",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "PENDING_PAYMENT",
+      "created_at": 1793260389723,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "164754",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793262189723,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_50-chain_city",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_city",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0,
+          "amount": 0,
+          "ref_order_id": "o_50",
+          "status": "pending",
+          "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_50-chain_province",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_province",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.13,
+          "amount": 349,
+          "ref_order_id": "o_50",
+          "status": "pending",
+          "note": "固定链级差 省代 (0.35−0.3)×6980"
+        },
+        {
+          "id": "po-o_50-chain_hq",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "chain_hq",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.73,
+          "amount": 2024.2,
+          "ref_order_id": "o_50",
+          "status": "pending",
+          "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_50-partner_product",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "partner_product",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.15,
+          "amount": 418.8,
+          "ref_order_id": "o_50",
+          "status": "pending",
+          "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8"
+        }
+      ]
+    },
+    {
+      "id": "o_52",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "CANCELLED",
+      "created_at": 1793260434265,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "172116",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793262234265,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_52-chain_city",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_city",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0,
+          "amount": 0,
+          "ref_order_id": "o_52",
+          "status": "pending",
+          "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_52-chain_province",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "chain_province",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.13,
+          "amount": 349,
+          "ref_order_id": "o_52",
+          "status": "pending",
+          "note": "固定链级差 省代 (0.35−0.3)×6980"
+        },
+        {
+          "id": "po-o_52-chain_hq",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "chain_hq",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.73,
+          "amount": 2024.2,
+          "ref_order_id": "o_52",
+          "status": "pending",
+          "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）"
+        },
+        {
+          "id": "po-o_52-partner_product",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "partner_product",
+          "period": "2026-10",
+          "base_amount": 2792,
+          "rate": 0.15,
+          "amount": 418.8,
+          "ref_order_id": "o_52",
+          "status": "pending",
+          "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8"
+        }
+      ],
+      "cancel_reason": "USER_CANCEL",
+      "cancelled_at": 1793260447800,
+      "cancelled_by": "p5",
+      "stock_restored": true
+    },
+    {
+      "id": "o_54",
+      "type": "product",
+      "productKey": "memoryCard",
+      "productName": "记忆卡",
+      "kind": "software",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 399.2,
+      "paid": 250,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 37.5,
+      "skuId": "sku-memoryCard-1",
+      "skuLabel": "月卡",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793260437796,
+      "delivery_mode": "ACTIVATION",
+      "activation_mode": "CODE",
+      "tip_text": "下单后联系门店获取激活码",
+      "delivery_store": "330110-S1",
+      "verify_code": "179478",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": null,
+      "pay_timeout_minutes": 30,
+      "paid_at": 1793260439043
+    },
+    {
+      "id": "o_56",
+      "type": "product",
+      "productKey": "memoryCard",
+      "productName": "记忆卡",
+      "kind": "software",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 399.2,
+      "paid": 250,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 37.5,
+      "skuId": "sku-memoryCard-1",
+      "skuLabel": "月卡",
+      "skuQty": 1,
+      "status": "CANCELLED",
+      "created_at": 1793260465924,
+      "delivery_mode": "ACTIVATION",
+      "activation_mode": "CODE",
+      "tip_text": "下单后联系门店获取激活码",
+      "delivery_store": "330110-S1",
+      "verify_code": "186840",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": 1793262265924,
+      "pay_timeout_minutes": 30,
+      "commission_rows": [
+        {
+          "id": "po-o_56-card_city",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "card_city",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.17,
+          "amount": 42.5,
+          "ref_order_id": "o_56",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 市代（扣产品提成）"
+        },
+        {
+          "id": "po-o_56-card_province",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "card_province",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.08,
+          "amount": 20,
+          "ref_order_id": "o_56",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 省代"
+        },
+        {
+          "id": "po-o_56-card_hq",
+          "owner_id": "HQ",
+          "type": "product",
+          "subtype": "card_hq",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.6,
+          "amount": 150,
+          "ref_order_id": "o_56",
+          "status": "pending",
+          "note": "AI软件卡拿货差价 总部"
+        },
+        {
+          "id": "po-o_56-partner_product",
+          "owner_id": "p1",
+          "type": "product",
+          "subtype": "partner_product",
+          "period": "2026-10",
+          "base_amount": 250,
+          "rate": 0.15,
+          "amount": 37.5,
+          "ref_order_id": "o_56",
+          "status": "pending",
+          "note": "产品提成 | 实付 250 × 15%（cofounder 产品提成） = 37.5"
+        }
+      ],
+      "cancel_reason": "USER_CANCEL",
+      "cancelled_at": 1793260494749,
+      "cancelled_by": "p5",
+      "stock_restored": true
+    },
+    {
+      "id": "o_58",
+      "type": "product",
+      "productKey": "pad",
+      "productName": "脑商Pad",
+      "kind": "physical",
+      "buyer_id": "p5",
+      "qty": 1,
+      "level": "district",
+      "discount_kind": "agent",
+      "member_id": null,
+      "unitPrice": 2792,
+      "paid": 2792,
+      "deliveryType": "store",
+      "regionCode": "330110",
+      "store_code": "330110-S1",
+      "storeId": "330110-S1",
+      "storeAgentId": "ra_15",
+      "commissionAmount": 418.8,
+      "skuId": "sku-pad-1",
+      "skuLabel": "智能变速，一档",
+      "skuQty": 1,
+      "status": "paid",
+      "created_at": 1793260506567,
+      "delivery_mode": "EXPRESS",
+      "activation_mode": "NONE",
+      "tip_text": "实物商品，支付后由门店/总部发货",
+      "delivery_store": "330110-S1",
+      "verify_code": "194202",
+      "verified": false,
+      "verified_at": null,
+      "verified_by": null,
+      "pay_expire_at": null,
+      "pay_timeout_minutes": 30,
+      "paid_at": 1793260511499
+    },
+    {
+      "id": "demo_o_1",
+      "buyer_id": "demo_p4",
+      "seller_id": "demo_p3",
+      "packageTier": "vip",
+      "oldTier": "vip",
+      "quotaCount": 1,
+      "vipCredit": 1,
+      "actual_paid": 7980,
+      "sellerCost": 7500,
+      "supply_spread": 480,
+      "store_fee": 0,
+      "hq_fee": 6500,
+      "regionCode": "320102",
+      "channel": "partner",
+      "store_id": null,
+      "status": "paid",
+      "created_at": 1793250000000,
+      "_story": "王小鱼(VIP)向陈小满补1个VIP名额 → 供货级差链"
+    },
+    {
+      "id": "demo_o_2",
+      "buyer_id": "demo_p7",
+      "seller_id": "demo_p3",
+      "packageTier": "angel",
+      "oldTier": "angel",
+      "quotaCount": 2,
+      "vipCredit": 2,
+      "actual_paid": 15000,
+      "sellerCost": 15000,
+      "supply_spread": 0,
+      "store_fee": 0,
+      "hq_fee": 13000,
+      "regionCode": "320102",
+      "channel": "partner",
+      "store_id": null,
+      "status": "paid",
+      "created_at": 1793250001000,
+      "_story": "钱合店(天使)向同级陈小满补2个天使 → 触发平级奖"
+    },
+    {
+      "id": "demo_o_prod",
+      "type": "product",
+      "productKey": "featured_demo",
+      "productName": "特色体验课·演示",
+      "kind": "featured",
+      "buyer_id": "demo_p4",
+      "seller_id": "demo_p6",
+      "packageTier": "vip",
+      "oldTier": null,
+      "quotaCount": 0,
+      "vipCredit": 0,
+      "actual_paid": 1300,
+      "paid": 1300,
+      "sellerCost": 0,
+      "supply_spread": 0,
+      "store_fee": 0,
+      "hq_fee": 0,
+      "regionCode": "320102",
+      "store_code": "320102-S9",
+      "storeId": "320102-S9",
+      "channel": "store",
+      "deliveryType": "store",
+      "status": "paid",
+      "created_at": 1793250002000,
+      "_story": "王小鱼在孙店长门店买特色产品1300 → 产品分成+可分配巡查/销售"
+    },
+    {
+      "id": "demo_cs_1",
+      "buyer_id": "demo_p7",
+      "seller_id": "demo_p6",
+      "packageTier": "vip",
+      "oldTier": null,
+      "quotaCount": 1,
+      "vipCredit": 0,
+      "actual_paid": 4188,
+      "sellerCost": 0,
+      "supply_spread": 0,
+      "store_fee": 0,
+      "hq_fee": 0,
+      "regionCode": "320102",
+      "channel": "partner",
+      "store_id": "320102-S9",
+      "status": "paid",
+      "created_at": 1793250003000,
+      "_story": "钱合店缴纳6×698合店费"
+    }
+  ],
+  "commissions": [
+    {
+      "owner_id": "p3",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 480,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "实付 7980 − 拿货成本 7500 = 差价 480",
+      "seller_cost": 7500,
+      "actual_paid": 7980,
+      "id": "c_2"
+    },
+    {
+      "owner_id": "p2",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 520,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "供货链级差 (7500 − 6980) × 1 名额 = 520",
+      "id": "c_3"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 7980,
+      "rate": null,
+      "amount": 480,
+      "ref_order_id": "o_1",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 1 名额 = 480",
+      "id": "c_4"
+    },
+    {
+      "owner_id": "p5",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 22500,
+      "rate": null,
+      "amount": 1560,
+      "ref_order_id": "o_5",
+      "status": "pending",
+      "formula": "实付 22500 − 拿货成本 20940 = 差价 1560",
+      "seller_cost": 20940,
+      "actual_paid": 22500,
+      "id": "c_6"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 22500,
+      "rate": null,
+      "amount": 1440,
+      "ref_order_id": "o_5",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 3 名额 = 1440",
+      "id": "c_7"
+    },
+    {
+      "owner_id": "p2",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 15000,
+      "rate": null,
+      "amount": 760.8,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "供货链级差 (7500 − 6980) × 2 名额 − 平级奖 279.2 = 760.8",
+      "id": "c_9"
+    },
+    {
+      "owner_id": "p1",
+      "type": "supply",
+      "period": "2026-10",
+      "base_amount": 15000,
+      "rate": null,
+      "amount": 960,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "供货链级差 (6980 − 6500) × 2 名额 = 960",
+      "id": "c_10"
+    },
+    {
+      "owner_id": "p3",
+      "type": "parity",
+      "period": "2026-10",
+      "base_amount": 6980,
+      "rate": 0.02,
+      "amount": 279.2,
+      "ref_order_id": "o_8",
+      "status": "pending",
+      "formula": "平级奖 供货上级(private)拿货价 6980 × 2% × 2 名额 = 279.2（已从 p2 级差扣）",
+      "id": "c_11"
+    },
+    {
+      "id": "po-o_23-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_23",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_25-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_25",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_27-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_27",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_29-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_29",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_31-card_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "card_hq",
+      "period": "2026-10",
+      "base_amount": 150,
+      "rate": 1,
+      "amount": 150,
+      "ref_order_id": "o_31",
+      "status": "pending",
+      "note": "AI软件卡拿货差价 总部直供",
+      "formula": "150 × 100% = 150"
+    },
+    {
+      "id": "po-o_33-card_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "card_hq",
+      "period": "2026-10",
+      "base_amount": 150,
+      "rate": 1,
+      "amount": 150,
+      "ref_order_id": "o_33",
+      "status": "pending",
+      "note": "AI软件卡拿货差价 总部直供",
+      "formula": "150 × 100% = 150"
+    },
+    {
+      "id": "po-o_35-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_35",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_37-chain_hq_direct",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq_direct",
+      "period": "2026-10",
+      "base_amount": 2094,
+      "rate": 1,
+      "amount": 2094,
+      "ref_order_id": "o_37",
+      "status": "pending",
+      "note": "总部直供（无上级代理）",
+      "formula": "2094 × 100% = 2094"
+    },
+    {
+      "id": "po-o_39-chain_city",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_city",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0,
+      "amount": 0,
+      "ref_order_id": "o_39",
+      "status": "pending",
+      "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）",
+      "formula": "2792 × 0% = 0"
+    },
+    {
+      "id": "po-o_39-chain_province",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_province",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.13,
+      "amount": 349,
+      "ref_order_id": "o_39",
+      "status": "pending",
+      "note": "固定链级差 省代 (0.35−0.3)×6980",
+      "formula": "2792 × 13% = 349"
+    },
+    {
+      "id": "po-o_39-chain_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.73,
+      "amount": 2024.2,
+      "ref_order_id": "o_39",
+      "status": "pending",
+      "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）",
+      "formula": "2792 × 73% = 2024.2"
+    },
+    {
+      "id": "po-o_39-partner_product",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "partner_product",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.15,
+      "amount": 418.8,
+      "ref_order_id": "o_39",
+      "status": "pending",
+      "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8",
+      "formula": "2792 × 15% = 418.8"
+    },
+    {
+      "id": "po-o_44-chain_city",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_city",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0,
+      "amount": 0,
+      "ref_order_id": "o_44",
+      "status": "pending",
+      "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）",
+      "formula": "2792 × 0% = 0"
+    },
+    {
+      "id": "po-o_44-chain_province",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_province",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.13,
+      "amount": 349,
+      "ref_order_id": "o_44",
+      "status": "pending",
+      "note": "固定链级差 省代 (0.35−0.3)×6980",
+      "formula": "2792 × 13% = 349"
+    },
+    {
+      "id": "po-o_44-chain_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.73,
+      "amount": 2024.2,
+      "ref_order_id": "o_44",
+      "status": "pending",
+      "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）",
+      "formula": "2792 × 73% = 2024.2"
+    },
+    {
+      "id": "po-o_44-partner_product",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "partner_product",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.15,
+      "amount": 418.8,
+      "ref_order_id": "o_44",
+      "status": "pending",
+      "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8",
+      "formula": "2792 × 15% = 418.8"
+    },
+    {
+      "id": "po-o_54-card_city",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "card_city",
+      "period": "2026-10",
+      "base_amount": 250,
+      "rate": 0.17,
+      "amount": 42.5,
+      "ref_order_id": "o_54",
+      "status": "pending",
+      "note": "AI软件卡拿货差价 市代（扣产品提成）",
+      "formula": "250 × 17% = 42.5"
+    },
+    {
+      "id": "po-o_54-card_province",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "card_province",
+      "period": "2026-10",
+      "base_amount": 250,
+      "rate": 0.08,
+      "amount": 20,
+      "ref_order_id": "o_54",
+      "status": "pending",
+      "note": "AI软件卡拿货差价 省代",
+      "formula": "250 × 8% = 20"
+    },
+    {
+      "id": "po-o_54-card_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "card_hq",
+      "period": "2026-10",
+      "base_amount": 250,
+      "rate": 0.6,
+      "amount": 150,
+      "ref_order_id": "o_54",
+      "status": "pending",
+      "note": "AI软件卡拿货差价 总部",
+      "formula": "250 × 60% = 150"
+    },
+    {
+      "id": "po-o_54-partner_product",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "partner_product",
+      "period": "2026-10",
+      "base_amount": 250,
+      "rate": 0.15,
+      "amount": 37.5,
+      "ref_order_id": "o_54",
+      "status": "pending",
+      "note": "产品提成 | 实付 250 × 15%（cofounder 产品提成） = 37.5",
+      "formula": "250 × 15% = 37.5"
+    },
+    {
+      "id": "po-o_58-chain_city",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_city",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0,
+      "amount": 0,
+      "ref_order_id": "o_58",
+      "status": "pending",
+      "note": "固定链级差 市代 (0.4−0.35)×6980（扣产品提成）",
+      "formula": "2792 × 0% = 0"
+    },
+    {
+      "id": "po-o_58-chain_province",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "chain_province",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.13,
+      "amount": 349,
+      "ref_order_id": "o_58",
+      "status": "pending",
+      "note": "固定链级差 省代 (0.35−0.3)×6980",
+      "formula": "2792 × 13% = 349"
+    },
+    {
+      "id": "po-o_58-chain_hq",
+      "owner_id": "HQ",
+      "type": "product",
+      "subtype": "chain_hq",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.73,
+      "amount": 2024.2,
+      "ref_order_id": "o_58",
+      "status": "pending",
+      "note": "固定链级差 总部 (0.3−0)×6980（扣产品提成）",
+      "formula": "2792 × 73% = 2024.2"
+    },
+    {
+      "id": "po-o_58-partner_product",
+      "owner_id": "p1",
+      "type": "product",
+      "subtype": "partner_product",
+      "period": "2026-10",
+      "base_amount": 2792,
+      "rate": 0.15,
+      "amount": 418.8,
+      "ref_order_id": "o_58",
+      "status": "pending",
+      "note": "产品提成 | 实付 2792 × 15%（cofounder 产品提成） = 418.8",
+      "formula": "2792 × 15% = 418.8"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": null,
+      "formula": "实付 7980 − 拿货成本 7500 = 差价 480",
+      "created_at": 1793250000000,
+      "id": "demo_c_o1_p3",
+      "owner_id": "demo_p3",
+      "identity": "partner",
+      "type": "supply",
+      "subtype": null,
+      "base_amount": 7980,
+      "amount": 480,
+      "ref_order_id": "demo_o_1",
+      "seller_cost": 7500,
+      "actual_paid": 7980
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": null,
+      "formula": "供货链级差 (7500 − 6980) × 1 名额 = 520",
+      "created_at": 1793250000000,
+      "id": "demo_c_o1_p2",
+      "owner_id": "demo_p2",
+      "identity": "partner",
+      "type": "supply",
+      "base_amount": 7980,
+      "amount": 520,
+      "ref_order_id": "demo_o_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": null,
+      "formula": "供货链级差 (6980 − 6500) × 1 名额 = 480",
+      "created_at": 1793250000000,
+      "id": "demo_c_o1_p1",
+      "owner_id": "demo_p1",
+      "identity": "partner",
+      "type": "supply",
+      "base_amount": 7980,
+      "amount": 480,
+      "ref_order_id": "demo_o_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.02,
+      "note": null,
+      "formula": "平级奖 供货上级(private)拿货价 6980 × 2% × 2 名额 = 279.2（已从 demo_p2 级差扣）",
+      "created_at": 1793250000000,
+      "id": "demo_c_o2_parity_p3",
+      "owner_id": "demo_p3",
+      "identity": "partner",
+      "type": "parity",
+      "base_amount": 6980,
+      "amount": 279.2,
+      "ref_order_id": "demo_o_2"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": null,
+      "formula": "供货链级差 (7500 − 6980) × 2 名额 − 平级奖 279.2 = 760.8",
+      "created_at": 1793250000000,
+      "id": "demo_c_o2_p2",
+      "owner_id": "demo_p2",
+      "identity": "partner",
+      "type": "supply",
+      "base_amount": 15000,
+      "amount": 760.8,
+      "ref_order_id": "demo_o_2"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": null,
+      "formula": "供货链级差 (6980 − 6500) × 2 名额 = 960",
+      "created_at": 1793250000000,
+      "id": "demo_c_o2_p1",
+      "owner_id": "demo_p1",
+      "identity": "partner",
+      "type": "supply",
+      "base_amount": 15000,
+      "amount": 960,
+      "ref_order_id": "demo_o_2"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.15,
+      "note": "总部 15%",
+      "formula": "净池 1170 × 15% = 175.5",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_hq",
+      "owner_id": "HQ",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_hq",
+      "base_amount": 1300,
+      "amount": 175.5,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.02,
+      "note": "省代 2%",
+      "formula": "净池 1170 × 2% = 23.4",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_province",
+      "owner_id": "demo_p1",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_province",
+      "base_amount": 1300,
+      "amount": 23.4,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.08,
+      "note": "市代 8%",
+      "formula": "净池 1170 × 8% = 93.6",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_city",
+      "owner_id": "demo_p1",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_city",
+      "base_amount": 1300,
+      "amount": 93.6,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.05,
+      "note": "区县代(管理) 5%",
+      "formula": "净池 1170 × 5% = 58.5",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_district_mgmt",
+      "owner_id": "demo_p5",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_district_mgmt",
+      "base_amount": 1300,
+      "amount": 58.5,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending_allocation",
+      "period": "2026-10",
+      "rate": 0.05,
+      "note": "区县代(巡查) 5% · 可分配",
+      "formula": "净池 1170 × 5% = 58.5",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_district_inspect",
+      "owner_id": "demo_p5",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_district_inspect",
+      "base_amount": 1300,
+      "amount": 58.5,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "SETTLED",
+      "allocationId": "alc_demo_inspect",
+      "allocationKind": "inspect",
+      "allocationRows": [
+        {
+          "targetId": "demo_p1",
+          "name": "林启航",
+          "kind": "province",
+          "percent": 100,
+          "amount": 58.5,
+          "roleLabel": "省代"
+        }
+      ],
+      "withhold": true,
+      "withdrawable": false
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.3,
+      "note": "店长(交付) 30%",
+      "formula": "净池 1170 × 30% = 351.0",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_store_delivery",
+      "owner_id": "demo_p6",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_store_delivery",
+      "base_amount": 1300,
+      "amount": 351,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.3,
+      "note": "店长(引流) 30%",
+      "formula": "净池 1170 × 30% = 351.0",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_store_traffic",
+      "owner_id": "demo_p6",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_store_traffic",
+      "base_amount": 1300,
+      "amount": 351,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.05,
+      "note": "店长(销售) 5% · 可分配",
+      "formula": "净池 1170 × 5% = 58.5",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-featured_store_sales",
+      "owner_id": "demo_p6",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_store_sales",
+      "base_amount": 1300,
+      "amount": 58.5,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "PENDING",
+      "allocationId": "alc_demo_sales",
+      "allocationKind": "sales",
+      "allocationRows": [
+        {
+          "targetId": "demo_p5",
+          "name": "赵郡守",
+          "kind": "other",
+          "percent": 100,
+          "amount": 58.5,
+          "roleLabel": "区县代"
+        }
+      ]
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.1,
+      "note": "买方上级(天使)产品提成 10%",
+      "formula": "1300 × 10% = 130",
+      "created_at": 1793250000000,
+      "id": "po-demo_o_prod-partner_product",
+      "owner_id": "demo_p3",
+      "identity": "partner",
+      "type": "product",
+      "subtype": "partner_product",
+      "base_amount": 1300,
+      "amount": 130,
+      "ref_order_id": "demo_o_prod",
+      "allocationStatus": "NONE"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.15,
+      "note": "A | 总部 15%",
+      "formula": "合店费 4188 × 15% = 628.2",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-hq-HQ",
+      "owner_id": "HQ",
+      "identity": "agent",
+      "type": "costore",
+      "subtype": "region_costore",
+      "base_amount": 4188,
+      "amount": 628.2,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.02,
+      "note": "A | 省 2%",
+      "formula": "合店费 4188 × 2.0% = 83.76",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-province-demo_p1",
+      "owner_id": "demo_p1",
+      "identity": "agent",
+      "type": "costore",
+      "subtype": "region_costore",
+      "base_amount": 4188,
+      "amount": 83.76,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.08,
+      "note": "A | 市 8%",
+      "formula": "合店费 4188 × 8.0% = 335.04",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-city-demo_p1",
+      "owner_id": "demo_p1",
+      "identity": "agent",
+      "type": "costore",
+      "subtype": "region_costore",
+      "base_amount": 4188,
+      "amount": 335.04,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.1,
+      "note": "A | 区/县 10%",
+      "formula": "合店费 4188 × 10% = 418.8",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-district-demo_p5",
+      "owner_id": "demo_p5",
+      "identity": "agent",
+      "type": "costore",
+      "subtype": "region_costore",
+      "base_amount": 4188,
+      "amount": 418.8,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.4,
+      "note": "A | 门店股东服务 40%",
+      "formula": "合店费 4188 × 40% = 1675.2",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-storeService-demo_p6",
+      "owner_id": "demo_p6",
+      "identity": "costore",
+      "type": "costore",
+      "subtype": "costore_store_service",
+      "base_amount": 4188,
+      "amount": 1675.2,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.13,
+      "note": "A | 13% 直推奖 → 门店店长(上级非合店老板)",
+      "formula": "合店费 4188 × 13% = 544.44",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-businessDirect-demo_p6",
+      "owner_id": "demo_p6",
+      "identity": "costore",
+      "type": "costore",
+      "subtype": "costore_store_direct",
+      "base_amount": 4188,
+      "amount": 544.44,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 0.02,
+      "note": "A | 2% 复购奖 → 上级",
+      "formula": "合店费 4188 × 2.0% = 83.76",
+      "created_at": 1793250000000,
+      "id": "cs-demo_cs_1-businessUpline-demo_p3",
+      "owner_id": "demo_p3",
+      "identity": "partner",
+      "type": "costore",
+      "subtype": "costore_upline_repurchase",
+      "base_amount": 4188,
+      "amount": 83.76,
+      "ref_order_id": "demo_cs_1"
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": null,
+      "note": "全平台分红池(2026-10/1笔) 合店老板达标",
+      "formula": "分红池 418.80 → demo_p7",
+      "created_at": 1793250000000,
+      "id": "cs-div-demo_p7-2026-10",
+      "owner_id": "demo_p7",
+      "identity": "costore",
+      "type": "costore",
+      "subtype": "costore_dividend",
+      "base_amount": 418.8,
+      "amount": 418.8,
+      "ref_order_id": null
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 1,
+      "note": "演示：当月仅联创林启航一人占全球奖份额（手写，非正式 settleAll 输出）",
+      "formula": "奖池 450 × 本人份额 100% = 450",
+      "created_at": 1793250000000,
+      "id": "global-2026-10-demo_p1",
+      "owner_id": "demo_p1",
+      "identity": "partner",
+      "type": "global",
+      "subtype": null,
+      "base_amount": 450,
+      "amount": 450,
+      "ref_order_id": null
+    },
+    {
+      "status": "pending",
+      "period": "2026-10",
+      "rate": 1,
+      "note": "分配 巡查 5%（100% → 林启航）来自 po-demo_o_prod-featured_district_inspect",
+      "formula": "58.50 × 100% = 58.50",
+      "created_at": 1793250000000,
+      "id": "alc-alc_demo_inspect-demo_p1",
+      "owner_id": "demo_p1",
+      "identity": "agent",
+      "type": "product",
+      "subtype": "featured_district_inspect_alloc",
+      "base_amount": 58.5,
+      "amount": 58.5,
+      "ref_order_id": "demo_o_prod",
+      "allocationFrom": "po-demo_o_prod-featured_district_inspect",
+      "allocationKind": "inspect",
+      "allocationRoleLabel": "省代"
+    }
+  ],
+  "quotaLedger": {
+    "p1": {
+      "standard": 500,
+      "activity": []
+    },
+    "p2": {
+      "standard": 200,
+      "activity": []
+    },
+    "p3": {
+      "standard": 97,
+      "activity": [
+        {
+          "qty": 4,
+          "obtainedAt": 1793244570057,
+          "expireAt": 1824780570057
+        }
+      ]
+    },
+    "p4": {
+      "standard": 51,
+      "activity": []
+    },
+    "p5": {
+      "standard": 197,
+      "activity": []
+    },
+    "p6": {
+      "standard": 103,
+      "activity": []
+    },
+    "p7": {
+      "standard": 102,
+      "activity": []
+    },
+    "demo_p1": {
+      "standard": 300,
+      "activity": []
+    },
+    "demo_p2": {
+      "standard": 80,
+      "activity": []
+    },
+    "demo_p3": {
+      "standard": 80,
+      "activity": []
+    },
+    "demo_p4": {
+      "standard": 80,
+      "activity": []
+    },
+    "demo_p5": {
+      "standard": 80,
+      "activity": []
+    },
+    "demo_p6": {
+      "standard": 80,
+      "activity": []
+    },
+    "demo_p7": {
+      "standard": 80,
+      "activity": []
+    }
+  },
+  "quota_transactions": [
+    {
+      "id": "qt_fr0fs5ix",
+      "type": "issue",
+      "partnerId": "p3",
+      "kind": "activity",
+      "qty": 4,
+      "operatorId": null,
+      "ref": "seed",
+      "at": 1793244570057,
+      "expireAt": 1824780570057
+    },
+    {
+      "id": "qt_9fvk0el6",
+      "type": "consume",
+      "partnerId": "p3",
+      "usedStandard": 1,
+      "usedActivity": 0,
+      "ref": "o_1",
+      "operatorId": null,
+      "at": 1793244570139
+    },
+    {
+      "id": "qt_66ttqlu2",
+      "type": "consume",
+      "partnerId": "p5",
+      "usedStandard": 3,
+      "usedActivity": 0,
+      "ref": "o_5",
+      "operatorId": null,
+      "at": 1793244570140
+    },
+    {
+      "id": "qt_eusq4u7q",
+      "type": "consume",
+      "partnerId": "p3",
+      "usedStandard": 2,
+      "usedActivity": 0,
+      "ref": "o_8",
+      "operatorId": null,
+      "at": 1793244570140
+    }
+  ],
+  "regionalAgents": [
+    {
+      "id": "ra_12",
+      "partner_id": "p1",
+      "region_type": "province",
+      "region_code": "33",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_13",
+      "partner_id": "p1",
+      "region_type": "city",
+      "region_code": "3301",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_14",
+      "partner_id": "p5",
+      "region_type": "district",
+      "region_code": "330110",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "private",
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_15",
+      "partner_id": "p6",
+      "region_type": "store",
+      "region_code": "330110-S1",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": null,
+      "appointed_at": "2026-10-29T03:29:30.140Z"
+    },
+    {
+      "id": "ra_demo_prov",
+      "partner_id": "demo_p1",
+      "region_type": "province",
+      "region_code": "32",
+      "parent_code": null,
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T09:00:00.000Z"
+    },
+    {
+      "id": "ra_demo_city",
+      "partner_id": "demo_p1",
+      "region_type": "city",
+      "region_code": "3201",
+      "parent_code": "32",
+      "price_tier": 0,
+      "referrer_id": null,
+      "granted_tier": "cofounder",
+      "appointed_at": "2026-10-29T09:00:00.000Z"
+    },
+    {
+      "id": "ra_demo_dist",
+      "partner_id": "demo_p5",
+      "region_type": "district",
+      "region_code": "320102",
+      "parent_code": "3201",
+      "price_tier": 0,
+      "referrer_id": "demo_p1",
+      "granted_tier": "private",
+      "appointed_at": "2026-10-29T09:00:00.000Z"
+    },
+    {
+      "id": "ra_demo_store",
+      "partner_id": "demo_p6",
+      "region_type": "store",
+      "region_code": "320102-S9",
+      "parent_code": "320102",
+      "price_tier": 0,
+      "referrer_id": "demo_p5",
+      "granted_tier": null,
+      "appointed_at": "2026-10-29T09:00:00.000Z"
+    }
+  ],
+  "coStores": [
+    {
+      "owner_id": "p7",
+      "promoter_id": "p6",
+      "storeManagerId": "p6",
+      "store_id": "330110-S1",
+      "monthly_fee": 698,
+      "ownerCount": 1,
+      "joinDate": "2026-10",
+      "owners": [
+        {
+          "id": "p7",
+          "performance": 500
+        }
+      ],
+      "id": "cs_16",
+      "referrer": "other",
+      "partners": [
+        {
+          "id": "p7",
+          "performance": 500
+        }
+      ]
+    },
+    {
+      "id": "demo_cs_1",
+      "owner_id": "demo_p7",
+      "promoter_id": "demo_p6",
+      "storeManagerId": "demo_p6",
+      "store_id": "320102-S9",
+      "monthly_fee": 698,
+      "ownerCount": 1,
+      "joinDate": "2026-10",
+      "referrer": "other",
+      "owners": [
+        {
+          "id": "demo_p7",
+          "performance": 3200
+        }
+      ],
+      "partners": [
+        {
+          "id": "demo_p7",
+          "performance": 3200
+        }
+      ]
+    }
+  ],
+  "uplineHistory": [],
+  "freeUpgradeLog": [],
+  "experience": [
+    {
+      "id": "exp_24",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_23",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259071659
+    },
+    {
+      "id": "exp_26",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_25",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259080212
+    },
+    {
+      "id": "exp_28",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_27",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259173819
+    },
+    {
+      "id": "exp_30",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_29",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259198452
+    },
+    {
+      "id": "exp_32",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "记忆卡",
+      "points": 150,
+      "price": 150,
+      "refId": "o_31",
+      "meta": {
+        "productKey": "memoryCard",
+        "kind": "software",
+        "kindLabel": "软件卡",
+        "qty": 1,
+        "deliveryMode": "ACTIVATION"
+      },
+      "occurredAt": 1793259205668
+    },
+    {
+      "id": "exp_34",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "记忆卡",
+      "points": 150,
+      "price": 150,
+      "refId": "o_33",
+      "meta": {
+        "productKey": "memoryCard",
+        "kind": "software",
+        "kindLabel": "软件卡",
+        "qty": 1,
+        "deliveryMode": "ACTIVATION"
+      },
+      "occurredAt": 1793259217988
+    },
+    {
+      "id": "exp_36",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_35",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259231876
+    },
+    {
+      "id": "exp_38",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_37",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259246434
+    },
+    {
+      "id": "exp_40",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_39",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259369140
+    },
+    {
+      "id": "exp_43",
+      "userId": "p1",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2094,
+      "price": 2094,
+      "refId": "o_42",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259798172
+    },
+    {
+      "id": "exp_45",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_44",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793259819650
+    },
+    {
+      "id": "exp_47",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "记忆卡",
+      "points": 250,
+      "price": 250,
+      "refId": "o_46",
+      "meta": {
+        "productKey": "memoryCard",
+        "kind": "software",
+        "kindLabel": "软件卡",
+        "qty": 1,
+        "deliveryMode": "ACTIVATION"
+      },
+      "occurredAt": 1793259830949
+    },
+    {
+      "id": "exp_49",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_48",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793260376948
+    },
+    {
+      "id": "exp_51",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_50",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793260389723
+    },
+    {
+      "id": "exp_53",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_52",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793260434265
+    },
+    {
+      "id": "exp_55",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "记忆卡",
+      "points": 250,
+      "price": 250,
+      "refId": "o_54",
+      "meta": {
+        "productKey": "memoryCard",
+        "kind": "software",
+        "kindLabel": "软件卡",
+        "qty": 1,
+        "deliveryMode": "ACTIVATION"
+      },
+      "occurredAt": 1793260437796
+    },
+    {
+      "id": "exp_57",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "记忆卡",
+      "points": 250,
+      "price": 250,
+      "refId": "o_56",
+      "meta": {
+        "productKey": "memoryCard",
+        "kind": "software",
+        "kindLabel": "软件卡",
+        "qty": 1,
+        "deliveryMode": "ACTIVATION"
+      },
+      "occurredAt": 1793260465924
+    },
+    {
+      "id": "exp_59",
+      "userId": "p5",
+      "tab": "product",
+      "tabLabel": "购买产品",
+      "event": "product",
+      "eventLabel": "购买产品",
+      "title": "脑商Pad",
+      "points": 2792,
+      "price": 2792,
+      "refId": "o_58",
+      "meta": {
+        "productKey": "pad",
+        "kind": "physical",
+        "kindLabel": "实物",
+        "qty": 1,
+        "deliveryMode": "EXPRESS"
+      },
+      "occurredAt": 1793260506567
+    }
+  ],
+  "promotionTasks": [
+    {
+      "id": "pt_17",
+      "userId": "p1",
+      "startTier": "cofounder",
+      "createdAt": 1793245986438,
+      "validUntil": 1824349986438,
+      "validMonths": 12,
+      "targets": [
+        {
+          "key": "private",
+          "label": "直推私董",
+          "required": 3
+        },
+        {
+          "key": "vip",
+          "label": "直推VIP",
+          "required": 18
+        }
+      ],
+      "status": "ONGOING",
+      "achievedAt": null,
+      "grantedTier": null,
+      "claimedAt": null
+    },
+    {
+      "id": "pt_18",
+      "userId": "p4",
+      "startTier": "vip",
+      "createdAt": 1793255362063,
+      "validUntil": 1824359362063,
+      "validMonths": 12,
+      "targets": [
+        {
+          "key": "private",
+          "label": "直推私董",
+          "required": 3
+        },
+        {
+          "key": "vip",
+          "label": "直推VIP",
+          "required": 18
+        }
+      ],
+      "status": "ONGOING",
+      "achievedAt": null,
+      "grantedTier": null,
+      "claimedAt": null
+    },
+    {
+      "id": "pt_41",
+      "userId": "p5",
+      "startTier": "private",
+      "createdAt": 1793259450266,
+      "validUntil": 1824363450266,
+      "validMonths": 12,
+      "targets": [
+        {
+          "key": "private",
+          "label": "直推私董",
+          "required": 3
+        },
+        {
+          "key": "vip",
+          "label": "直推VIP",
+          "required": 18
+        }
+      ],
+      "status": "ONGOING",
+      "achievedAt": null,
+      "grantedTier": null,
+      "claimedAt": null
+    }
+  ],
+  "allocations": [
+    {
+      "id": "alc_demo_inspect",
+      "entryId": "po-demo_o_prod-featured_district_inspect",
+      "userId": "demo_p5",
+      "kind": "inspect",
+      "kindLabel": "巡查 5%",
+      "entryAmount": 58.5,
+      "rows": [
+        {
+          "targetId": "demo_p1",
+          "name": "林启航",
+          "kind": "province",
+          "percent": 100,
+          "amount": 58.5,
+          "roleLabel": "省代"
+        }
+      ],
+      "totalPercent": 100,
+      "totalAmount": 58.5,
+      "status": "SETTLED",
+      "byAdmin": false,
+      "operatorId": "demo_p5",
+      "idempotencyKey": "demo-alc-inspect-1",
+      "createdAt": 1793250005000,
+      "settledAt": 1793250006000
+    },
+    {
+      "id": "alc_demo_sales",
+      "entryId": "po-demo_o_prod-featured_store_sales",
+      "userId": "demo_p6",
+      "kind": "sales",
+      "kindLabel": "销售 5%",
+      "entryAmount": 58.5,
+      "rows": [
+        {
+          "targetId": "demo_p5",
+          "name": "赵郡守",
+          "kind": "other",
+          "percent": 100,
+          "amount": 58.5,
+          "roleLabel": "区县代"
+        }
+      ],
+      "totalPercent": 100,
+      "totalAmount": 58.5,
+      "status": "PENDING_SETTLEMENT",
+      "byAdmin": false,
+      "operatorId": "demo_p6",
+      "idempotencyKey": "demo-alc-sales-1",
+      "createdAt": 1793250007000,
+      "settledAt": null
+    }
+  ],
+  "inviteCodes": [],
+  "members": [],
+  "payments": [
+    {
+      "id": "payq7qx01g2",
+      "bizType": "product_order",
+      "bizId": "o_54",
+      "userId": "p5",
+      "amount": 250,
+      "channel": "wechat",
+      "subject": "商品订单支付",
+      "status": "PAID",
+      "idempotencyKey": "request-1793260438392-szieqmjuk4q",
+      "transactionId": "sandbox_txt7hdicp7",
+      "payParams": {
+        "sandbox": true,
+        "channel": "wechat",
+        "channelName": "微信支付",
+        "mode": "sandbox",
+        "autoPay": true,
+        "note": "sandbox 免支付直通（正式环境由渠道 SDK 返回调起参数）",
+        "invoke": {
+          "autoPay": true,
+          "note": "sandbox 免支付直通（正式环境由渠道 SDK 返回调起参数）"
+        }
+      },
+      "meta": {
+        "orderId": "o_54"
+      },
+      "note": "sandbox 免支付直通",
+      "createdAt": 1793260439041,
+      "paidAt": 1793260439041,
+      "idempotencyFingerprint": "5f6099160ee18477d6511c173d0a856c",
+      "__idempotencyPayload": {
+        "bizType": "product_order",
+        "bizId": "o_54",
+        "userId": "p5",
+        "amount": 250
+      }
+    },
+    {
+      "id": "pay3i1nmqlk",
+      "bizType": "product_order",
+      "bizId": "o_58",
+      "userId": "p5",
+      "amount": 2792,
+      "channel": "wechat",
+      "subject": "商品订单支付",
+      "status": "PAID",
+      "idempotencyKey": "request-1793260511486-u326e0t0bjs",
+      "transactionId": "sandbox_txml1l9hy0",
+      "payParams": {
+        "sandbox": true,
+        "channel": "wechat",
+        "channelName": "微信支付",
+        "mode": "sandbox",
+        "autoPay": true,
+        "note": "sandbox 免支付直通（正式环境由渠道 SDK 返回调起参数）",
+        "invoke": {
+          "autoPay": true,
+          "note": "sandbox 免支付直通（正式环境由渠道 SDK 返回调起参数）"
+        }
+      },
+      "meta": {
+        "orderId": "o_58"
+      },
+      "note": "sandbox 免支付直通",
+      "createdAt": 1793260511499,
+      "paidAt": 1793260511499,
+      "idempotencyFingerprint": "bc3e4820d135427b58db4d812e342945",
+      "__idempotencyPayload": {
+        "bizType": "product_order",
+        "bizId": "o_58",
+        "userId": "p5",
+        "amount": 2792
+      }
+    }
+  ],
+  "wechatTickets": [],
+  "skus": [
+    {
+      "id": "sku-pad-1",
+      "productId": "pad",
+      "label": "智能变速，一档",
+      "listPrice": 6980,
+      "stock": 11,
+      "updatedAt": 1793260506567
+    },
+    {
+      "id": "sku-pad-2",
+      "productId": "pad",
+      "label": "智能变速，二档",
+      "listPrice": 6980,
+      "stock": 7,
+      "updatedAt": 1793259246434
+    },
+    {
+      "id": "sku-pad-3",
+      "productId": "pad",
+      "label": "智能变速，三档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-4",
+      "productId": "pad",
+      "label": "无级变速，一档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-5",
+      "productId": "pad",
+      "label": "无级变速，二档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-6",
+      "productId": "pad",
+      "label": "无级变速，三档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-7",
+      "productId": "pad",
+      "label": "定速，无变速，一档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-8",
+      "productId": "pad",
+      "label": "定速，无变速，二档",
+      "listPrice": 6980,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-pad-9",
+      "productId": "pad",
+      "label": "定速，无变速，三档",
+      "listPrice": 6980,
+      "stock": 7,
+      "updatedAt": 1793260376948
+    },
+    {
+      "id": "sku-memoryCard-1",
+      "productId": "memoryCard",
+      "label": "月卡",
+      "listPrice": 998,
+      "stock": 16,
+      "updatedAt": 1793260491254
+    },
+    {
+      "id": "sku-memoryCard-2",
+      "productId": "memoryCard",
+      "label": "年卡",
+      "listPrice": 998,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-coachCard-1",
+      "productId": "coachCard",
+      "label": "单次",
+      "listPrice": 2000,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-coachCard-2",
+      "productId": "coachCard",
+      "label": "10 次包",
+      "listPrice": 2000,
+      "stock": 8,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-featured-1",
+      "productId": "featured",
+      "label": "10 课时",
+      "listPrice": 1300,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-featuredCamp-1",
+      "productId": "featuredCamp",
+      "label": "假期营",
+      "listPrice": 10000,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-adminFee-1",
+      "productId": "adminFee",
+      "label": "默认规格",
+      "listPrice": 0,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-col_1-1",
+      "productId": "col_1",
+      "label": "默认规格",
+      "listPrice": 299,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    },
+    {
+      "id": "sku-col_2-1",
+      "productId": "col_2",
+      "label": "默认规格",
+      "listPrice": 199,
+      "stock": 20,
+      "updatedAt": 1793244570141
+    }
+  ],
+  "columns": [
+    {
+      "id": "col_1",
+      "title": "专注力特训专栏",
+      "summary": "21 天专注力提升计划，配套视频与练习，适合在家自主训练。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "price": 299,
+      "fulfillmentType": "ACTIVATION_CODE",
+      "requiresMember": false,
+      "pricePresentation": "tiered",
+      "checkoutNotice": "专栏课下单后联系门店获取激活码",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "专注力特训专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "这是一套面向 6–12 岁孩子的专注力训练方案，共 4 课，每课 10 分钟左右，含视频与练习。"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "建议每天固定一个时段陪孩子跟练一次，课后记录完成情况，下一课会自动带出上次的进度。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL1-C1",
+          "title": "开篇 · 专注力基线测评",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "专注力基线测评"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "先做一次基线测评，了解孩子当前的专注水平，后续对照进步。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C2",
+          "title": "第 1 周 · 呼吸与放松训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "呼吸与放松训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "每天 5 分钟呼吸训练，帮助快速进入专注状态。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C3",
+          "title": "第 2 周 · 番茄工作法",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "番茄工作法"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用番茄钟把学习任务切小，降低启动阻力。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C4",
+          "title": "第 3 周 · 干扰隔离训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c4.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c4.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "干扰隔离训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "识别并隔离干扰源，打造无干扰学习环境。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "col_2",
+      "title": "记忆大师专栏",
+      "summary": "从联想记忆到记忆宫殿，系统提升记忆效率。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "price": 199,
+      "fulfillmentType": "ACTIVATION_CODE",
+      "requiresMember": false,
+      "pricePresentation": "tiered",
+      "checkoutNotice": "专栏课下单后联系门店获取激活码",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "记忆大师专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "共 2 课，聚焦可迁移的记忆方法：先把零散信息用故事串起来，再用空间把故事固定下来。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL2-C1",
+          "title": "联想记忆入门",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "联想记忆入门"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用故事把零散信息串联起来，记得更牢。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL2-C2",
+          "title": "记忆宫殿实战",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col2-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col2-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "记忆宫殿实战"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "搭建你的第一座记忆宫殿，存放考试要点。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "activationCodes": [
+    {
+      "code": "NS-FS-0001",
+      "targetType": "fs",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-FS-0006",
+      "targetType": "fs",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-JY-0002",
+      "targetType": "jy",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-CJ-0003",
+      "targetType": "cj",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-XN-0004",
+      "targetType": "xn",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-YS-0005",
+      "targetType": "ys",
+      "targetId": null,
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-L1-0001",
+      "targetType": "level",
+      "targetId": "L1",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-L2-0002",
+      "targetType": "level",
+      "targetId": "L2",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    },
+    {
+      "code": "NS-COL-0001",
+      "targetType": "column",
+      "targetId": "col_1",
+      "maxUses": 1,
+      "uses": 0,
+      "status": "active",
+      "expiresAt": 1801020570141
+    }
+  ],
+  "hqAdmins": [
+    {
+      "adminId": "admin",
+      "username": "admin",
+      "displayName": "总部/后台",
+      "role": "admin",
+      "password": "scrypt$b0875565d1db17f8da2f6c705451f2ad$e9d53923867e10c85e425ee4af0e643b5102b3825b16b971e408eff1c093f495fa9c4266f611d19c9f2bcc1ce35f5ac2f31db63f90d672fb970430c551020b3e",
+      "hqPermissions": [],
+      "status": "ACTIVE",
+      "createdAt": "2026-10-29T03:29:30.161Z",
+      "version": 1
+    }
+  ],
+  "hqSessions": [],
+  "hqAuditLogs": [
+    {
+      "id": "hqop_5001",
+      "module": "stores",
+      "action": "create",
+      "targetId": "20261030005",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "新建",
+      "before": null,
+      "after": {
+        "storeId": "20261030005",
+        "name": "郑州高新区脑商俱乐部",
+        "code": "100150029115",
+        "address": "河南郑州市高新区",
+        "managerName": "董雨豪",
+        "managerPhone": "13283814738",
+        "ownerAccountId": "111111111",
+        "active": true,
+        "version": 1,
+        "createdAt": "2026-10-30T01:44:45.869Z"
+      },
+      "requestId": null,
+      "occurredAt": "2026-10-30T01:44:45.870Z"
+    },
+    {
+      "id": "hqal_5000",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-30T00:39:23.100Z"
+    },
+    {
+      "id": "hqal_76",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:17:37.007Z"
+    },
+    {
+      "id": "hqal_75",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:14:50.074Z"
+    },
+    {
+      "id": "hqal_74",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:12:27.536Z"
+    },
+    {
+      "id": "hqal_73",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:08:44.602Z"
+    },
+    {
+      "id": "hqal_72",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:06:28.871Z"
+    },
+    {
+      "id": "hqal_71",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:04:10.795Z"
+    },
+    {
+      "id": "hqal_70",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:03:21.652Z"
+    },
+    {
+      "id": "hqal_69",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:02:24.352Z"
+    },
+    {
+      "id": "hqal_68",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:01:40.264Z"
+    },
+    {
+      "id": "hqal_67",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:00:56.140Z"
+    },
+    {
+      "id": "hqal_66",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T09:00:32.086Z"
+    },
+    {
+      "id": "hqal_65",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T08:59:45.889Z"
+    },
+    {
+      "id": "hqal_64",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T08:58:31.642Z"
+    },
+    {
+      "id": "hqal_63",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T08:54:44.554Z"
+    },
+    {
+      "id": "hqop_61",
+      "module": "products",
+      "action": "create",
+      "targetId": "hqpd_62",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "上架111",
+      "before": null,
+      "after": {
+        "productId": "hqpd_62",
+        "title": "测试11111",
+        "subtitle": null,
+        "coverUrl": null,
+        "fulfillmentType": "PHYSICAL",
+        "status": "draft",
+        "skus": [],
+        "version": 1,
+        "createdAt": "2026-10-29T07:57:39.381Z"
+      },
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:57:39.381Z"
+    },
+    {
+      "id": "hqal_60",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:56:04.656Z"
+    },
+    {
+      "id": "hqal_22",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:18:30.913Z"
+    },
+    {
+      "id": "hqal_21",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:11:54.337Z"
+    },
+    {
+      "id": "hqal_20",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:11:42.000Z"
+    },
+    {
+      "id": "hqal_19",
+      "module": "auth",
+      "action": "login",
+      "targetId": "admin",
+      "operatorId": "admin",
+      "operatorName": "总部/后台",
+      "reason": "后台登录",
+      "before": null,
+      "after": null,
+      "requestId": null,
+      "occurredAt": "2026-10-29T07:11:36.192Z"
+    }
+  ],
+  "hqAnnouncements": [],
+  "hqColumns": [
+    {
+      "columnId": "col_1",
+      "productId": null,
+      "title": "专注力特训专栏",
+      "summary": "21 天专注力提升计划，配套视频与练习，适合在家自主训练。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "专注力特训专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "这是一套面向 6–12 岁孩子的专注力训练方案，共 4 课，每课 10 分钟左右，含视频与练习。"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "建议每天固定一个时段陪孩子跟练一次，课后记录完成情况，下一课会自动带出上次的进度。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL1-C1",
+          "title": "开篇 · 专注力基线测评",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "专注力基线测评"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "先做一次基线测评，了解孩子当前的专注水平，后续对照进步。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C2",
+          "title": "第 1 周 · 呼吸与放松训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "呼吸与放松训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "每天 5 分钟呼吸训练，帮助快速进入专注状态。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C3",
+          "title": "第 2 周 · 番茄工作法",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "番茄工作法"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用番茄钟把学习任务切小，降低启动阻力。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL1-C4",
+          "title": "第 3 周 · 干扰隔离训练",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col1-c4.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col1-c4.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "干扰隔离训练"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "识别并隔离干扰源，打造无干扰学习环境。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "status": "published",
+      "version": 1,
+      "publishedAt": null,
+      "offlineAt": null
+    },
+    {
+      "columnId": "col_2",
+      "productId": null,
+      "title": "记忆大师专栏",
+      "summary": "从联想记忆到记忆宫殿，系统提升记忆效率。",
+      "coverUrl": "/static/product/product-cover.jpg",
+      "content": {
+        "format": "nodes",
+        "version": 1,
+        "nodes": [
+          {
+            "name": "h2",
+            "children": [
+              {
+                "type": "text",
+                "text": "记忆大师专栏"
+              }
+            ]
+          },
+          {
+            "name": "p",
+            "children": [
+              {
+                "type": "text",
+                "text": "共 2 课，聚焦可迁移的记忆方法：先把零散信息用故事串起来，再用空间把故事固定下来。"
+              }
+            ]
+          }
+        ]
+      },
+      "chapters": [
+        {
+          "id": "COL2-C1",
+          "title": "联想记忆入门",
+          "type": "article",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "联想记忆入门"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "用故事把零散信息串联起来，记得更牢。"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "COL2-C2",
+          "title": "记忆宫殿实战",
+          "type": "video",
+          "videoUrl": "https://cdn.naoshang.example.com/video/col2-c2.mp4",
+          "posterUrl": "https://cdn.naoshang.example.com/poster/col2-c2.jpg",
+          "content": {
+            "format": "nodes",
+            "version": 1,
+            "nodes": [
+              {
+                "name": "h2",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "记忆宫殿实战"
+                  }
+                ]
+              },
+              {
+                "name": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "搭建你的第一座记忆宫殿，存放考试要点。"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "status": "published",
+      "version": 1,
+      "publishedAt": null,
+      "offlineAt": null
+    }
+  ],
+  "hqMaterials": [],
+  "hqProducts": [
+    {
+      "productId": "hqpd_62",
+      "title": "测试11111",
+      "subtitle": null,
+      "coverUrl": null,
+      "fulfillmentType": "PHYSICAL",
+      "status": "draft",
+      "skus": [],
+      "version": 1,
+      "createdAt": "2026-10-29T07:57:39.381Z"
+    }
+  ],
+  "hqSkus": [],
+  "hqSoftwareCards": [],
+  "hqSoftwareCardBatches": [],
+  "hqShipments": [],
+  "hqCouponTemplates": [],
+  "hqUserCoupons": [],
+  "hqQuotaAccounts": [],
+  "hqRevenueAccounts": [],
+  "hqRevenueLedgers": [],
+  "hqStaff": [],
+  "hqStores": [
+    {
+      "storeId": "20261030005",
+      "name": "郑州高新区脑商俱乐部",
+      "code": "100150029115",
+      "address": "河南郑州市高新区",
+      "managerName": "董雨豪",
+      "managerPhone": "13283814738",
+      "ownerAccountId": "111111111",
+      "active": true,
+      "version": 1,
+      "createdAt": "2026-10-30T01:44:45.869Z"
+    }
+  ],
+  "hqTrainingBalances": [],
+  "hqTrainingFeedback": [],
+  "hqTransfers": [],
+  "hqPartnerContexts": [],
+  "hqPartnerBenefits": [],
+  "hqCostorePlans": [],
+  "hqCostoreApplications": [],
+  "hqSupportTickets": [],
+  "hqSupportMessages": [],
+  "hqPaymentsChannels": [],
+  "hqPaymentJobs": [],
+  "hqReconciliation": [],
+  "hqCourseEntitlements": [],
+  "hqIdempotency": {
+    "products POST /products/mutate::39d2ced1-f390-4f17-b497-dbfa403dbdbf": {
+      "fingerprint": "d91b1eb1f4f824e8",
+      "result": {
+        "product": {
+          "productId": "hqpd_62",
+          "title": "测试11111",
+          "subtitle": null,
+          "coverUrl": null,
+          "fulfillmentType": "PHYSICAL",
+          "status": "draft",
+          "skus": [],
+          "version": 1,
+          "allowedActions": [
+            "publish",
+            "save",
+            "update-sku"
+          ]
+        },
+        "operationId": "hqop_61"
+      },
+      "at": "2026-10-29T07:57:39.383Z",
+      "scope": "products POST /products/mutate"
+    }
+  },
+  "addresses": [
+    {
+      "id": "adr_66u8m5f6",
+      "userId": "p1",
+      "recipient": "2",
+      "phone": "18224516229",
+      "regionCodes": [
+        "110000",
+        "110100",
+        "110101"
+      ],
+      "regionNames": [
+        "北京市",
+        "市辖区",
+        "东城区"
+      ],
+      "detail": "222",
+      "isDefault": true,
+      "version": 1,
+      "createdAt": 1793248947781
+    },
+    {
+      "id": "adr_vv1ecaym",
+      "userId": "p5",
+      "recipient": "2",
+      "phone": "18224516229",
+      "regionCodes": [
+        "110000",
+        "110100",
+        "110101"
+      ],
+      "regionNames": [
+        "北京市",
+        "市辖区",
+        "东城区"
+      ],
+      "detail": "22222",
+      "isDefault": true,
+      "version": 1,
+      "createdAt": 1793254407538
+    },
+    {
+      "id": "adr_20yqb6kc",
+      "userId": "p2",
+      "recipient": "2",
+      "phone": "18224516229",
+      "regionCodes": [
+        "110000",
+        "110100",
+        "110101"
+      ],
+      "regionNames": [
+        "北京市",
+        "市辖区",
+        "东城区"
+      ],
+      "detail": "2222",
+      "isDefault": true,
+      "version": 1,
+      "createdAt": 1793259298008
+    }
+  ],
+  "coupons": [
+    {
+      "id": "cpn_soy5ow2t",
+      "userId": "p1",
+      "title": "新人专享券",
+      "discountAmount": 50,
+      "thresholdText": "满 500 元可用",
+      "scopeLabel": "全场通用",
+      "status": "available",
+      "expiresAt": 1795840932044
+    },
+    {
+      "id": "cpn_5lydnwzi",
+      "userId": "p1",
+      "title": "学习课程券",
+      "discountAmount": 100,
+      "thresholdText": "满 1000 元可用",
+      "scopeLabel": "课程类商品",
+      "status": "available",
+      "expiresAt": 1798432932044
+    },
+    {
+      "id": "cpn_7x8536sa",
+      "userId": "p1",
+      "title": "商城满减券",
+      "discountAmount": 30,
+      "thresholdText": "满 300 元可用",
+      "scopeLabel": "甄选商品",
+      "status": "used",
+      "expiresAt": 1795840932044
+    },
+    {
+      "id": "cpn_hx266fj5",
+      "userId": "p1",
+      "title": "已过期券",
+      "discountAmount": 20,
+      "thresholdText": "满 200 元可用",
+      "scopeLabel": "全场通用",
+      "status": "void",
+      "expiresAt": 1793162532044
+    },
+    {
+      "id": "cpn_0bdnp67v",
+      "userId": "p5",
+      "title": "新人专享券",
+      "discountAmount": 50,
+      "thresholdText": "满 500 元可用",
+      "scopeLabel": "全场通用",
+      "status": "available",
+      "expiresAt": 1795846394831
+    },
+    {
+      "id": "cpn_e3w5p8ef",
+      "userId": "p5",
+      "title": "学习课程券",
+      "discountAmount": 100,
+      "thresholdText": "满 1000 元可用",
+      "scopeLabel": "课程类商品",
+      "status": "available",
+      "expiresAt": 1798438394831
+    },
+    {
+      "id": "cpn_rrep6ve6",
+      "userId": "p5",
+      "title": "商城满减券",
+      "discountAmount": 30,
+      "thresholdText": "满 300 元可用",
+      "scopeLabel": "甄选商品",
+      "status": "used",
+      "expiresAt": 1795846394831
+    },
+    {
+      "id": "cpn_b0q1w0jc",
+      "userId": "p5",
+      "title": "已过期券",
+      "discountAmount": 20,
+      "thresholdText": "满 200 元可用",
+      "scopeLabel": "全场通用",
+      "status": "void",
+      "expiresAt": 1793167994831
+    },
+    {
+      "id": "cpn_322sc7a6",
+      "userId": "p2",
+      "title": "新人专享券",
+      "discountAmount": 50,
+      "thresholdText": "满 500 元可用",
+      "scopeLabel": "全场通用",
+      "status": "available",
+      "expiresAt": 1795851285059
+    },
+    {
+      "id": "cpn_0y79pcqp",
+      "userId": "p2",
+      "title": "学习课程券",
+      "discountAmount": 100,
+      "thresholdText": "满 1000 元可用",
+      "scopeLabel": "课程类商品",
+      "status": "available",
+      "expiresAt": 1798443285059
+    },
+    {
+      "id": "cpn_fvtcpsmi",
+      "userId": "p2",
+      "title": "商城满减券",
+      "discountAmount": 30,
+      "thresholdText": "满 300 元可用",
+      "scopeLabel": "甄选商品",
+      "status": "used",
+      "expiresAt": 1795851285059
+    },
+    {
+      "id": "cpn_81s4n5ux",
+      "userId": "p2",
+      "title": "已过期券",
+      "discountAmount": 20,
+      "thresholdText": "满 200 元可用",
+      "scopeLabel": "全场通用",
+      "status": "void",
+      "expiresAt": 1793172885059
+    }
+  ],
+  "supportFeedback": [],
+  "learningProgress": [],
+  "withdrawals": [],
+  "payees": [],
+  "coaches": [],
+  "trainingFeedback": [],
+  "storeTransfers": [],
+  "assets": [],
+  "materialRenders": [],
+  "jobs": [],
+  "applications": [],
+  "passwordResets": [],
+  "smsChallenges": [
+    {
+      "phone": "18224516229",
+      "code": "861190",
+      "purpose": "register",
+      "expiresAt": 1793262282476,
+      "used": false
+    }
+  ],
+  "entitlementOrders": [],
+  "stockLedger": [
+    {
+      "id": "sl_8fzkt50z",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_23",
+      "operatorId": null,
+      "at": 1793259071658,
+      "balanceAfter": 19
+    },
+    {
+      "id": "sl_5lu3zemm",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_25",
+      "operatorId": null,
+      "at": 1793259080212,
+      "balanceAfter": 18
+    },
+    {
+      "id": "sl_l6tgdm5g",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_27",
+      "operatorId": null,
+      "at": 1793259173819,
+      "balanceAfter": 17
+    },
+    {
+      "id": "sl_ynmc258b",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_29",
+      "operatorId": null,
+      "at": 1793259198452,
+      "balanceAfter": 16
+    },
+    {
+      "id": "sl_w080cq21",
+      "skuId": "sku-memoryCard-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_31",
+      "operatorId": null,
+      "at": 1793259205668,
+      "balanceAfter": 19
+    },
+    {
+      "id": "sl_7kfw0eyf",
+      "skuId": "sku-memoryCard-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_33",
+      "operatorId": null,
+      "at": 1793259217988,
+      "balanceAfter": 18
+    },
+    {
+      "id": "sl_8tslajkz",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_35",
+      "operatorId": null,
+      "at": 1793259231876,
+      "balanceAfter": 15
+    },
+    {
+      "id": "sl_ne57jils",
+      "skuId": "sku-pad-2",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_37",
+      "operatorId": null,
+      "at": 1793259246434,
+      "balanceAfter": 7
+    },
+    {
+      "id": "sl_vprr3ah4",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_39",
+      "operatorId": null,
+      "at": 1793259369140,
+      "balanceAfter": 14
+    },
+    {
+      "id": "sl_dob0ptni",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_42",
+      "operatorId": null,
+      "at": 1793259798171,
+      "balanceAfter": 13
+    },
+    {
+      "id": "sl_z18fgo1o",
+      "skuId": "sku-pad-1",
+      "delta": 1,
+      "reason": "ORDER_CANCEL_RESTORE",
+      "orderId": "o_42",
+      "operatorId": null,
+      "at": 1793259815317,
+      "balanceAfter": 14
+    },
+    {
+      "id": "sl_cxp9gtrg",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_44",
+      "operatorId": null,
+      "at": 1793259819649,
+      "balanceAfter": 13
+    },
+    {
+      "id": "sl_7gh22obq",
+      "skuId": "sku-memoryCard-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_46",
+      "operatorId": null,
+      "at": 1793259830948,
+      "balanceAfter": 17
+    },
+    {
+      "id": "sl_e4txg70e",
+      "skuId": "sku-pad-9",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_48",
+      "operatorId": null,
+      "at": 1793260376948,
+      "balanceAfter": 7
+    },
+    {
+      "id": "sl_yoag2l2u",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_50",
+      "operatorId": null,
+      "at": 1793260389723,
+      "balanceAfter": 12
+    },
+    {
+      "id": "sl_c40d32do",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_52",
+      "operatorId": null,
+      "at": 1793260434265,
+      "balanceAfter": 11
+    },
+    {
+      "id": "sl_u59uae21",
+      "skuId": "sku-memoryCard-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_54",
+      "operatorId": null,
+      "at": 1793260437796,
+      "balanceAfter": 16
+    },
+    {
+      "id": "sl_lhcutmzp",
+      "skuId": "sku-pad-1",
+      "delta": 1,
+      "reason": "ORDER_CANCEL_RESTORE",
+      "orderId": "o_52",
+      "operatorId": null,
+      "at": 1793260447800,
+      "balanceAfter": 12
+    },
+    {
+      "id": "sl_j23px0ux",
+      "skuId": "sku-memoryCard-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_56",
+      "operatorId": null,
+      "at": 1793260465924,
+      "balanceAfter": 15
+    },
+    {
+      "id": "sl_kb2x21e3",
+      "skuId": "sku-memoryCard-1",
+      "delta": 1,
+      "reason": "ORDER_CANCEL_RESTORE",
+      "orderId": "o_56",
+      "operatorId": null,
+      "at": 1793260491254,
+      "balanceAfter": 16
+    },
+    {
+      "id": "sl_nz5d63kq",
+      "skuId": "sku-pad-1",
+      "delta": -1,
+      "reason": "ORDER_CREATE",
+      "orderId": "o_58",
+      "operatorId": null,
+      "at": 1793260506567,
+      "balanceAfter": 11
+    }
+  ],
+  "activityPrices": [],
+  "quotes": [
+    {
+      "id": "q_4tuutj5i4i4j",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793248950979,
+      "expiresAt": 1793249550979,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_yk3848t74ld3",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793248955175,
+      "expiresAt": 1793249555175,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_3woh715c5eh6",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793248992906,
+      "expiresAt": 1793249592906,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ymr5mv4y5qqt",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249008805,
+      "expiresAt": 1793249608805,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_5m8crlgn5tfs",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249012296,
+      "expiresAt": 1793249612296,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_bapezts17tta",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249106094,
+      "expiresAt": 1793249706094,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ghpbsu00adv7",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249225395,
+      "expiresAt": 1793249825395,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_bg0y1ekcaim1",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249231545,
+      "expiresAt": 1793249831545,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_eqstqvnhan2l",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793249237325,
+      "expiresAt": 1793249837325,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_6ib9x5lctvmm",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793250134878,
+      "expiresAt": 1793250734878,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_2c3j71upugha",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793251841518,
+      "expiresAt": 1793252441518,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_lqeolgnxy5s1",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252014273,
+      "expiresAt": 1793252614273,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_r9zq9k8aya7l",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252020017,
+      "expiresAt": 1793252620017,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_h8p84ekzydb3",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252024031,
+      "expiresAt": 1793252624031,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ux0ala7nyeyb",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252026163,
+      "expiresAt": 1793252626163,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_4k91zppsyhy7",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252030047,
+      "expiresAt": 1793252630047,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_9q68lbln0bal",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793252114733,
+      "expiresAt": 1793252714733,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_2mgx6740x20o",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793253642360,
+      "expiresAt": 1793254242360,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_z7tq0dnyx8ly",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793253650902,
+      "expiresAt": 1793254250902,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_h56t9ybvxy1c",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793253683856,
+      "expiresAt": 1793254283856,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_jv8swkmc05mq",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793253787010,
+      "expiresAt": 1793254387010,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ue0bz96s0ah7",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793253793291,
+      "expiresAt": 1793254393291,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_hxwecw3u5ogd",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254044685,
+      "expiresAt": 1793254644685,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_qmg11bwr7exy",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254125670,
+      "expiresAt": 1793254725670,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_b3bl9yyddhsd",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254409293,
+      "expiresAt": 1793255009293,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ssw3xh3jdimi",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254410378,
+      "expiresAt": 1793255010378,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_u93lmutgdtgb",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254424411,
+      "expiresAt": 1793255024411,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_fwdxvjtrfix5",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254504073,
+      "expiresAt": 1793255104073,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_aphnsvp0fowm",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793254511830,
+      "expiresAt": 1793255111830,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_xlokgm7xx2an",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255322335,
+      "expiresAt": 1793255922335,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_zaw900suxgbq",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255340518,
+      "expiresAt": 1793255940518,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_wm279xmr3woh",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255641649,
+      "expiresAt": 1793256241649,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_op8dio9t4cx3",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255662695,
+      "expiresAt": 1793256262695,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_jxokfsbc4h5f",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255668179,
+      "expiresAt": 1793256268179,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_17gicw9l71tm",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793255788282,
+      "expiresAt": 1793256388282,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_5nh6ypxeessx",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256149841,
+      "expiresAt": 1793256749841,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_eja5jw0hexpy",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256156214,
+      "expiresAt": 1793256756214,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_kbyvbbazg97a",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256217750,
+      "expiresAt": 1793256817750,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_f8pldytkh204",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256255076,
+      "expiresAt": 1793256855076,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_9e4eg3wjm2mo",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256489168,
+      "expiresAt": 1793257089168,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_goh47ijom3np",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256490501,
+      "expiresAt": 1793257090501,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_ym7z6ticm4r8",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256491924,
+      "expiresAt": 1793257091924,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_llvdnn14p6fc",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256634056,
+      "expiresAt": 1793257234056,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_vhpobgzvp9bt",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793256637817,
+      "expiresAt": 1793257237817,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_5ov57r9cd3jk",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793257750064,
+      "expiresAt": 1793258350064,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_rn6dh9v5s22s",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258448004,
+      "expiresAt": 1793259048004,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_e8mtjdqmtqur",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258526771,
+      "expiresAt": 1793259126771,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_trr0axc5u2u6",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258542302,
+      "expiresAt": 1793259142302,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_zhj4mgztwghf",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258653299,
+      "expiresAt": 1793259253299,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_vwcbiw3ywph9",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258664957,
+      "expiresAt": 1793259264957,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_1ieny05gwppf",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258665251,
+      "expiresAt": 1793259265251,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_xch4rux2wvlz",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258672903,
+      "expiresAt": 1793259272903,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_o23s2issxxt6",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258722410,
+      "expiresAt": 1793259322410,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_d77e1jjpzkyp",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258799073,
+      "expiresAt": 1793259399073,
+      "consumed": true,
+      "consumedAt": 1793259080213,
+      "consumedRef": "o_25"
+    },
+    {
+      "id": "q_tx3n97x80y39",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258862741,
+      "expiresAt": 1793259462741,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_zexchhet3841",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793258969041,
+      "expiresAt": 1793259569041,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_cckixnzz43sa",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1"
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259010090,
+      "expiresAt": 1793259610090,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_lhueo2py58z2",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259063470,
+      "expiresAt": 1793259663470,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_q5zq4bvr5fab",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": null,
+        "addressId": null,
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259071651,
+      "expiresAt": 1793259671651,
+      "consumed": true,
+      "consumedAt": 1793259071659,
+      "consumedRef": "o_23"
+    },
+    {
+      "id": "q_7m1sq2nf5fht",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259071921,
+      "expiresAt": 1793259671921,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_xewmi4745fxi",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259072486,
+      "expiresAt": 1793259672486,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_17tavbll7kgy",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259171682,
+      "expiresAt": 1793259771682,
+      "consumed": true,
+      "consumedAt": 1793259173820,
+      "consumedRef": "o_27"
+    },
+    {
+      "id": "q_ij81x8c08440",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259197136,
+      "expiresAt": 1793259797136,
+      "consumed": true,
+      "consumedAt": 1793259198453,
+      "consumedRef": "o_29"
+    },
+    {
+      "id": "q_i08148zx89hy",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259204118,
+      "expiresAt": 1793259804118,
+      "consumed": true,
+      "consumedAt": 1793259205669,
+      "consumedRef": "o_31"
+    },
+    {
+      "id": "q_7uns8lpz8k6q",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 150,
+      "breakdown": {
+        "goodsAmount": 150,
+        "discountAmount": 848,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259217970,
+      "expiresAt": 1793259817970,
+      "consumed": true,
+      "consumedAt": 1793259217989,
+      "consumedRef": "o_33"
+    },
+    {
+      "id": "q_uiypyii68uws",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259231868,
+      "expiresAt": 1793259831868,
+      "consumed": true,
+      "consumedAt": 1793259231877,
+      "consumedRef": "o_35"
+    },
+    {
+      "id": "q_d9kzub2l95bl",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-2"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-2",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259245361,
+      "expiresAt": 1793259845361,
+      "consumed": true,
+      "consumedAt": 1793259246435,
+      "consumedRef": "o_37"
+    },
+    {
+      "id": "q_11t5pebrah9w",
+      "scene": "checkout",
+      "userId": "p2",
+      "amount": 4886,
+      "breakdown": {
+        "goodsAmount": 4886,
+        "discountAmount": 2094,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_20yqb6kc",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259307508,
+      "expiresAt": 1793259907508,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_g8zfzfndahyb",
+      "scene": "checkout",
+      "userId": "p2",
+      "amount": 4886,
+      "breakdown": {
+        "goodsAmount": 4886,
+        "discountAmount": 2094,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_20yqb6kc",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259308387,
+      "expiresAt": 1793259908387,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_8iujdvi8anrb",
+      "scene": "checkout",
+      "userId": "p2",
+      "amount": 698.6,
+      "breakdown": {
+        "goodsAmount": 698.6,
+        "discountAmount": 299.4,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_20yqb6kc",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259315911,
+      "expiresAt": 1793259915911,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_g0zdsmvcb62w",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 250,
+      "breakdown": {
+        "goodsAmount": 250,
+        "discountAmount": 748,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259339656,
+      "expiresAt": 1793259939656,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_85lb5i13brls",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259367552,
+      "expiresAt": 1793259967552,
+      "consumed": true,
+      "consumedAt": 1793259369141,
+      "consumedRef": "o_39"
+    },
+    {
+      "id": "q_zzj0ca1bkzva",
+      "scene": "checkout",
+      "userId": "p1",
+      "amount": 2094,
+      "breakdown": {
+        "goodsAmount": 2094,
+        "discountAmount": 4886,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_66u8m5f6",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259798166,
+      "expiresAt": 1793260398166,
+      "consumed": true,
+      "consumedAt": 1793259798173,
+      "consumedRef": "o_42"
+    },
+    {
+      "id": "q_2ks1q4rvlgfj",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259819631,
+      "expiresAt": 1793260419631,
+      "consumed": true,
+      "consumedAt": 1793259819652,
+      "consumedRef": "o_44"
+    },
+    {
+      "id": "q_e0q0stl4lkht",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259824897,
+      "expiresAt": 1793260424897,
+      "consumed": false,
+      "consumedAt": null,
+      "consumedRef": null
+    },
+    {
+      "id": "q_emb0e2qjlnrc",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 250,
+      "breakdown": {
+        "goodsAmount": 250,
+        "discountAmount": 748,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793259829128,
+      "expiresAt": 1793260429128,
+      "consumed": true,
+      "consumedAt": 1793259830950,
+      "consumedRef": "o_46"
+    },
+    {
+      "id": "q_g0taduz2xdf1",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-9"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-9",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260375597,
+      "expiresAt": 1793260975597,
+      "consumed": true,
+      "consumedAt": 1793260376950,
+      "consumedRef": "o_48"
+    },
+    {
+      "id": "q_mfnoonwvxnp8",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260388924,
+      "expiresAt": 1793260988924,
+      "consumed": true,
+      "consumedAt": 1793260389726,
+      "consumedRef": "o_50"
+    },
+    {
+      "id": "q_emrh6omkyk3u",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260430922,
+      "expiresAt": 1793261030922,
+      "consumed": true,
+      "consumedAt": 1793260434267,
+      "consumedRef": "o_52"
+    },
+    {
+      "id": "q_2isrczdgyoy1",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 250,
+      "breakdown": {
+        "goodsAmount": 250,
+        "discountAmount": 748,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260437193,
+      "expiresAt": 1793261037193,
+      "consumed": true,
+      "consumedAt": 1793260437800,
+      "consumedRef": "o_54"
+    },
+    {
+      "id": "q_0q1xqxbbzaiq",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 250,
+      "breakdown": {
+        "goodsAmount": 250,
+        "discountAmount": 748,
+        "listAmount": 998
+      },
+      "items": [
+        {
+          "key": "memoryCard",
+          "qty": 1,
+          "skuId": "sku-memoryCard-1"
+        }
+      ],
+      "meta": {
+        "productKey": "memoryCard",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-memoryCard-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260465154,
+      "expiresAt": 1793261065154,
+      "consumed": true,
+      "consumedAt": 1793260465928,
+      "consumedRef": "o_56"
+    },
+    {
+      "id": "q_cz2recbc050j",
+      "scene": "checkout",
+      "userId": "p5",
+      "amount": 2792,
+      "breakdown": {
+        "goodsAmount": 2792,
+        "discountAmount": 4188,
+        "listAmount": 6980
+      },
+      "items": [
+        {
+          "key": "pad",
+          "qty": 1,
+          "skuId": "sku-pad-1"
+        }
+      ],
+      "meta": {
+        "productKey": "pad",
+        "level": null,
+        "memberId": null,
+        "skuId": "sku-pad-1",
+        "storeId": "330110-S1",
+        "addressId": "adr_vv1ecaym",
+        "quantity": 1
+      },
+      "ruleVersion": 1,
+      "issuedAt": 1793260504675,
+      "expiresAt": 1793261104675,
+      "consumed": true,
+      "consumedAt": 1793260506569,
+      "consumedRef": "o_58"
+    }
+  ],
+  "announcementReads": {
+    "p1": {
+      "ann_1": 1793257117061
+    }
+  },
+  "hqActivationBatches": [],
+  "seq": 5002,
+  "userSeq": 2100,
+  "memberSeq": 1
+}

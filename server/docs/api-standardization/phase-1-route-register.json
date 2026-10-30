@@ -12,7 +12,7 @@
     "fallback"
   ],
   "coveragePolicy": "Denominator = canonical active JSON handler families (method + literal/template/exact source predicate). Action aliases, regex action synonyms and role branches count once; health, OPTIONS, metadata and CSV representation excluded. Infinite dynamic paths remain exact predicates, never guessed :id templates. This measures registered handler-family coverage, not all possible URL strings.",
-  "denominator": 334,
+  "denominator": 335,
   "endpoints": [
     {
       "method": "POST",
@@ -154,7 +154,7 @@
       "pathPattern": "/api/hq/users/catalog",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 87
+        "line": 93
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -162,7 +162,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 87
+        "line": 93
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -181,7 +181,7 @@
       "pathPattern": "/api/hq/users/:accountId",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 114
+        "line": 120
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -189,7 +189,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 114
+        "line": 120
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -208,7 +208,7 @@
       "pathPattern": "/api/hq/users/:accountId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 138
+        "line": 144
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -216,7 +216,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 138
+        "line": 144
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3013,10 +3013,10 @@
     },
     {
       "method": "GET",
-      "pathPattern": "/api/hq/support/tickets",
+      "pathPattern": "/api/hq/support/profile",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 53
+        "line": 54
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -3024,7 +3024,34 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 53
+        "line": 54
+      },
+      "status": "active",
+      "requiresDispatchReview": false,
+      "matchKind": "template",
+      "dispatchNotes": "HQ strips /api/hq and trailing slashes, static segments before parameter routes; auth may terminate before handler.",
+      "id": "GET /api/hq/support/profile",
+      "dispatchStage": 0,
+      "effectiveMatch": "Own path matcher, subject to global auth/role/entitlement guards, minus earlier returning route predicates at the same dispatch stage and earlier delegates. See ordered evidence; prefix matches are not narrowed to a single segment.",
+      "earlierDispatchStages": [
+        "OPTIONS",
+        "/health"
+      ]
+    },
+    {
+      "method": "GET",
+      "pathPattern": "/api/hq/support/tickets",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 69
+      },
+      "enabled": true,
+      "defaultResponse": "{code,message,data}",
+      "exception": null,
+      "pendingMigration": true,
+      "primaryHandler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 69
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3043,7 +3070,7 @@
       "pathPattern": "/api/hq/support/catalog",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 78
+        "line": 97
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -3051,7 +3078,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 78
+        "line": 97
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3070,7 +3097,7 @@
       "pathPattern": "/api/hq/support/tickets/:ticketId",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 104
+        "line": 123
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -3078,7 +3105,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 104
+        "line": 123
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3097,7 +3124,7 @@
       "pathPattern": "/api/hq/support/tickets/:ticketId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 117
+        "line": 136
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -3105,7 +3132,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 117
+        "line": 136
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3124,7 +3151,7 @@
       "pathPattern": "/api/hq/support/tickets",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 186
+        "line": 205
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -3132,7 +3159,7 @@
       "pendingMigration": true,
       "primaryHandler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 186
+        "line": 205
       },
       "status": "active",
       "requiresDispatchReview": false,
@@ -3259,7 +3286,7 @@
       "pathPattern": "/api/auth/login",
       "handler": {
         "file": "server.js",
-        "line": 395
+        "line": 397
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3270,7 +3297,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 395
+        "line": 397
       },
       "status": "active",
       "id": "POST /api/auth/login",
@@ -3287,7 +3314,7 @@
       "pathPattern": "/api/calc/region-vip",
       "handler": {
         "file": "server.js",
-        "line": 414
+        "line": 416
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3298,7 +3325,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 414
+        "line": 416
       },
       "status": "active",
       "id": "POST /api/calc/region-vip",
@@ -3315,7 +3342,7 @@
       "pathPattern": "/api/calc/goods-diff",
       "handler": {
         "file": "server.js",
-        "line": 418
+        "line": 420
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3326,7 +3353,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 418
+        "line": 420
       },
       "status": "active",
       "id": "POST /api/calc/goods-diff",
@@ -3343,7 +3370,7 @@
       "pathPattern": "/api/calc/store-delivery",
       "handler": {
         "file": "server.js",
-        "line": 422
+        "line": 424
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3354,7 +3381,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 422
+        "line": 424
       },
       "status": "active",
       "id": "POST /api/calc/store-delivery",
@@ -3371,7 +3398,7 @@
       "pathPattern": "/api/calc/region",
       "handler": {
         "file": "server.js",
-        "line": 426
+        "line": 428
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3382,7 +3409,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 426
+        "line": 428
       },
       "status": "active",
       "id": "POST /api/calc/region",
@@ -3399,7 +3426,7 @@
       "pathPattern": "/api/agent/qrcode",
       "handler": {
         "file": "server.js",
-        "line": 431
+        "line": 433
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3410,7 +3437,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 431
+        "line": 433
       },
       "status": "active",
       "id": "GET /api/agent/qrcode",
@@ -3427,7 +3454,7 @@
       "pathPattern": "/api/calc/virtual-split",
       "handler": {
         "file": "server.js",
-        "line": 440
+        "line": 442
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3438,7 +3465,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 440
+        "line": 442
       },
       "status": "active",
       "id": "POST /api/calc/virtual-split",
@@ -3455,7 +3482,7 @@
       "pathPattern": "/api/calc/physical-diff",
       "handler": {
         "file": "server.js",
-        "line": 444
+        "line": 446
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3466,7 +3493,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 444
+        "line": 446
       },
       "status": "active",
       "id": "POST /api/calc/physical-diff",
@@ -3483,7 +3510,7 @@
       "pathPattern": "/api/calc/agent-fee",
       "handler": {
         "file": "server.js",
-        "line": 448
+        "line": 450
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3494,7 +3521,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 448
+        "line": 450
       },
       "status": "active",
       "id": "GET /api/calc/agent-fee",
@@ -3511,7 +3538,7 @@
       "pathPattern": "/api/products",
       "handler": {
         "file": "server.js",
-        "line": 465
+        "line": 467
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3522,7 +3549,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 465
+        "line": 467
       },
       "status": "active",
       "id": "GET /api/products",
@@ -3539,7 +3566,7 @@
       "pathPattern": "/api/calc/product-price",
       "handler": {
         "file": "server.js",
-        "line": 493
+        "line": 495
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3550,7 +3577,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 493
+        "line": 495
       },
       "status": "active",
       "id": "POST /api/calc/product-price",
@@ -3567,7 +3594,7 @@
       "pathPattern": "/api/calc/product-commission",
       "handler": {
         "file": "server.js",
-        "line": 497
+        "line": 499
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3578,7 +3605,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 497
+        "line": 499
       },
       "status": "active",
       "id": "POST /api/calc/product-commission",
@@ -3595,7 +3622,7 @@
       "pathPattern": "/api/calc/featured-split",
       "handler": {
         "file": "server.js",
-        "line": 501
+        "line": 503
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3606,7 +3633,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 501
+        "line": 503
       },
       "status": "active",
       "id": "POST /api/calc/featured-split",
@@ -3623,7 +3650,7 @@
       "pathPattern": "/api/seed",
       "handler": {
         "file": "server.js",
-        "line": 513
+        "line": 515
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3634,7 +3661,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 513
+        "line": 515
       },
       "status": "active",
       "id": "GET /api/seed",
@@ -3651,7 +3678,7 @@
       "pathPattern": "/api/seed",
       "handler": {
         "file": "server.js",
-        "line": 522
+        "line": 524
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3662,7 +3689,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 522
+        "line": 524
       },
       "status": "active",
       "id": "POST /api/seed",
@@ -3679,7 +3706,7 @@
       "pathPattern": "/api/seed/reset",
       "handler": {
         "file": "server.js",
-        "line": 527
+        "line": 529
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3690,7 +3717,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 527
+        "line": 529
       },
       "status": "active",
       "id": "POST /api/seed/reset",
@@ -3707,7 +3734,7 @@
       "pathPattern": "/api/partner",
       "handler": {
         "file": "server.js",
-        "line": 531
+        "line": 533
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3718,7 +3745,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 531
+        "line": 533
       },
       "status": "active",
       "id": "POST /api/partner",
@@ -3735,7 +3762,7 @@
       "pathPattern": "/api/order",
       "handler": {
         "file": "server.js",
-        "line": 539
+        "line": 541
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3746,7 +3773,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 539
+        "line": 541
       },
       "status": "active",
       "id": "POST /api/order",
@@ -3763,7 +3790,7 @@
       "pathPattern": "/api/order/product",
       "handler": {
         "file": "server.js",
-        "line": 544
+        "line": 546
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3774,13 +3801,13 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 544
+        "line": 546
       },
       "status": "active",
       "otherHandlers": [
         {
           "file": "server.js",
-          "line": 946,
+          "line": 952,
           "status": "role-dependent",
           "reason": "Admin and non-admin branch share endpoint"
         }
@@ -3788,7 +3815,7 @@
       "evidence": [
         {
           "file": "server.js",
-          "line": 946
+          "line": 952
         }
       ],
       "id": "POST /api/order/product",
@@ -3805,7 +3832,7 @@
       "pathPattern": "/api/agent/appoint",
       "handler": {
         "file": "server.js",
-        "line": 556
+        "line": 558
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3816,7 +3843,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 556
+        "line": 558
       },
       "status": "active",
       "id": "POST /api/agent/appoint",
@@ -3833,7 +3860,7 @@
       "pathPattern": "/api/agent/revoke",
       "handler": {
         "file": "server.js",
-        "line": 566
+        "line": 568
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3844,7 +3871,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 566
+        "line": 568
       },
       "status": "active",
       "id": "POST /api/agent/revoke",
@@ -3861,7 +3888,7 @@
       "pathPattern": "/api/agent/update",
       "handler": {
         "file": "server.js",
-        "line": 576
+        "line": 578
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3872,13 +3899,13 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 576
+        "line": 578
       },
       "status": "active",
       "otherHandlers": [
         {
           "file": "server.js",
-          "line": 779,
+          "line": 785,
           "status": "shadowed",
           "reason": "Earlier identical condition in admin block returns first"
         }
@@ -3886,7 +3913,7 @@
       "evidence": [
         {
           "file": "server.js",
-          "line": 779
+          "line": 785
         }
       ],
       "id": "POST /api/agent/update",
@@ -3903,7 +3930,7 @@
       "pathPattern": "/api/costore",
       "handler": {
         "file": "server.js",
-        "line": 585
+        "line": 587
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3914,7 +3941,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 585
+        "line": 587
       },
       "status": "active",
       "id": "POST /api/costore",
@@ -3931,7 +3958,7 @@
       "pathPattern": "/api/settings",
       "handler": {
         "file": "server.js",
-        "line": 593
+        "line": 595
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3942,7 +3969,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 593
+        "line": 595
       },
       "status": "active",
       "id": "GET /api/settings",
@@ -3959,7 +3986,7 @@
       "pathPattern": "/api/settings",
       "handler": {
         "file": "server.js",
-        "line": 596
+        "line": 598
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3970,7 +3997,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 596
+        "line": 598
       },
       "status": "active",
       "id": "POST /api/settings",
@@ -3987,7 +4014,7 @@
       "pathPattern": "/api/skus",
       "handler": {
         "file": "server.js",
-        "line": 605
+        "line": 607
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -3998,7 +4025,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 605
+        "line": 607
       },
       "status": "active",
       "id": "GET /api/skus",
@@ -4015,7 +4042,7 @@
       "pathPattern": "p.match(/^\\/api\\/skus\\/[^/]+\\/stock$/) && m === 'POST'",
       "handler": {
         "file": "server.js",
-        "line": 609
+        "line": 611
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4026,7 +4053,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 609
+        "line": 611
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/api\\/skus\\/[^/]+\\/stock$/) && m === 'POST'",
@@ -4045,7 +4072,7 @@
       "pathPattern": "p.match(/^\\/api\\/skus\\/[^/]+$/) && m === 'PUT'",
       "handler": {
         "file": "server.js",
-        "line": 627
+        "line": 629
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4056,7 +4083,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 627
+        "line": 629
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/api\\/skus\\/[^/]+$/) && m === 'PUT'",
@@ -4075,7 +4102,7 @@
       "pathPattern": "/api/columns",
       "handler": {
         "file": "server.js",
-        "line": 642
+        "line": 645
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4086,7 +4113,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 642
+        "line": 645
       },
       "status": "active",
       "id": "GET /api/columns",
@@ -4103,7 +4130,7 @@
       "pathPattern": "/api/columns",
       "handler": {
         "file": "server.js",
-        "line": 645
+        "line": 648
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4114,7 +4141,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 645
+        "line": 648
       },
       "status": "active",
       "id": "PUT /api/columns",
@@ -4131,7 +4158,7 @@
       "pathPattern": "/api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 658
+        "line": 662
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4142,7 +4169,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 658
+        "line": 662
       },
       "status": "active",
       "id": "GET /api/activity-prices",
@@ -4159,7 +4186,7 @@
       "pathPattern": "/api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 661
+        "line": 665
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4170,7 +4197,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 661
+        "line": 665
       },
       "status": "active",
       "id": "POST /api/activity-prices",
@@ -4187,7 +4214,7 @@
       "pathPattern": "/api/quota/issue",
       "handler": {
         "file": "server.js",
-        "line": 672
+        "line": 678
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4198,7 +4225,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 672
+        "line": 678
       },
       "status": "active",
       "id": "POST /api/quota/issue",
@@ -4215,7 +4242,7 @@
       "pathPattern": "/api/quota/ledger",
       "handler": {
         "file": "server.js",
-        "line": 677
+        "line": 683
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4226,7 +4253,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 677
+        "line": 683
       },
       "status": "active",
       "id": "GET /api/quota/ledger",
@@ -4243,7 +4270,7 @@
       "pathPattern": "/api/quota/transactions",
       "handler": {
         "file": "server.js",
-        "line": 685
+        "line": 691
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4254,7 +4281,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 685
+        "line": 691
       },
       "status": "active",
       "id": "GET /api/quota/transactions",
@@ -4271,7 +4298,7 @@
       "pathPattern": "/api/relation/unbind",
       "handler": {
         "file": "server.js",
-        "line": 689
+        "line": 695
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4282,7 +4309,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 689
+        "line": 695
       },
       "status": "active",
       "id": "POST /api/relation/unbind",
@@ -4299,7 +4326,7 @@
       "pathPattern": "/api/relation/rebind",
       "handler": {
         "file": "server.js",
-        "line": 694
+        "line": 700
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4310,7 +4337,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 694
+        "line": 700
       },
       "status": "active",
       "id": "POST /api/relation/rebind",
@@ -4327,7 +4354,7 @@
       "pathPattern": "/api/settle",
       "handler": {
         "file": "server.js",
-        "line": 704
+        "line": 710
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4338,7 +4365,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 704
+        "line": 710
       },
       "status": "active",
       "id": "POST /api/settle",
@@ -4355,7 +4382,7 @@
       "pathPattern": "/api/report",
       "handler": {
         "file": "server.js",
-        "line": 709
+        "line": 715
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4366,7 +4393,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 709
+        "line": 715
       },
       "status": "active",
       "id": "GET /api/report",
@@ -4383,7 +4410,7 @@
       "pathPattern": "/api/users",
       "handler": {
         "file": "server.js",
-        "line": 716
+        "line": 722
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4394,7 +4421,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 716
+        "line": 722
       },
       "status": "active",
       "id": "GET /api/users",
@@ -4411,7 +4438,7 @@
       "pathPattern": "/api/free-upgrade",
       "handler": {
         "file": "server.js",
-        "line": 728
+        "line": 734
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4422,7 +4449,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 728
+        "line": 734
       },
       "status": "active",
       "id": "GET /api/free-upgrade",
@@ -4439,7 +4466,7 @@
       "pathPattern": "/api/partner/update",
       "handler": {
         "file": "server.js",
-        "line": 761
+        "line": 767
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4450,7 +4477,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 761
+        "line": 767
       },
       "status": "active",
       "id": "POST /api/partner/update",
@@ -4467,7 +4494,7 @@
       "pathPattern": "/api/partner/delete",
       "handler": {
         "file": "server.js",
-        "line": 767
+        "line": 773
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4478,7 +4505,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 767
+        "line": 773
       },
       "status": "active",
       "id": "POST /api/partner/delete",
@@ -4495,7 +4522,7 @@
       "pathPattern": "/api/order/update",
       "handler": {
         "file": "server.js",
-        "line": 773
+        "line": 779
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4506,7 +4533,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 773
+        "line": 779
       },
       "status": "active",
       "id": "POST /api/order/update",
@@ -4523,7 +4550,7 @@
       "pathPattern": "/api/commissions/all",
       "handler": {
         "file": "server.js",
-        "line": 790
+        "line": 796
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4534,7 +4561,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 790
+        "line": 796
       },
       "status": "active",
       "id": "GET /api/commissions/all",
@@ -4551,7 +4578,7 @@
       "pathPattern": "/api/identities",
       "handler": {
         "file": "server.js",
-        "line": 809
+        "line": 815
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4562,13 +4589,13 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 809
+        "line": 815
       },
       "status": "active",
       "otherHandlers": [
         {
           "file": "server.js",
-          "line": 936,
+          "line": 942,
           "status": "role-dependent",
           "reason": "Admin and non-admin branch share endpoint"
         }
@@ -4576,7 +4603,7 @@
       "evidence": [
         {
           "file": "server.js",
-          "line": 936
+          "line": 942
         }
       ],
       "id": "GET /api/identities",
@@ -4593,7 +4620,7 @@
       "pathPattern": "/api/commissions",
       "handler": {
         "file": "server.js",
-        "line": 815
+        "line": 821
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4604,13 +4631,13 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 815
+        "line": 821
       },
       "status": "active",
       "otherHandlers": [
         {
           "file": "server.js",
-          "line": 931,
+          "line": 937,
           "status": "role-dependent",
           "reason": "Admin and non-admin branch share endpoint"
         }
@@ -4618,7 +4645,7 @@
       "evidence": [
         {
           "file": "server.js",
-          "line": 931
+          "line": 937
         }
       ],
       "id": "GET /api/commissions",
@@ -4635,7 +4662,7 @@
       "pathPattern": "/api/orders/all",
       "handler": {
         "file": "server.js",
-        "line": 825
+        "line": 831
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4646,7 +4673,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 825
+        "line": 831
       },
       "status": "active",
       "id": "GET /api/orders/all",
@@ -4663,7 +4690,7 @@
       "pathPattern": "/api/stores",
       "handler": {
         "file": "server.js",
-        "line": 842
+        "line": 848
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4674,7 +4701,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 842
+        "line": 848
       },
       "status": "active",
       "id": "GET /api/stores",
@@ -4691,7 +4718,7 @@
       "pathPattern": "/api/region/team",
       "handler": {
         "file": "server.js",
-        "line": 859
+        "line": 865
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4702,7 +4729,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 859
+        "line": 865
       },
       "status": "active",
       "id": "GET /api/region/team",
@@ -4719,7 +4746,7 @@
       "pathPattern": "/api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 874
+        "line": 880
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4730,7 +4757,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 874
+        "line": 880
       },
       "status": "active",
       "id": "GET /api/allocation/scheme",
@@ -4747,7 +4774,7 @@
       "pathPattern": "/api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 877
+        "line": 883
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4758,7 +4785,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 877
+        "line": 883
       },
       "status": "active",
       "id": "POST /api/allocation/scheme",
@@ -4775,7 +4802,7 @@
       "pathPattern": "/api/allocation/settle",
       "handler": {
         "file": "server.js",
-        "line": 885
+        "line": 891
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4786,7 +4813,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 885
+        "line": 891
       },
       "status": "active",
       "id": "POST /api/allocation/settle",
@@ -4803,7 +4830,7 @@
       "pathPattern": "/api/dividend/rights",
       "handler": {
         "file": "server.js",
-        "line": 891
+        "line": 897
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4814,7 +4841,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 891
+        "line": 897
       },
       "status": "active",
       "id": "GET /api/dividend/rights",
@@ -4831,7 +4858,7 @@
       "pathPattern": "/api/dividend/history",
       "handler": {
         "file": "server.js",
-        "line": 899
+        "line": 905
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4842,7 +4869,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 899
+        "line": 905
       },
       "status": "active",
       "id": "GET /api/dividend/history",
@@ -4859,7 +4886,7 @@
       "pathPattern": "/api/experience/ledger",
       "handler": {
         "file": "server.js",
-        "line": 907
+        "line": 913
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4870,7 +4897,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 907
+        "line": 913
       },
       "status": "active",
       "id": "GET /api/experience/ledger",
@@ -4887,7 +4914,7 @@
       "pathPattern": "/api/promotion-tasks",
       "handler": {
         "file": "server.js",
-        "line": 913
+        "line": 919
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4898,7 +4925,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 913
+        "line": 919
       },
       "status": "active",
       "id": "GET /api/promotion-tasks",
@@ -4915,7 +4942,7 @@
       "pathPattern": "/api/me",
       "handler": {
         "file": "server.js",
-        "line": 925
+        "line": 931
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4926,7 +4953,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 925
+        "line": 931
       },
       "status": "active",
       "id": "GET /api/me",
@@ -4943,7 +4970,7 @@
       "pathPattern": "/api/team",
       "handler": {
         "file": "server.js",
-        "line": 928
+        "line": 934
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4954,7 +4981,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 928
+        "line": 934
       },
       "status": "active",
       "id": "GET /api/team",
@@ -4971,7 +4998,7 @@
       "pathPattern": "/api/costore",
       "handler": {
         "file": "server.js",
-        "line": 940
+        "line": 946
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -4982,7 +5009,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 940
+        "line": 946
       },
       "status": "active",
       "id": "GET /api/costore",
@@ -4999,7 +5026,7 @@
       "pathPattern": "/api/agent",
       "handler": {
         "file": "server.js",
-        "line": 943
+        "line": 949
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -5010,7 +5037,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 943
+        "line": 949
       },
       "status": "active",
       "id": "GET /api/agent",
@@ -5027,7 +5054,7 @@
       "pathPattern": "/api/region/month",
       "handler": {
         "file": "server.js",
-        "line": 955
+        "line": 961
       },
       "enabled": true,
       "defaultResponse": "Raw JSON success; {error} or {ok:false,error} failure (branch evidence in phase-0 register)",
@@ -5038,7 +5065,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 955
+        "line": 961
       },
       "status": "active",
       "id": "POST /api/region/month",
@@ -6735,7 +6762,7 @@
       "pathPattern": "/orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1133
+        "line": 1153
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6746,7 +6773,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1133
+        "line": 1153
       },
       "status": "active",
       "id": "GET /orders",
@@ -6767,7 +6794,7 @@
       "pathPattern": "p.startsWith('/orders/') && m === 'GET' && !/\\/payment-channels$/.test(p)",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1151
+        "line": 1171
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6778,7 +6805,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1151
+        "line": 1171
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/orders/') && m === 'GET' && !/\\/payment-channels$/.test(p)",
@@ -6801,7 +6828,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/payment$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1175
+        "line": 1195
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6812,7 +6839,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1175
+        "line": 1195
       },
       "status": "active",
       "pathPredicate": "p.match(/\\/orders\\/[^/]+\\/payment$/) && m === 'POST'",
@@ -6835,7 +6862,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/(cancellations|cancel)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1234
+        "line": 1254
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6846,7 +6873,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1234
+        "line": 1254
       },
       "status": "active",
       "pathPredicate": "p.match(/\\/orders\\/[^/]+\\/(cancellations|cancel)$/) && m === 'POST'",
@@ -6874,7 +6901,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/(receipts|confirm-receipt)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1252
+        "line": 1272
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6885,7 +6912,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1252
+        "line": 1272
       },
       "status": "active",
       "pathPredicate": "p.match(/\\/orders\\/[^/]+\\/(receipts|confirm-receipt)$/) && m === 'POST'",
@@ -6913,7 +6940,7 @@
       "pathPattern": "/payments/attempts",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1259
+        "line": 1279
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6924,7 +6951,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1259
+        "line": 1279
       },
       "status": "active",
       "id": "POST /payments/attempts",
@@ -6945,7 +6972,7 @@
       "pathPattern": "p.startsWith('/payments/attempts/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1298
+        "line": 1318
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6956,7 +6983,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1298
+        "line": 1318
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/payments/attempts/') && m === 'GET'",
@@ -6979,7 +7006,7 @@
       "pathPattern": "p.match(/^\\/orders\\/[^/]+\\/payment-channels$/) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1314
+        "line": 1334
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -6990,7 +7017,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1314
+        "line": 1334
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/orders\\/[^/]+\\/payment-channels$/) && m === 'GET'",
@@ -7013,7 +7040,7 @@
       "pathPattern": "/columns",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1329
+        "line": 1349
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7024,7 +7051,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1329
+        "line": 1349
       },
       "status": "active",
       "id": "GET /columns",
@@ -7045,7 +7072,7 @@
       "pathPattern": "p.startsWith('/columns/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1340
+        "line": 1360
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7056,7 +7083,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1340
+        "line": 1360
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/columns/') && m === 'GET'",
@@ -7079,7 +7106,7 @@
       "pathPattern": "/partner/entitlement-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1368
+        "line": 1388
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7090,7 +7117,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1368
+        "line": 1388
       },
       "status": "active",
       "id": "GET /partner/entitlement-options",
@@ -7111,7 +7138,7 @@
       "pathPattern": "/partner/entitlement-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1379
+        "line": 1399
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7122,7 +7149,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1379
+        "line": 1399
       },
       "status": "active",
       "id": "POST /partner/entitlement-quotes",
@@ -7143,7 +7170,7 @@
       "pathPattern": "/partner/entitlement-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1397
+        "line": 1417
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7154,7 +7181,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1397
+        "line": 1417
       },
       "status": "active",
       "id": "POST /partner/entitlement-orders",
@@ -7175,7 +7202,7 @@
       "pathPattern": "/partner/quota-purchase-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1425
+        "line": 1445
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7186,7 +7213,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1425
+        "line": 1445
       },
       "status": "active",
       "id": "GET /partner/quota-purchase-options",
@@ -7207,7 +7234,7 @@
       "pathPattern": "/partner/quota-purchase-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1429
+        "line": 1449
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7218,7 +7245,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1429
+        "line": 1449
       },
       "status": "active",
       "id": "POST /partner/quota-purchase-quotes",
@@ -7239,7 +7266,7 @@
       "pathPattern": "/partner/quota-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1448
+        "line": 1468
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7250,7 +7277,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1448
+        "line": 1468
       },
       "status": "active",
       "id": "POST /partner/quota-orders",
@@ -7271,7 +7298,7 @@
       "pathPattern": "/partner/upgrade-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1476
+        "line": 1496
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7282,7 +7309,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1476
+        "line": 1496
       },
       "status": "active",
       "id": "GET /partner/upgrade-options",
@@ -7303,7 +7330,7 @@
       "pathPattern": "/partner/upgrade-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1525
+        "line": 1545
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7314,7 +7341,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1525
+        "line": 1545
       },
       "status": "active",
       "id": "POST /partner/upgrade-quotes",
@@ -7335,7 +7362,7 @@
       "pathPattern": "/partner/upgrades",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1559
+        "line": 1579
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7346,7 +7373,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1559
+        "line": 1579
       },
       "status": "active",
       "id": "POST /partner/upgrades",
@@ -7367,7 +7394,7 @@
       "pathPattern": "/partner/store-binding-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1626
+        "line": 1646
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7378,7 +7405,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1626
+        "line": 1646
       },
       "status": "active",
       "id": "GET /partner/store-binding-options",
@@ -7399,7 +7426,7 @@
       "pathPattern": "/partner/store-binding-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1631
+        "line": 1651
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7410,7 +7437,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1631
+        "line": 1651
       },
       "status": "active",
       "id": "POST /partner/store-binding-quotes",
@@ -7431,7 +7458,7 @@
       "pathPattern": "/partner/store-bindings",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1649
+        "line": 1669
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7442,7 +7469,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1649
+        "line": 1669
       },
       "status": "active",
       "id": "POST /partner/store-bindings",
@@ -7463,7 +7490,7 @@
       "pathPattern": "/partner/quota-transfer-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1671
+        "line": 1691
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7474,7 +7501,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1671
+        "line": 1691
       },
       "status": "active",
       "id": "GET /partner/quota-transfer-options",
@@ -7495,7 +7522,7 @@
       "pathPattern": "/partner/quota-transfer-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1677
+        "line": 1697
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7506,7 +7533,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1677
+        "line": 1697
       },
       "status": "active",
       "id": "POST /partner/quota-transfer-quotes",
@@ -7527,7 +7554,7 @@
       "pathPattern": "/partner/quota-transfers",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1695
+        "line": 1715
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7538,7 +7565,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1695
+        "line": 1715
       },
       "status": "active",
       "id": "POST /partner/quota-transfers",
@@ -7559,7 +7586,7 @@
       "pathPattern": "/founder-awards",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1720
+        "line": 1740
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7570,7 +7597,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1720
+        "line": 1740
       },
       "status": "active",
       "id": "GET /founder-awards",
@@ -7591,7 +7618,7 @@
       "pathPattern": "/costore/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1726
+        "line": 1746
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7602,7 +7629,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1726
+        "line": 1746
       },
       "status": "active",
       "id": "GET /costore/application-options",
@@ -7623,7 +7650,7 @@
       "pathPattern": "/costore/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1727
+        "line": 1747
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7634,7 +7661,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1727
+        "line": 1747
       },
       "status": "active",
       "id": "POST /costore/application-quotes",
@@ -7655,7 +7682,7 @@
       "pathPattern": "/applications/costore",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1748
+        "line": 1768
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7666,7 +7693,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1748
+        "line": 1768
       },
       "status": "active",
       "id": "POST /applications/costore",
@@ -7687,7 +7714,7 @@
       "pathPattern": "/promotion/agency-code",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1779
+        "line": 1799
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7698,7 +7725,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1779
+        "line": 1799
       },
       "status": "active",
       "id": "GET /promotion/agency-code",
@@ -7719,7 +7746,7 @@
       "pathPattern": "/agency/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1784
+        "line": 1804
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7730,7 +7757,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1784
+        "line": 1804
       },
       "status": "active",
       "id": "POST /agency/application-quotes",
@@ -7751,7 +7778,7 @@
       "pathPattern": "/agency/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1811
+        "line": 1831
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7762,7 +7789,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1811
+        "line": 1831
       },
       "status": "active",
       "id": "GET /agency/application-options",
@@ -7783,7 +7810,7 @@
       "pathPattern": "/agency/applications",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1859
+        "line": 1879
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7794,7 +7821,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5.js",
-        "line": 1859
+        "line": 1879
       },
       "status": "active",
       "id": "POST /agency/applications",
@@ -7815,7 +7842,7 @@
       "pathPattern": "/me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 309
+        "line": 313
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7826,7 +7853,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 309
+        "line": 313
       },
       "status": "active",
       "id": "GET /me",
@@ -7845,7 +7872,7 @@
       "pathPattern": "/me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 331
+        "line": 335
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7856,7 +7883,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 331
+        "line": 335
       },
       "status": "active",
       "id": "PATCH /me",
@@ -7875,7 +7902,7 @@
       "pathPattern": "/addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 356
+        "line": 360
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7886,7 +7913,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 356
+        "line": 360
       },
       "status": "active",
       "id": "GET /addresses",
@@ -7905,7 +7932,7 @@
       "pathPattern": "/addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 360
+        "line": 364
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7916,7 +7943,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 360
+        "line": 364
       },
       "status": "active",
       "id": "POST /addresses",
@@ -7935,7 +7962,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 371
+        "line": 375
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7946,7 +7973,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 371
+        "line": 375
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/addresses/') && m === 'GET'",
@@ -7967,7 +7994,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 377
+        "line": 381
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -7978,7 +8005,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 377
+        "line": 381
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/addresses/') && m === 'PATCH'",
@@ -7999,7 +8026,7 @@
       "pathPattern": "/addresses/default",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 394
+        "line": 398
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8010,7 +8037,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 394
+        "line": 398
       },
       "status": "active",
       "id": "PUT /addresses/default",
@@ -8029,7 +8056,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'DELETE'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 404
+        "line": 408
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8040,7 +8067,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 404
+        "line": 408
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/addresses/') && m === 'DELETE'",
@@ -8061,7 +8088,7 @@
       "pathPattern": "/coupons",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 417
+        "line": 421
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8072,7 +8099,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 417
+        "line": 421
       },
       "status": "active",
       "id": "GET /coupons",
@@ -8091,7 +8118,7 @@
       "pathPattern": "/support/config",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 423
+        "line": 427
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8102,7 +8129,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 423
+        "line": 427
       },
       "status": "active",
       "id": "GET /support/config",
@@ -8121,7 +8148,7 @@
       "pathPattern": "/support/feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 426
+        "line": 430
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8132,7 +8159,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 426
+        "line": 430
       },
       "status": "active",
       "id": "POST /support/feedback",
@@ -8151,7 +8178,7 @@
       "pathPattern": "p.startsWith('/agreements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 442
+        "line": 446
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8162,7 +8189,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 442
+        "line": 446
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/agreements/') && m === 'GET'",
@@ -8183,7 +8210,7 @@
       "pathPattern": "/members/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 450
+        "line": 454
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8194,7 +8221,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 450
+        "line": 454
       },
       "status": "active",
       "id": "GET /members/options",
@@ -8213,7 +8240,7 @@
       "pathPattern": "/members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 451
+        "line": 455
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8224,7 +8251,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 451
+        "line": 455
       },
       "status": "active",
       "id": "GET /members",
@@ -8243,7 +8270,7 @@
       "pathPattern": "/members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 457
+        "line": 461
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8254,7 +8281,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 457
+        "line": 461
       },
       "status": "active",
       "id": "POST /members",
@@ -8273,7 +8300,7 @@
       "pathPattern": "/activations/preview",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 492
+        "line": 496
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8284,7 +8311,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 492
+        "line": 496
       },
       "status": "active",
       "id": "POST /activations/preview",
@@ -8303,7 +8330,7 @@
       "pathPattern": "/activations",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 529
+        "line": 533
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8314,7 +8341,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 529
+        "line": 533
       },
       "status": "active",
       "id": "POST /activations",
@@ -8333,7 +8360,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/orders') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 570
+        "line": 574
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8344,7 +8371,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 570
+        "line": 574
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/orders') && m === 'GET'",
@@ -8365,7 +8392,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/training-feedback') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 577
+        "line": 581
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8376,7 +8403,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 577
+        "line": 581
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/training-feedback') && m === 'GET'",
@@ -8397,7 +8424,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/store-profile') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 586
+        "line": 590
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8408,7 +8435,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 586
+        "line": 590
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/store-profile') && m === 'GET'",
@@ -8429,7 +8456,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/training') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 592
+        "line": 596
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8440,7 +8467,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 592
+        "line": 596
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/training') && m === 'PATCH'",
@@ -8461,7 +8488,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/levels') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 615
+        "line": 619
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8472,7 +8499,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 615
+        "line": 619
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/levels') && m === 'GET'",
@@ -8493,7 +8520,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 630
+        "line": 634
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8504,7 +8531,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 630
+        "line": 634
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && p.endsWith('/learning-progress') && m === 'PUT'",
@@ -8525,7 +8552,7 @@
       "pathPattern": "p.startsWith('/columns/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 649
+        "line": 653
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8536,7 +8563,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 649
+        "line": 653
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/columns/') && p.endsWith('/learning-progress') && m === 'PUT'",
@@ -8557,7 +8584,7 @@
       "pathPattern": "p.startsWith('/members/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 668
+        "line": 672
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8568,7 +8595,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 668
+        "line": 672
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/members/') && m === 'PATCH'",
@@ -8589,7 +8616,7 @@
       "pathPattern": "/learning/levels",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 687
+        "line": 691
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8600,7 +8627,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 687
+        "line": 691
       },
       "status": "active",
       "id": "GET /learning/levels",
@@ -8619,7 +8646,7 @@
       "pathPattern": "p.startsWith('/learning/levels/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 701
+        "line": 705
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8630,7 +8657,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 701
+        "line": 705
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/learning/levels/') && m === 'GET'",
@@ -8651,7 +8678,7 @@
       "pathPattern": "/announcements",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 718
+        "line": 722
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8662,7 +8689,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 718
+        "line": 722
       },
       "status": "active",
       "id": "GET /announcements",
@@ -8681,7 +8708,7 @@
       "pathPattern": "p.startsWith('/announcements/') && p.endsWith('/read') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 721
+        "line": 725
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8692,7 +8719,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 721
+        "line": 725
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/announcements/') && p.endsWith('/read') && m === 'PUT'",
@@ -8713,7 +8740,7 @@
       "pathPattern": "p.startsWith('/announcements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 737
+        "line": 741
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8724,7 +8751,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 737
+        "line": 741
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/announcements/') && m === 'GET'",
@@ -8745,7 +8772,7 @@
       "pathPattern": "p.startsWith('/lessons/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 742
+        "line": 746
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8756,7 +8783,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 742
+        "line": 746
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/lessons/') && m === 'GET'",
@@ -8777,7 +8804,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocation-options$/.test(p) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 769
+        "line": 773
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8788,7 +8815,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 769
+        "line": 773
       },
       "status": "active",
       "pathPredicate": "/^\\/income\\/entries\\/[^/]+\\/allocation-options$/.test(p) && m === 'GET'",
@@ -8809,7 +8836,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocation-quotes$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 800
+        "line": 804
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8820,7 +8847,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 800
+        "line": 804
       },
       "status": "active",
       "pathPredicate": "/^\\/income\\/entries\\/[^/]+\\/allocation-quotes$/.test(p) && m === 'POST'",
@@ -8841,7 +8868,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocations$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 825
+        "line": 829
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8852,7 +8879,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 825
+        "line": 829
       },
       "status": "active",
       "pathPredicate": "/^\\/income\\/entries\\/[^/]+\\/allocations$/.test(p) && m === 'POST'",
@@ -8873,7 +8900,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocations\\/[^/]+\\/revoke$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 845
+        "line": 849
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8884,7 +8911,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 845
+        "line": 849
       },
       "status": "active",
       "pathPredicate": "/^\\/income\\/entries\\/[^/]+\\/allocations\\/[^/]+\\/revoke$/.test(p) && m === 'POST'",
@@ -8905,7 +8932,7 @@
       "pathPattern": "/wallet/withdrawal-options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 857
+        "line": 861
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8916,7 +8943,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 857
+        "line": 861
       },
       "status": "active",
       "id": "GET /wallet/withdrawal-options",
@@ -8935,7 +8962,7 @@
       "pathPattern": "/wallet/payees",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 867
+        "line": 871
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8946,7 +8973,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 867
+        "line": 871
       },
       "status": "active",
       "id": "POST /wallet/payees",
@@ -8965,7 +8992,7 @@
       "pathPattern": "/wallet/withdrawal-quotes",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 879
+        "line": 883
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -8976,7 +9003,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 879
+        "line": 883
       },
       "status": "active",
       "id": "POST /wallet/withdrawal-quotes",
@@ -8995,7 +9022,7 @@
       "pathPattern": "/wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 899
+        "line": 903
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9006,7 +9033,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 899
+        "line": 903
       },
       "status": "active",
       "id": "POST /wallet/withdrawals",
@@ -9025,7 +9052,7 @@
       "pathPattern": "/wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 927
+        "line": 931
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9036,7 +9063,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 927
+        "line": 931
       },
       "status": "active",
       "id": "GET /wallet/withdrawals",
@@ -9055,7 +9082,7 @@
       "pathPattern": "/applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 938
+        "line": 942
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9066,7 +9093,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 938
+        "line": 942
       },
       "status": "active",
       "id": "GET /applications",
@@ -9085,7 +9112,7 @@
       "pathPattern": "p.startsWith('/promotion/invitations/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 944
+        "line": 948
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9096,7 +9123,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 944
+        "line": 948
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/promotion/invitations/') && m === 'GET'",
@@ -9117,7 +9144,7 @@
       "pathPattern": "/agency/store-workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 961
+        "line": 965
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9128,7 +9155,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 961
+        "line": 965
       },
       "status": "active",
       "id": "GET /agency/store-workspace",
@@ -9147,7 +9174,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/coaches$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 975
+        "line": 979
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9158,7 +9185,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 975
+        "line": 979
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/stores\\/[^/]+\\/coaches$/) && m === 'POST'",
@@ -9179,7 +9206,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/coaches\\/[^/]+$/) && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 992
+        "line": 996
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9190,7 +9217,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 992
+        "line": 996
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/stores\\/[^/]+\\/coaches\\/[^/]+$/) && m === 'PATCH'",
@@ -9211,7 +9238,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/orders\\/[^/]+\\/verify$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1012
+        "line": 1016
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9222,7 +9249,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1012
+        "line": 1016
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/stores\\/[^/]+\\/orders\\/[^/]+\\/verify$/) && m === 'POST'",
@@ -9243,7 +9270,7 @@
       "pathPattern": "p.startsWith('/stores/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1048
+        "line": 1052
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9254,7 +9281,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1048
+        "line": 1052
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/stores/') && m === 'PATCH'",
@@ -9275,7 +9302,7 @@
       "pathPattern": "p.match(/^\\/applications\\/[^/]+\\/decisions$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1063
+        "line": 1067
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9286,7 +9313,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1063
+        "line": 1067
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/applications\\/[^/]+\\/decisions$/) && m === 'POST'",
@@ -9307,7 +9334,7 @@
       "pathPattern": "/coach/workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1093
+        "line": 1097
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9318,7 +9345,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1093
+        "line": 1097
       },
       "status": "active",
       "id": "GET /coach/workspace",
@@ -9337,7 +9364,7 @@
       "pathPattern": "/training-feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1100
+        "line": 1104
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9348,7 +9375,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1100
+        "line": 1104
       },
       "status": "active",
       "id": "POST /training-feedback",
@@ -9367,7 +9394,7 @@
       "pathPattern": "p.startsWith('/training-feedback/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1128
+        "line": 1132
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9378,7 +9405,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1128
+        "line": 1132
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/training-feedback/') && m === 'GET'",
@@ -9399,7 +9426,7 @@
       "pathPattern": "/store-transfer/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1135
+        "line": 1139
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9410,7 +9437,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1135
+        "line": 1139
       },
       "status": "active",
       "id": "GET /store-transfer/options",
@@ -9429,7 +9456,7 @@
       "pathPattern": "/store-transfer/applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1148
+        "line": 1152
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9440,7 +9467,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1148
+        "line": 1152
       },
       "status": "active",
       "id": "POST /store-transfer/applications",
@@ -9459,7 +9486,7 @@
       "pathPattern": "/assets/upload-intents",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1180
+        "line": 1184
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9470,7 +9497,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1180
+        "line": 1184
       },
       "status": "active",
       "id": "POST /assets/upload-intents",
@@ -9489,7 +9516,7 @@
       "pathPattern": "p.match(/^\\/assets\\/[^/]+\\/(completions|complete)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1205
+        "line": 1209
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9500,7 +9527,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1205
+        "line": 1209
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/assets\\/[^/]+\\/(completions|complete)$/) && m === 'POST'",
@@ -9526,7 +9553,7 @@
       "pathPattern": "/materials/categories",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1218
+        "line": 1222
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9537,7 +9564,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1218
+        "line": 1222
       },
       "status": "active",
       "id": "GET /materials/categories",
@@ -9556,7 +9583,7 @@
       "pathPattern": "/materials",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1223
+        "line": 1227
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9567,7 +9594,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1223
+        "line": 1227
       },
       "status": "active",
       "id": "GET /materials",
@@ -9586,7 +9613,7 @@
       "pathPattern": "p.startsWith('/materials/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1230
+        "line": 1234
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9597,7 +9624,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1230
+        "line": 1234
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/materials/') && m === 'GET'",
@@ -9618,7 +9645,7 @@
       "pathPattern": "p.match(/^\\/materials\\/[^/]+\\/renders$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1235
+        "line": 1239
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9629,7 +9656,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1235
+        "line": 1239
       },
       "status": "active",
       "pathPredicate": "p.match(/^\\/materials\\/[^/]+\\/renders$/) && m === 'POST'",
@@ -9650,7 +9677,7 @@
       "pathPattern": "p.startsWith('/jobs/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1256
+        "line": 1260
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -9661,7 +9688,7 @@
       "requiresDispatchReview": false,
       "primaryHandler": {
         "file": "src/routes/h5biz.js",
-        "line": 1256
+        "line": 1260
       },
       "status": "active",
       "pathPredicate": "p.startsWith('/jobs/') && m === 'GET'",
@@ -9934,7 +9961,7 @@
       "pathPattern": "*",
       "handler": {
         "file": "server.js",
-        "line": 979
+        "line": 985
       },
       "enabled": true,
       "defaultResponse": "204 empty",
@@ -9942,7 +9969,7 @@
       "pendingMigration": false,
       "primaryHandler": {
         "file": "server.js",
-        "line": 979
+        "line": 985
       },
       "status": "active",
       "requiresDispatchReview": false
@@ -9952,7 +9979,7 @@
       "pathPattern": "/health",
       "handler": {
         "file": "server.js",
-        "line": 980
+        "line": 986
       },
       "enabled": true,
       "defaultResponse": "{ok:true,ts,service}",
@@ -9964,7 +9991,7 @@
       "pathPattern": "/",
       "handler": {
         "file": "server.js",
-        "line": 964
+        "line": 970
       },
       "enabled": true,
       "defaultResponse": "service metadata JSON",
@@ -10071,10 +10098,10 @@
       "stage": 0
     },
     {
-      "id": "GET /api/hq/support/tickets",
+      "id": "GET /api/hq/support/profile",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 53
+        "line": 54
       },
       "stage": 0
     },
@@ -10175,6 +10202,14 @@
       "stage": 0
     },
     {
+      "id": "GET /api/hq/support/tickets",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 69
+      },
+      "stage": 0
+    },
+    {
       "id": "GET /api/hq/software-cards",
       "handler": {
         "file": "src/routes/hq/modules/softwareCards.js",
@@ -10211,14 +10246,6 @@
       "handler": {
         "file": "src/routes/hq/modules/revenue.js",
         "line": 73
-      },
-      "stage": 0
-    },
-    {
-      "id": "GET /api/hq/support/catalog",
-      "handler": {
-        "file": "src/routes/hq/modules/support.js",
-        "line": 78
       },
       "stage": 0
     },
@@ -10279,14 +10306,6 @@
       "stage": 0
     },
     {
-      "id": "GET /api/hq/users/catalog",
-      "handler": {
-        "file": "src/routes/hq/modules/users.js",
-        "line": 87
-      },
-      "stage": 0
-    },
-    {
       "id": "GET /api/hq/columns/catalog",
       "handler": {
         "file": "src/routes/hq/modules/columns.js",
@@ -10339,6 +10358,14 @@
       "handler": {
         "file": "src/routes/hq/modules/trace.js",
         "line": 91
+      },
+      "stage": 0
+    },
+    {
+      "id": "GET /api/hq/users/catalog",
+      "handler": {
+        "file": "src/routes/hq/modules/users.js",
+        "line": 93
       },
       "stage": 0
     },
@@ -10423,6 +10450,14 @@
       "stage": 0
     },
     {
+      "id": "GET /api/hq/support/catalog",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 97
+      },
+      "stage": 0
+    },
+    {
       "id": "GET /api/hq/training/catalog",
       "handler": {
         "file": "src/routes/hq/modules/training.js",
@@ -10487,14 +10522,6 @@
       "stage": 0
     },
     {
-      "id": "GET /api/hq/support/tickets/:ticketId",
-      "handler": {
-        "file": "src/routes/hq/modules/support.js",
-        "line": 104
-      },
-      "stage": 0
-    },
-    {
       "id": "POST /api/hq/course/entitlements/:entitlementId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/course.js",
@@ -10515,14 +10542,6 @@
       "handler": {
         "file": "src/routes/hq/modules/softwareCards.js",
         "line": 113
-      },
-      "stage": 0
-    },
-    {
-      "id": "GET /api/hq/users/:accountId",
-      "handler": {
-        "file": "src/routes/hq/modules/users.js",
-        "line": 114
       },
       "stage": 0
     },
@@ -10559,14 +10578,6 @@
       "stage": 0
     },
     {
-      "id": "POST /api/hq/support/tickets/:ticketId/mutate",
-      "handler": {
-        "file": "src/routes/hq/modules/support.js",
-        "line": 117
-      },
-      "stage": 0
-    },
-    {
       "id": "GET /api/hq/products/catalog",
       "handler": {
         "file": "src/routes/hq/modules/products.js",
@@ -10591,6 +10602,14 @@
       "stage": 0
     },
     {
+      "id": "GET /api/hq/users/:accountId",
+      "handler": {
+        "file": "src/routes/hq/modules/users.js",
+        "line": 120
+      },
+      "stage": 0
+    },
+    {
       "id": "GET /api/hq/columns/:columnId",
       "handler": {
         "file": "src/routes/hq/modules/columns.js",
@@ -10603,6 +10622,14 @@
       "handler": {
         "file": "src/routes/hq/modules/partners.js",
         "line": 122
+      },
+      "stage": 0
+    },
+    {
+      "id": "GET /api/hq/support/tickets/:ticketId",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 123
       },
       "stage": 0
     },
@@ -10695,18 +10722,18 @@
       "stage": 0
     },
     {
-      "id": "GET /api/hq/invitations/:accountId",
+      "id": "POST /api/hq/support/tickets/:ticketId/mutate",
       "handler": {
-        "file": "src/routes/hq/modules/invitations.js",
-        "line": 137
+        "file": "src/routes/hq/modules/support.js",
+        "line": 136
       },
       "stage": 0
     },
     {
-      "id": "POST /api/hq/users/:accountId/mutate",
+      "id": "GET /api/hq/invitations/:accountId",
       "handler": {
-        "file": "src/routes/hq/modules/users.js",
-        "line": 138
+        "file": "src/routes/hq/modules/invitations.js",
+        "line": 137
       },
       "stage": 0
     },
@@ -10747,6 +10774,14 @@
       "handler": {
         "file": "src/routes/hq/modules/payments.js",
         "line": 143
+      },
+      "stage": 0
+    },
+    {
+      "id": "POST /api/hq/users/:accountId/mutate",
+      "handler": {
+        "file": "src/routes/hq/modules/users.js",
+        "line": 144
       },
       "stage": 0
     },
@@ -10919,14 +10954,6 @@
       "stage": 0
     },
     {
-      "id": "POST /api/hq/support/tickets",
-      "handler": {
-        "file": "src/routes/hq/modules/support.js",
-        "line": 186
-      },
-      "stage": 0
-    },
-    {
       "id": "POST /api/hq/payments/mutate",
       "handler": {
         "file": "src/routes/hq/modules/payments.js",
@@ -10946,6 +10973,14 @@
       "id": "POST /api/hq/orders/:orderId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/orders.js",
+        "line": 205
+      },
+      "stage": 0
+    },
+    {
+      "id": "POST /api/hq/support/tickets",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
         "line": 205
       },
       "stage": 0
@@ -10986,7 +11021,7 @@
       "id": "POST /api/auth/login",
       "handler": {
         "file": "server.js",
-        "line": 395
+        "line": 397
       },
       "stage": 1
     },
@@ -10994,7 +11029,7 @@
       "id": "POST /api/calc/region-vip",
       "handler": {
         "file": "server.js",
-        "line": 414
+        "line": 416
       },
       "stage": 1
     },
@@ -11002,7 +11037,7 @@
       "id": "POST /api/calc/goods-diff",
       "handler": {
         "file": "server.js",
-        "line": 418
+        "line": 420
       },
       "stage": 1
     },
@@ -11010,7 +11045,7 @@
       "id": "POST /api/calc/store-delivery",
       "handler": {
         "file": "server.js",
-        "line": 422
+        "line": 424
       },
       "stage": 1
     },
@@ -11018,7 +11053,7 @@
       "id": "POST /api/calc/region",
       "handler": {
         "file": "server.js",
-        "line": 426
+        "line": 428
       },
       "stage": 1
     },
@@ -11026,7 +11061,7 @@
       "id": "GET /api/agent/qrcode",
       "handler": {
         "file": "server.js",
-        "line": 431
+        "line": 433
       },
       "stage": 1
     },
@@ -11034,7 +11069,7 @@
       "id": "POST /api/calc/virtual-split",
       "handler": {
         "file": "server.js",
-        "line": 440
+        "line": 442
       },
       "stage": 1
     },
@@ -11042,7 +11077,7 @@
       "id": "POST /api/calc/physical-diff",
       "handler": {
         "file": "server.js",
-        "line": 444
+        "line": 446
       },
       "stage": 1
     },
@@ -11050,7 +11085,7 @@
       "id": "GET /api/calc/agent-fee",
       "handler": {
         "file": "server.js",
-        "line": 448
+        "line": 450
       },
       "stage": 1
     },
@@ -11058,7 +11093,7 @@
       "id": "GET /api/products",
       "handler": {
         "file": "server.js",
-        "line": 465
+        "line": 467
       },
       "stage": 1
     },
@@ -11066,7 +11101,7 @@
       "id": "POST /api/calc/product-price",
       "handler": {
         "file": "server.js",
-        "line": 493
+        "line": 495
       },
       "stage": 1
     },
@@ -11074,7 +11109,7 @@
       "id": "POST /api/calc/product-commission",
       "handler": {
         "file": "server.js",
-        "line": 497
+        "line": 499
       },
       "stage": 1
     },
@@ -11082,7 +11117,7 @@
       "id": "POST /api/calc/featured-split",
       "handler": {
         "file": "server.js",
-        "line": 501
+        "line": 503
       },
       "stage": 1
     },
@@ -11090,7 +11125,7 @@
       "id": "GET /api/seed",
       "handler": {
         "file": "server.js",
-        "line": 513
+        "line": 515
       },
       "stage": 1
     },
@@ -11098,7 +11133,7 @@
       "id": "POST /api/seed",
       "handler": {
         "file": "server.js",
-        "line": 522
+        "line": 524
       },
       "stage": 1
     },
@@ -11106,7 +11141,7 @@
       "id": "POST /api/seed/reset",
       "handler": {
         "file": "server.js",
-        "line": 527
+        "line": 529
       },
       "stage": 1
     },
@@ -11114,7 +11149,7 @@
       "id": "POST /api/partner",
       "handler": {
         "file": "server.js",
-        "line": 531
+        "line": 533
       },
       "stage": 1
     },
@@ -11122,7 +11157,7 @@
       "id": "POST /api/order",
       "handler": {
         "file": "server.js",
-        "line": 539
+        "line": 541
       },
       "stage": 1
     },
@@ -11130,7 +11165,7 @@
       "id": "POST /api/order/product",
       "handler": {
         "file": "server.js",
-        "line": 544
+        "line": 546
       },
       "stage": 1
     },
@@ -11138,7 +11173,7 @@
       "id": "POST /api/agent/appoint",
       "handler": {
         "file": "server.js",
-        "line": 556
+        "line": 558
       },
       "stage": 1
     },
@@ -11146,7 +11181,7 @@
       "id": "POST /api/agent/revoke",
       "handler": {
         "file": "server.js",
-        "line": 566
+        "line": 568
       },
       "stage": 1
     },
@@ -11154,7 +11189,7 @@
       "id": "POST /api/agent/update",
       "handler": {
         "file": "server.js",
-        "line": 576
+        "line": 578
       },
       "stage": 1
     },
@@ -11162,7 +11197,7 @@
       "id": "POST /api/costore",
       "handler": {
         "file": "server.js",
-        "line": 585
+        "line": 587
       },
       "stage": 1
     },
@@ -11170,7 +11205,7 @@
       "id": "GET /api/settings",
       "handler": {
         "file": "server.js",
-        "line": 593
+        "line": 595
       },
       "stage": 1
     },
@@ -11178,7 +11213,7 @@
       "id": "POST /api/settings",
       "handler": {
         "file": "server.js",
-        "line": 596
+        "line": 598
       },
       "stage": 1
     },
@@ -11186,7 +11221,7 @@
       "id": "GET /api/skus",
       "handler": {
         "file": "server.js",
-        "line": 605
+        "line": 607
       },
       "stage": 1
     },
@@ -11194,7 +11229,7 @@
       "id": "POST p.match(/^\\/api\\/skus\\/[^/]+\\/stock$/) && m === 'POST'",
       "handler": {
         "file": "server.js",
-        "line": 609
+        "line": 611
       },
       "stage": 1
     },
@@ -11202,7 +11237,7 @@
       "id": "PUT p.match(/^\\/api\\/skus\\/[^/]+$/) && m === 'PUT'",
       "handler": {
         "file": "server.js",
-        "line": 627
+        "line": 629
       },
       "stage": 1
     },
@@ -11210,7 +11245,7 @@
       "id": "GET /api/columns",
       "handler": {
         "file": "server.js",
-        "line": 642
+        "line": 645
       },
       "stage": 1
     },
@@ -11218,7 +11253,7 @@
       "id": "PUT /api/columns",
       "handler": {
         "file": "server.js",
-        "line": 645
+        "line": 648
       },
       "stage": 1
     },
@@ -11226,7 +11261,7 @@
       "id": "GET /api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 658
+        "line": 662
       },
       "stage": 1
     },
@@ -11234,7 +11269,7 @@
       "id": "POST /api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 661
+        "line": 665
       },
       "stage": 1
     },
@@ -11242,7 +11277,7 @@
       "id": "POST /api/quota/issue",
       "handler": {
         "file": "server.js",
-        "line": 672
+        "line": 678
       },
       "stage": 1
     },
@@ -11250,7 +11285,7 @@
       "id": "GET /api/quota/ledger",
       "handler": {
         "file": "server.js",
-        "line": 677
+        "line": 683
       },
       "stage": 1
     },
@@ -11258,7 +11293,7 @@
       "id": "GET /api/quota/transactions",
       "handler": {
         "file": "server.js",
-        "line": 685
+        "line": 691
       },
       "stage": 1
     },
@@ -11266,7 +11301,7 @@
       "id": "POST /api/relation/unbind",
       "handler": {
         "file": "server.js",
-        "line": 689
+        "line": 695
       },
       "stage": 1
     },
@@ -11274,7 +11309,7 @@
       "id": "POST /api/relation/rebind",
       "handler": {
         "file": "server.js",
-        "line": 694
+        "line": 700
       },
       "stage": 1
     },
@@ -11282,7 +11317,7 @@
       "id": "POST /api/settle",
       "handler": {
         "file": "server.js",
-        "line": 704
+        "line": 710
       },
       "stage": 1
     },
@@ -11290,7 +11325,7 @@
       "id": "GET /api/report",
       "handler": {
         "file": "server.js",
-        "line": 709
+        "line": 715
       },
       "stage": 1
     },
@@ -11298,7 +11333,7 @@
       "id": "GET /api/users",
       "handler": {
         "file": "server.js",
-        "line": 716
+        "line": 722
       },
       "stage": 1
     },
@@ -11306,7 +11341,7 @@
       "id": "GET /api/free-upgrade",
       "handler": {
         "file": "server.js",
-        "line": 728
+        "line": 734
       },
       "stage": 1
     },
@@ -11314,7 +11349,7 @@
       "id": "POST /api/partner/update",
       "handler": {
         "file": "server.js",
-        "line": 761
+        "line": 767
       },
       "stage": 1
     },
@@ -11322,7 +11357,7 @@
       "id": "POST /api/partner/delete",
       "handler": {
         "file": "server.js",
-        "line": 767
+        "line": 773
       },
       "stage": 1
     },
@@ -11330,7 +11365,7 @@
       "id": "POST /api/order/update",
       "handler": {
         "file": "server.js",
-        "line": 773
+        "line": 779
       },
       "stage": 1
     },
@@ -11338,7 +11373,7 @@
       "id": "GET /api/commissions/all",
       "handler": {
         "file": "server.js",
-        "line": 790
+        "line": 796
       },
       "stage": 1
     },
@@ -11346,7 +11381,7 @@
       "id": "GET /api/identities",
       "handler": {
         "file": "server.js",
-        "line": 809
+        "line": 815
       },
       "stage": 1
     },
@@ -11354,7 +11389,7 @@
       "id": "GET /api/commissions",
       "handler": {
         "file": "server.js",
-        "line": 815
+        "line": 821
       },
       "stage": 1
     },
@@ -11362,7 +11397,7 @@
       "id": "GET /api/orders/all",
       "handler": {
         "file": "server.js",
-        "line": 825
+        "line": 831
       },
       "stage": 1
     },
@@ -11370,7 +11405,7 @@
       "id": "GET /api/stores",
       "handler": {
         "file": "server.js",
-        "line": 842
+        "line": 848
       },
       "stage": 1
     },
@@ -11378,7 +11413,7 @@
       "id": "GET /api/region/team",
       "handler": {
         "file": "server.js",
-        "line": 859
+        "line": 865
       },
       "stage": 1
     },
@@ -11386,7 +11421,7 @@
       "id": "GET /api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 874
+        "line": 880
       },
       "stage": 1
     },
@@ -11394,7 +11429,7 @@
       "id": "POST /api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 877
+        "line": 883
       },
       "stage": 1
     },
@@ -11402,7 +11437,7 @@
       "id": "POST /api/allocation/settle",
       "handler": {
         "file": "server.js",
-        "line": 885
+        "line": 891
       },
       "stage": 1
     },
@@ -11410,7 +11445,7 @@
       "id": "GET /api/dividend/rights",
       "handler": {
         "file": "server.js",
-        "line": 891
+        "line": 897
       },
       "stage": 1
     },
@@ -11418,7 +11453,7 @@
       "id": "GET /api/dividend/history",
       "handler": {
         "file": "server.js",
-        "line": 899
+        "line": 905
       },
       "stage": 1
     },
@@ -11426,7 +11461,7 @@
       "id": "GET /api/experience/ledger",
       "handler": {
         "file": "server.js",
-        "line": 907
+        "line": 913
       },
       "stage": 1
     },
@@ -11434,7 +11469,7 @@
       "id": "GET /api/promotion-tasks",
       "handler": {
         "file": "server.js",
-        "line": 913
+        "line": 919
       },
       "stage": 1
     },
@@ -11442,7 +11477,7 @@
       "id": "GET /api/me",
       "handler": {
         "file": "server.js",
-        "line": 925
+        "line": 931
       },
       "stage": 1
     },
@@ -11450,7 +11485,7 @@
       "id": "GET /api/team",
       "handler": {
         "file": "server.js",
-        "line": 928
+        "line": 934
       },
       "stage": 1
     },
@@ -11458,7 +11493,7 @@
       "id": "GET /api/costore",
       "handler": {
         "file": "server.js",
-        "line": 940
+        "line": 946
       },
       "stage": 1
     },
@@ -11466,7 +11501,7 @@
       "id": "GET /api/agent",
       "handler": {
         "file": "server.js",
-        "line": 943
+        "line": 949
       },
       "stage": 1
     },
@@ -11474,7 +11509,7 @@
       "id": "POST /api/region/month",
       "handler": {
         "file": "server.js",
-        "line": 955
+        "line": 961
       },
       "stage": 1
     },
@@ -11610,7 +11645,7 @@
       "id": "GET /me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 309
+        "line": 313
       },
       "stage": 3
     },
@@ -11618,7 +11653,7 @@
       "id": "PATCH /me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 331
+        "line": 335
       },
       "stage": 3
     },
@@ -11626,7 +11661,7 @@
       "id": "GET /addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 356
+        "line": 360
       },
       "stage": 3
     },
@@ -11634,7 +11669,7 @@
       "id": "POST /addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 360
+        "line": 364
       },
       "stage": 3
     },
@@ -11642,7 +11677,7 @@
       "id": "GET p.startsWith('/addresses/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 371
+        "line": 375
       },
       "stage": 3
     },
@@ -11650,7 +11685,7 @@
       "id": "PATCH p.startsWith('/addresses/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 377
+        "line": 381
       },
       "stage": 3
     },
@@ -11658,7 +11693,7 @@
       "id": "PUT /addresses/default",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 394
+        "line": 398
       },
       "stage": 3
     },
@@ -11666,7 +11701,7 @@
       "id": "DELETE p.startsWith('/addresses/') && m === 'DELETE'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 404
+        "line": 408
       },
       "stage": 3
     },
@@ -11674,7 +11709,7 @@
       "id": "GET /coupons",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 417
+        "line": 421
       },
       "stage": 3
     },
@@ -11682,7 +11717,7 @@
       "id": "GET /support/config",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 423
+        "line": 427
       },
       "stage": 3
     },
@@ -11690,7 +11725,7 @@
       "id": "POST /support/feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 426
+        "line": 430
       },
       "stage": 3
     },
@@ -11698,7 +11733,7 @@
       "id": "GET p.startsWith('/agreements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 442
+        "line": 446
       },
       "stage": 3
     },
@@ -11706,7 +11741,7 @@
       "id": "GET /members/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 450
+        "line": 454
       },
       "stage": 3
     },
@@ -11714,7 +11749,7 @@
       "id": "GET /members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 451
+        "line": 455
       },
       "stage": 3
     },
@@ -11722,7 +11757,7 @@
       "id": "POST /members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 457
+        "line": 461
       },
       "stage": 3
     },
@@ -11730,7 +11765,7 @@
       "id": "POST /activations/preview",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 492
+        "line": 496
       },
       "stage": 3
     },
@@ -11738,7 +11773,7 @@
       "id": "POST /activations",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 529
+        "line": 533
       },
       "stage": 3
     },
@@ -11746,7 +11781,7 @@
       "id": "GET p.startsWith('/members/') && p.endsWith('/orders') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 570
+        "line": 574
       },
       "stage": 3
     },
@@ -11754,7 +11789,7 @@
       "id": "GET p.startsWith('/members/') && p.endsWith('/training-feedback') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 577
+        "line": 581
       },
       "stage": 3
     },
@@ -11762,7 +11797,7 @@
       "id": "GET p.startsWith('/members/') && p.endsWith('/store-profile') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 586
+        "line": 590
       },
       "stage": 3
     },
@@ -11770,7 +11805,7 @@
       "id": "PATCH p.startsWith('/members/') && p.endsWith('/training') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 592
+        "line": 596
       },
       "stage": 3
     },
@@ -11778,7 +11813,7 @@
       "id": "GET p.startsWith('/members/') && p.endsWith('/levels') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 615
+        "line": 619
       },
       "stage": 3
     },
@@ -11786,7 +11821,7 @@
       "id": "PUT p.startsWith('/members/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 630
+        "line": 634
       },
       "stage": 3
     },
@@ -11794,7 +11829,7 @@
       "id": "PUT p.startsWith('/columns/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 649
+        "line": 653
       },
       "stage": 3
     },
@@ -11802,7 +11837,7 @@
       "id": "PATCH p.startsWith('/members/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 668
+        "line": 672
       },
       "stage": 3
     },
@@ -11810,7 +11845,7 @@
       "id": "GET /learning/levels",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 687
+        "line": 691
       },
       "stage": 3
     },
@@ -11818,7 +11853,7 @@
       "id": "GET p.startsWith('/learning/levels/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 701
+        "line": 705
       },
       "stage": 3
     },
@@ -11826,7 +11861,7 @@
       "id": "GET /announcements",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 718
+        "line": 722
       },
       "stage": 3
     },
@@ -11834,7 +11869,7 @@
       "id": "PUT p.startsWith('/announcements/') && p.endsWith('/read') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 721
+        "line": 725
       },
       "stage": 3
     },
@@ -11842,7 +11877,7 @@
       "id": "GET p.startsWith('/announcements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 737
+        "line": 741
       },
       "stage": 3
     },
@@ -11850,7 +11885,7 @@
       "id": "GET p.startsWith('/lessons/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 742
+        "line": 746
       },
       "stage": 3
     },
@@ -11858,7 +11893,7 @@
       "id": "GET /^\\/income\\/entries\\/[^/]+\\/allocation-options$/.test(p) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 769
+        "line": 773
       },
       "stage": 3
     },
@@ -11866,7 +11901,7 @@
       "id": "POST /^\\/income\\/entries\\/[^/]+\\/allocation-quotes$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 800
+        "line": 804
       },
       "stage": 3
     },
@@ -11874,7 +11909,7 @@
       "id": "POST /^\\/income\\/entries\\/[^/]+\\/allocations$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 825
+        "line": 829
       },
       "stage": 3
     },
@@ -11882,7 +11917,7 @@
       "id": "POST /^\\/income\\/entries\\/[^/]+\\/allocations\\/[^/]+\\/revoke$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 845
+        "line": 849
       },
       "stage": 3
     },
@@ -11890,7 +11925,7 @@
       "id": "GET /wallet/withdrawal-options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 857
+        "line": 861
       },
       "stage": 3
     },
@@ -11898,7 +11933,7 @@
       "id": "POST /wallet/payees",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 867
+        "line": 871
       },
       "stage": 3
     },
@@ -11906,7 +11941,7 @@
       "id": "POST /wallet/withdrawal-quotes",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 879
+        "line": 883
       },
       "stage": 3
     },
@@ -11914,7 +11949,7 @@
       "id": "POST /wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 899
+        "line": 903
       },
       "stage": 3
     },
@@ -11922,7 +11957,7 @@
       "id": "GET /wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 927
+        "line": 931
       },
       "stage": 3
     },
@@ -11930,7 +11965,7 @@
       "id": "GET /applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 938
+        "line": 942
       },
       "stage": 3
     },
@@ -11938,7 +11973,7 @@
       "id": "GET p.startsWith('/promotion/invitations/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 944
+        "line": 948
       },
       "stage": 3
     },
@@ -11946,7 +11981,7 @@
       "id": "GET /agency/store-workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 961
+        "line": 965
       },
       "stage": 3
     },
@@ -11954,7 +11989,7 @@
       "id": "POST p.match(/^\\/stores\\/[^/]+\\/coaches$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 975
+        "line": 979
       },
       "stage": 3
     },
@@ -11962,7 +11997,7 @@
       "id": "PATCH p.match(/^\\/stores\\/[^/]+\\/coaches\\/[^/]+$/) && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 992
+        "line": 996
       },
       "stage": 3
     },
@@ -11970,7 +12005,7 @@
       "id": "POST p.match(/^\\/stores\\/[^/]+\\/orders\\/[^/]+\\/verify$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1012
+        "line": 1016
       },
       "stage": 3
     },
@@ -11978,7 +12013,7 @@
       "id": "PATCH p.startsWith('/stores/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1048
+        "line": 1052
       },
       "stage": 3
     },
@@ -11986,7 +12021,7 @@
       "id": "POST p.match(/^\\/applications\\/[^/]+\\/decisions$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1063
+        "line": 1067
       },
       "stage": 3
     },
@@ -11994,7 +12029,7 @@
       "id": "GET /coach/workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1093
+        "line": 1097
       },
       "stage": 3
     },
@@ -12002,7 +12037,7 @@
       "id": "POST /training-feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1100
+        "line": 1104
       },
       "stage": 3
     },
@@ -12010,7 +12045,7 @@
       "id": "GET p.startsWith('/training-feedback/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1128
+        "line": 1132
       },
       "stage": 3
     },
@@ -12018,7 +12053,7 @@
       "id": "GET /store-transfer/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1135
+        "line": 1139
       },
       "stage": 3
     },
@@ -12026,7 +12061,7 @@
       "id": "POST /store-transfer/applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1148
+        "line": 1152
       },
       "stage": 3
     },
@@ -12034,7 +12069,7 @@
       "id": "POST /assets/upload-intents",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1180
+        "line": 1184
       },
       "stage": 3
     },
@@ -12042,7 +12077,7 @@
       "id": "POST p.match(/^\\/assets\\/[^/]+\\/(completions|complete)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1205
+        "line": 1209
       },
       "stage": 3
     },
@@ -12050,7 +12085,7 @@
       "id": "GET /materials/categories",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1218
+        "line": 1222
       },
       "stage": 3
     },
@@ -12058,7 +12093,7 @@
       "id": "GET /materials",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1223
+        "line": 1227
       },
       "stage": 3
     },
@@ -12066,7 +12101,7 @@
       "id": "GET p.startsWith('/materials/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1230
+        "line": 1234
       },
       "stage": 3
     },
@@ -12074,7 +12109,7 @@
       "id": "POST p.match(/^\\/materials\\/[^/]+\\/renders$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1235
+        "line": 1239
       },
       "stage": 3
     },
@@ -12082,7 +12117,7 @@
       "id": "GET p.startsWith('/jobs/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1256
+        "line": 1260
       },
       "stage": 3
     },
@@ -12434,7 +12469,7 @@
       "id": "GET /orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1133
+        "line": 1153
       },
       "stage": 5
     },
@@ -12442,7 +12477,7 @@
       "id": "GET p.startsWith('/orders/') && m === 'GET' && !/\\/payment-channels$/.test(p)",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1151
+        "line": 1171
       },
       "stage": 5
     },
@@ -12450,7 +12485,7 @@
       "id": "POST p.match(/\\/orders\\/[^/]+\\/payment$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1175
+        "line": 1195
       },
       "stage": 5
     },
@@ -12458,7 +12493,7 @@
       "id": "POST p.match(/\\/orders\\/[^/]+\\/(cancellations|cancel)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1234
+        "line": 1254
       },
       "stage": 5
     },
@@ -12466,7 +12501,7 @@
       "id": "POST p.match(/\\/orders\\/[^/]+\\/(receipts|confirm-receipt)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1252
+        "line": 1272
       },
       "stage": 5
     },
@@ -12474,7 +12509,7 @@
       "id": "POST /payments/attempts",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1259
+        "line": 1279
       },
       "stage": 5
     },
@@ -12482,7 +12517,7 @@
       "id": "GET p.startsWith('/payments/attempts/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1298
+        "line": 1318
       },
       "stage": 5
     },
@@ -12490,7 +12525,7 @@
       "id": "GET p.match(/^\\/orders\\/[^/]+\\/payment-channels$/) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1314
+        "line": 1334
       },
       "stage": 5
     },
@@ -12498,7 +12533,7 @@
       "id": "GET /columns",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1329
+        "line": 1349
       },
       "stage": 5
     },
@@ -12506,7 +12541,7 @@
       "id": "GET p.startsWith('/columns/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1340
+        "line": 1360
       },
       "stage": 5
     },
@@ -12514,7 +12549,7 @@
       "id": "GET /partner/entitlement-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1368
+        "line": 1388
       },
       "stage": 5
     },
@@ -12522,7 +12557,7 @@
       "id": "POST /partner/entitlement-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1379
+        "line": 1399
       },
       "stage": 5
     },
@@ -12530,7 +12565,7 @@
       "id": "POST /partner/entitlement-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1397
+        "line": 1417
       },
       "stage": 5
     },
@@ -12538,7 +12573,7 @@
       "id": "GET /partner/quota-purchase-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1425
+        "line": 1445
       },
       "stage": 5
     },
@@ -12546,7 +12581,7 @@
       "id": "POST /partner/quota-purchase-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1429
+        "line": 1449
       },
       "stage": 5
     },
@@ -12554,7 +12589,7 @@
       "id": "POST /partner/quota-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1448
+        "line": 1468
       },
       "stage": 5
     },
@@ -12562,7 +12597,7 @@
       "id": "GET /partner/upgrade-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1476
+        "line": 1496
       },
       "stage": 5
     },
@@ -12570,7 +12605,7 @@
       "id": "POST /partner/upgrade-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1525
+        "line": 1545
       },
       "stage": 5
     },
@@ -12578,7 +12613,7 @@
       "id": "POST /partner/upgrades",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1559
+        "line": 1579
       },
       "stage": 5
     },
@@ -12586,7 +12621,7 @@
       "id": "GET /partner/store-binding-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1626
+        "line": 1646
       },
       "stage": 5
     },
@@ -12594,7 +12629,7 @@
       "id": "POST /partner/store-binding-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1631
+        "line": 1651
       },
       "stage": 5
     },
@@ -12602,7 +12637,7 @@
       "id": "POST /partner/store-bindings",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1649
+        "line": 1669
       },
       "stage": 5
     },
@@ -12610,7 +12645,7 @@
       "id": "GET /partner/quota-transfer-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1671
+        "line": 1691
       },
       "stage": 5
     },
@@ -12618,7 +12653,7 @@
       "id": "POST /partner/quota-transfer-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1677
+        "line": 1697
       },
       "stage": 5
     },
@@ -12626,7 +12661,7 @@
       "id": "POST /partner/quota-transfers",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1695
+        "line": 1715
       },
       "stage": 5
     },
@@ -12634,7 +12669,7 @@
       "id": "GET /founder-awards",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1720
+        "line": 1740
       },
       "stage": 5
     },
@@ -12642,7 +12677,7 @@
       "id": "GET /costore/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1726
+        "line": 1746
       },
       "stage": 5
     },
@@ -12650,7 +12685,7 @@
       "id": "POST /costore/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1727
+        "line": 1747
       },
       "stage": 5
     },
@@ -12658,7 +12693,7 @@
       "id": "POST /applications/costore",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1748
+        "line": 1768
       },
       "stage": 5
     },
@@ -12666,7 +12701,7 @@
       "id": "GET /promotion/agency-code",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1779
+        "line": 1799
       },
       "stage": 5
     },
@@ -12674,7 +12709,7 @@
       "id": "POST /agency/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1784
+        "line": 1804
       },
       "stage": 5
     },
@@ -12682,7 +12717,7 @@
       "id": "GET /agency/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1811
+        "line": 1831
       },
       "stage": 5
     },
@@ -12690,7 +12725,7 @@
       "id": "POST /agency/applications",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1859
+        "line": 1879
       },
       "stage": 5
     }
@@ -12762,7 +12797,7 @@
       "pathPattern": "/api/hq/users/catalog",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 87
+        "line": 93
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -12774,7 +12809,7 @@
       "pathPattern": "/api/hq/users/:accountId",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 114
+        "line": 120
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -12786,7 +12821,7 @@
       "pathPattern": "/api/hq/users/:accountId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/users.js",
-        "line": 138
+        "line": 144
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14031,10 +14066,22 @@
     },
     {
       "method": "GET",
+      "pathPattern": "/api/hq/support/profile",
+      "handler": {
+        "file": "src/routes/hq/modules/support.js",
+        "line": 54
+      },
+      "enabled": true,
+      "defaultResponse": "{code,message,data}",
+      "exception": null,
+      "pendingMigration": true
+    },
+    {
+      "method": "GET",
       "pathPattern": "/api/hq/support/tickets",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 53
+        "line": 69
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14046,7 +14093,7 @@
       "pathPattern": "/api/hq/support/catalog",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 78
+        "line": 97
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14058,7 +14105,7 @@
       "pathPattern": "/api/hq/support/tickets/:ticketId",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 104
+        "line": 123
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14070,7 +14117,7 @@
       "pathPattern": "/api/hq/support/tickets/:ticketId/mutate",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 117
+        "line": 136
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14082,7 +14129,7 @@
       "pathPattern": "/api/hq/support/tickets",
       "handler": {
         "file": "src/routes/hq/modules/support.js",
-        "line": 186
+        "line": 205
       },
       "enabled": true,
       "defaultResponse": "{code,message,data}",
@@ -14142,7 +14189,7 @@
       "pathPattern": "/api/auth/login",
       "handler": {
         "file": "server.js",
-        "line": 395
+        "line": 397
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14157,7 +14204,7 @@
       "pathPattern": "/api/calc/region-vip",
       "handler": {
         "file": "server.js",
-        "line": 414
+        "line": 416
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14172,7 +14219,7 @@
       "pathPattern": "/api/calc/goods-diff",
       "handler": {
         "file": "server.js",
-        "line": 418
+        "line": 420
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14187,7 +14234,7 @@
       "pathPattern": "/api/calc/store-delivery",
       "handler": {
         "file": "server.js",
-        "line": 422
+        "line": 424
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14202,7 +14249,7 @@
       "pathPattern": "/api/calc/region",
       "handler": {
         "file": "server.js",
-        "line": 426
+        "line": 428
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14217,7 +14264,7 @@
       "pathPattern": "/api/agent/qrcode",
       "handler": {
         "file": "server.js",
-        "line": 431
+        "line": 433
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14232,7 +14279,7 @@
       "pathPattern": "/api/calc/virtual-split",
       "handler": {
         "file": "server.js",
-        "line": 440
+        "line": 442
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14247,7 +14294,7 @@
       "pathPattern": "/api/calc/physical-diff",
       "handler": {
         "file": "server.js",
-        "line": 444
+        "line": 446
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14262,7 +14309,7 @@
       "pathPattern": "/api/calc/agent-fee",
       "handler": {
         "file": "server.js",
-        "line": 448
+        "line": 450
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14277,7 +14324,7 @@
       "pathPattern": "/api/products",
       "handler": {
         "file": "server.js",
-        "line": 465
+        "line": 467
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14292,7 +14339,7 @@
       "pathPattern": "/api/calc/product-price",
       "handler": {
         "file": "server.js",
-        "line": 493
+        "line": 495
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14307,7 +14354,7 @@
       "pathPattern": "/api/calc/product-commission",
       "handler": {
         "file": "server.js",
-        "line": 497
+        "line": 499
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14322,7 +14369,7 @@
       "pathPattern": "/api/calc/featured-split",
       "handler": {
         "file": "server.js",
-        "line": 501
+        "line": 503
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14337,7 +14384,7 @@
       "pathPattern": "/api/seed",
       "handler": {
         "file": "server.js",
-        "line": 513
+        "line": 515
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14352,7 +14399,7 @@
       "pathPattern": "/api/seed",
       "handler": {
         "file": "server.js",
-        "line": 522
+        "line": 524
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14367,7 +14414,7 @@
       "pathPattern": "/api/seed/reset",
       "handler": {
         "file": "server.js",
-        "line": 527
+        "line": 529
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14382,7 +14429,7 @@
       "pathPattern": "/api/partner",
       "handler": {
         "file": "server.js",
-        "line": 531
+        "line": 533
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14397,7 +14444,7 @@
       "pathPattern": "/api/order",
       "handler": {
         "file": "server.js",
-        "line": 539
+        "line": 541
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14412,7 +14459,7 @@
       "pathPattern": "/api/order/product",
       "handler": {
         "file": "server.js",
-        "line": 544
+        "line": 546
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14427,7 +14474,7 @@
       "pathPattern": "/api/agent/appoint",
       "handler": {
         "file": "server.js",
-        "line": 556
+        "line": 558
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14442,7 +14489,7 @@
       "pathPattern": "/api/agent/revoke",
       "handler": {
         "file": "server.js",
-        "line": 566
+        "line": 568
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14457,7 +14504,7 @@
       "pathPattern": "/api/agent/update",
       "handler": {
         "file": "server.js",
-        "line": 576
+        "line": 578
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14472,7 +14519,7 @@
       "pathPattern": "/api/costore",
       "handler": {
         "file": "server.js",
-        "line": 585
+        "line": 587
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14487,7 +14534,7 @@
       "pathPattern": "/api/settings",
       "handler": {
         "file": "server.js",
-        "line": 593
+        "line": 595
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14502,7 +14549,7 @@
       "pathPattern": "/api/settings",
       "handler": {
         "file": "server.js",
-        "line": 596
+        "line": 598
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14517,7 +14564,7 @@
       "pathPattern": "/api/skus",
       "handler": {
         "file": "server.js",
-        "line": 605
+        "line": 607
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14532,7 +14579,7 @@
       "pathPattern": "p.match(/^\\/api\\/skus\\/[^/]+\\/stock$/) && m === 'POST'",
       "handler": {
         "file": "server.js",
-        "line": 609
+        "line": 611
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14547,7 +14594,7 @@
       "pathPattern": "p.match(/^\\/api\\/skus\\/[^/]+$/) && m === 'PUT'",
       "handler": {
         "file": "server.js",
-        "line": 627
+        "line": 629
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14562,7 +14609,7 @@
       "pathPattern": "/api/columns",
       "handler": {
         "file": "server.js",
-        "line": 642
+        "line": 645
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14577,7 +14624,7 @@
       "pathPattern": "/api/columns",
       "handler": {
         "file": "server.js",
-        "line": 645
+        "line": 648
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14592,7 +14639,7 @@
       "pathPattern": "/api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 658
+        "line": 662
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14607,7 +14654,7 @@
       "pathPattern": "/api/activity-prices",
       "handler": {
         "file": "server.js",
-        "line": 661
+        "line": 665
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14622,7 +14669,7 @@
       "pathPattern": "/api/quota/issue",
       "handler": {
         "file": "server.js",
-        "line": 672
+        "line": 678
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14637,7 +14684,7 @@
       "pathPattern": "/api/quota/ledger",
       "handler": {
         "file": "server.js",
-        "line": 677
+        "line": 683
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14652,7 +14699,7 @@
       "pathPattern": "/api/quota/transactions",
       "handler": {
         "file": "server.js",
-        "line": 685
+        "line": 691
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14667,7 +14714,7 @@
       "pathPattern": "/api/relation/unbind",
       "handler": {
         "file": "server.js",
-        "line": 689
+        "line": 695
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14682,7 +14729,7 @@
       "pathPattern": "/api/relation/rebind",
       "handler": {
         "file": "server.js",
-        "line": 694
+        "line": 700
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14697,7 +14744,7 @@
       "pathPattern": "/api/settle",
       "handler": {
         "file": "server.js",
-        "line": 704
+        "line": 710
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14712,7 +14759,7 @@
       "pathPattern": "/api/report",
       "handler": {
         "file": "server.js",
-        "line": 709
+        "line": 715
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14727,7 +14774,7 @@
       "pathPattern": "/api/users",
       "handler": {
         "file": "server.js",
-        "line": 716
+        "line": 722
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14742,7 +14789,7 @@
       "pathPattern": "/api/free-upgrade",
       "handler": {
         "file": "server.js",
-        "line": 728
+        "line": 734
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14757,7 +14804,7 @@
       "pathPattern": "/api/partner/update",
       "handler": {
         "file": "server.js",
-        "line": 761
+        "line": 767
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14772,7 +14819,7 @@
       "pathPattern": "/api/partner/delete",
       "handler": {
         "file": "server.js",
-        "line": 767
+        "line": 773
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14787,7 +14834,7 @@
       "pathPattern": "/api/order/update",
       "handler": {
         "file": "server.js",
-        "line": 773
+        "line": 779
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14802,7 +14849,7 @@
       "pathPattern": "/api/agent/update",
       "handler": {
         "file": "server.js",
-        "line": 779
+        "line": 785
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14817,7 +14864,7 @@
       "pathPattern": "/api/commissions/all",
       "handler": {
         "file": "server.js",
-        "line": 790
+        "line": 796
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14832,7 +14879,7 @@
       "pathPattern": "/api/identities",
       "handler": {
         "file": "server.js",
-        "line": 809
+        "line": 815
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14847,7 +14894,7 @@
       "pathPattern": "/api/commissions",
       "handler": {
         "file": "server.js",
-        "line": 815
+        "line": 821
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14862,7 +14909,7 @@
       "pathPattern": "/api/orders/all",
       "handler": {
         "file": "server.js",
-        "line": 825
+        "line": 831
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14877,7 +14924,7 @@
       "pathPattern": "/api/stores",
       "handler": {
         "file": "server.js",
-        "line": 842
+        "line": 848
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14892,7 +14939,7 @@
       "pathPattern": "/api/region/team",
       "handler": {
         "file": "server.js",
-        "line": 859
+        "line": 865
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14907,7 +14954,7 @@
       "pathPattern": "/api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 874
+        "line": 880
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14922,7 +14969,7 @@
       "pathPattern": "/api/allocation/scheme",
       "handler": {
         "file": "server.js",
-        "line": 877
+        "line": 883
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14937,7 +14984,7 @@
       "pathPattern": "/api/allocation/settle",
       "handler": {
         "file": "server.js",
-        "line": 885
+        "line": 891
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14952,7 +14999,7 @@
       "pathPattern": "/api/dividend/rights",
       "handler": {
         "file": "server.js",
-        "line": 891
+        "line": 897
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14967,7 +15014,7 @@
       "pathPattern": "/api/dividend/history",
       "handler": {
         "file": "server.js",
-        "line": 899
+        "line": 905
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14982,7 +15029,7 @@
       "pathPattern": "/api/experience/ledger",
       "handler": {
         "file": "server.js",
-        "line": 907
+        "line": 913
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -14997,7 +15044,7 @@
       "pathPattern": "/api/promotion-tasks",
       "handler": {
         "file": "server.js",
-        "line": 913
+        "line": 919
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15012,7 +15059,7 @@
       "pathPattern": "/api/me",
       "handler": {
         "file": "server.js",
-        "line": 925
+        "line": 931
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15027,7 +15074,7 @@
       "pathPattern": "/api/team",
       "handler": {
         "file": "server.js",
-        "line": 928
+        "line": 934
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15042,7 +15089,7 @@
       "pathPattern": "/api/commissions",
       "handler": {
         "file": "server.js",
-        "line": 931
+        "line": 937
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15057,7 +15104,7 @@
       "pathPattern": "/api/identities",
       "handler": {
         "file": "server.js",
-        "line": 936
+        "line": 942
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15072,7 +15119,7 @@
       "pathPattern": "/api/costore",
       "handler": {
         "file": "server.js",
-        "line": 940
+        "line": 946
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15087,7 +15134,7 @@
       "pathPattern": "/api/agent",
       "handler": {
         "file": "server.js",
-        "line": 943
+        "line": 949
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15102,7 +15149,7 @@
       "pathPattern": "/api/order/product",
       "handler": {
         "file": "server.js",
-        "line": 946
+        "line": 952
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15117,7 +15164,7 @@
       "pathPattern": "/api/region/month",
       "handler": {
         "file": "server.js",
-        "line": 955
+        "line": 961
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15912,7 +15959,7 @@
       "pathPattern": "/orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1133
+        "line": 1153
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15927,7 +15974,7 @@
       "pathPattern": "p.startsWith('/orders/') && m === 'GET' && !/\\/payment-channels$/.test(p)",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1151
+        "line": 1171
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15942,7 +15989,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/payment$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1175
+        "line": 1195
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15957,7 +16004,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/(cancellations|cancel)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1234
+        "line": 1254
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15972,7 +16019,7 @@
       "pathPattern": "p.match(/\\/orders\\/[^/]+\\/(receipts|confirm-receipt)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1252
+        "line": 1272
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -15987,7 +16034,7 @@
       "pathPattern": "/payments/attempts",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1259
+        "line": 1279
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16002,7 +16049,7 @@
       "pathPattern": "p.startsWith('/payments/attempts/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1298
+        "line": 1318
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16017,7 +16064,7 @@
       "pathPattern": "p.match(/^\\/orders\\/[^/]+\\/payment-channels$/) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1314
+        "line": 1334
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16032,7 +16079,7 @@
       "pathPattern": "/columns",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1329
+        "line": 1349
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16047,7 +16094,7 @@
       "pathPattern": "p.startsWith('/columns/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1340
+        "line": 1360
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16062,7 +16109,7 @@
       "pathPattern": "/partner/entitlement-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1368
+        "line": 1388
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16077,7 +16124,7 @@
       "pathPattern": "/partner/entitlement-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1379
+        "line": 1399
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16092,7 +16139,7 @@
       "pathPattern": "/partner/entitlement-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1397
+        "line": 1417
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16107,7 +16154,7 @@
       "pathPattern": "/partner/quota-purchase-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1425
+        "line": 1445
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16122,7 +16169,7 @@
       "pathPattern": "/partner/quota-purchase-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1429
+        "line": 1449
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16137,7 +16184,7 @@
       "pathPattern": "/partner/quota-orders",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1448
+        "line": 1468
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16152,7 +16199,7 @@
       "pathPattern": "/partner/upgrade-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1476
+        "line": 1496
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16167,7 +16214,7 @@
       "pathPattern": "/partner/upgrade-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1525
+        "line": 1545
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16182,7 +16229,7 @@
       "pathPattern": "/partner/upgrades",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1559
+        "line": 1579
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16197,7 +16244,7 @@
       "pathPattern": "/partner/store-binding-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1626
+        "line": 1646
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16212,7 +16259,7 @@
       "pathPattern": "/partner/store-binding-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1631
+        "line": 1651
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16227,7 +16274,7 @@
       "pathPattern": "/partner/store-bindings",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1649
+        "line": 1669
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16242,7 +16289,7 @@
       "pathPattern": "/partner/quota-transfer-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1671
+        "line": 1691
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16257,7 +16304,7 @@
       "pathPattern": "/partner/quota-transfer-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1677
+        "line": 1697
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16272,7 +16319,7 @@
       "pathPattern": "/partner/quota-transfers",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1695
+        "line": 1715
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16287,7 +16334,7 @@
       "pathPattern": "/founder-awards",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1720
+        "line": 1740
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16302,7 +16349,7 @@
       "pathPattern": "/costore/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1726
+        "line": 1746
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16317,7 +16364,7 @@
       "pathPattern": "/costore/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1727
+        "line": 1747
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16332,7 +16379,7 @@
       "pathPattern": "/applications/costore",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1748
+        "line": 1768
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16347,7 +16394,7 @@
       "pathPattern": "/promotion/agency-code",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1779
+        "line": 1799
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16362,7 +16409,7 @@
       "pathPattern": "/agency/application-quotes",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1784
+        "line": 1804
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16377,7 +16424,7 @@
       "pathPattern": "/agency/application-options",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1811
+        "line": 1831
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16392,7 +16439,7 @@
       "pathPattern": "/agency/applications",
       "handler": {
         "file": "src/routes/h5.js",
-        "line": 1859
+        "line": 1879
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16519,7 +16566,7 @@
       "pathPattern": "/me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 309
+        "line": 313
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16534,7 +16581,7 @@
       "pathPattern": "/me",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 331
+        "line": 335
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16549,7 +16596,7 @@
       "pathPattern": "/addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 356
+        "line": 360
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16564,7 +16611,7 @@
       "pathPattern": "/addresses",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 360
+        "line": 364
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16579,7 +16626,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 371
+        "line": 375
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16594,7 +16641,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 377
+        "line": 381
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16609,7 +16656,7 @@
       "pathPattern": "/addresses/default",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 394
+        "line": 398
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16624,7 +16671,7 @@
       "pathPattern": "p.startsWith('/addresses/') && m === 'DELETE'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 404
+        "line": 408
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16639,7 +16686,7 @@
       "pathPattern": "/coupons",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 417
+        "line": 421
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16654,7 +16701,7 @@
       "pathPattern": "/support/config",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 423
+        "line": 427
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16669,7 +16716,7 @@
       "pathPattern": "/support/feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 426
+        "line": 430
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16684,7 +16731,7 @@
       "pathPattern": "p.startsWith('/agreements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 442
+        "line": 446
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16699,7 +16746,7 @@
       "pathPattern": "/members/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 450
+        "line": 454
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16714,7 +16761,7 @@
       "pathPattern": "/members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 451
+        "line": 455
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16729,7 +16776,7 @@
       "pathPattern": "/members",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 457
+        "line": 461
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16744,7 +16791,7 @@
       "pathPattern": "/activations/preview",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 492
+        "line": 496
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16759,7 +16806,7 @@
       "pathPattern": "/activations",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 529
+        "line": 533
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16774,7 +16821,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/orders') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 570
+        "line": 574
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16789,7 +16836,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/training-feedback') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 577
+        "line": 581
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16804,7 +16851,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/store-profile') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 586
+        "line": 590
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16819,7 +16866,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/training') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 592
+        "line": 596
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16834,7 +16881,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/levels') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 615
+        "line": 619
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16849,7 +16896,7 @@
       "pathPattern": "p.startsWith('/members/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 630
+        "line": 634
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16864,7 +16911,7 @@
       "pathPattern": "p.startsWith('/columns/') && p.endsWith('/learning-progress') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 649
+        "line": 653
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16879,7 +16926,7 @@
       "pathPattern": "p.startsWith('/members/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 668
+        "line": 672
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16894,7 +16941,7 @@
       "pathPattern": "/learning/levels",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 687
+        "line": 691
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16909,7 +16956,7 @@
       "pathPattern": "p.startsWith('/learning/levels/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 701
+        "line": 705
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16924,7 +16971,7 @@
       "pathPattern": "/announcements",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 718
+        "line": 722
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16939,7 +16986,7 @@
       "pathPattern": "p.startsWith('/announcements/') && p.endsWith('/read') && m === 'PUT'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 721
+        "line": 725
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16954,7 +17001,7 @@
       "pathPattern": "p.startsWith('/announcements/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 737
+        "line": 741
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16969,7 +17016,7 @@
       "pathPattern": "p.startsWith('/lessons/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 742
+        "line": 746
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16984,7 +17031,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocation-options$/.test(p) && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 769
+        "line": 773
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -16999,7 +17046,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocation-quotes$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 800
+        "line": 804
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17014,7 +17061,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocations$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 825
+        "line": 829
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17029,7 +17076,7 @@
       "pathPattern": "/^\\/income\\/entries\\/[^/]+\\/allocations\\/[^/]+\\/revoke$/.test(p) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 845
+        "line": 849
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17044,7 +17091,7 @@
       "pathPattern": "/wallet/withdrawal-options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 857
+        "line": 861
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17059,7 +17106,7 @@
       "pathPattern": "/wallet/payees",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 867
+        "line": 871
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17074,7 +17121,7 @@
       "pathPattern": "/wallet/withdrawal-quotes",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 879
+        "line": 883
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17089,7 +17136,7 @@
       "pathPattern": "/wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 899
+        "line": 903
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17104,7 +17151,7 @@
       "pathPattern": "/wallet/withdrawals",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 927
+        "line": 931
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17119,7 +17166,7 @@
       "pathPattern": "/applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 938
+        "line": 942
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17134,7 +17181,7 @@
       "pathPattern": "p.startsWith('/promotion/invitations/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 944
+        "line": 948
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17149,7 +17196,7 @@
       "pathPattern": "/agency/store-workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 961
+        "line": 965
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17164,7 +17211,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/coaches$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 975
+        "line": 979
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17179,7 +17226,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/coaches\\/[^/]+$/) && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 992
+        "line": 996
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17194,7 +17241,7 @@
       "pathPattern": "p.match(/^\\/stores\\/[^/]+\\/orders\\/[^/]+\\/verify$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1012
+        "line": 1016
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17209,7 +17256,7 @@
       "pathPattern": "p.startsWith('/stores/') && m === 'PATCH'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1048
+        "line": 1052
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17224,7 +17271,7 @@
       "pathPattern": "p.match(/^\\/applications\\/[^/]+\\/decisions$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1063
+        "line": 1067
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17239,7 +17286,7 @@
       "pathPattern": "/coach/workspace",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1093
+        "line": 1097
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17254,7 +17301,7 @@
       "pathPattern": "/training-feedback",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1100
+        "line": 1104
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17269,7 +17316,7 @@
       "pathPattern": "p.startsWith('/training-feedback/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1128
+        "line": 1132
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17284,7 +17331,7 @@
       "pathPattern": "/store-transfer/options",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1135
+        "line": 1139
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17299,7 +17346,7 @@
       "pathPattern": "/store-transfer/applications",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1148
+        "line": 1152
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17314,7 +17361,7 @@
       "pathPattern": "/assets/upload-intents",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1180
+        "line": 1184
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17329,7 +17376,7 @@
       "pathPattern": "p.match(/^\\/assets\\/[^/]+\\/(completions|complete)$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1205
+        "line": 1209
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17344,7 +17391,7 @@
       "pathPattern": "/materials/categories",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1218
+        "line": 1222
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17359,7 +17406,7 @@
       "pathPattern": "/materials",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1223
+        "line": 1227
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17374,7 +17421,7 @@
       "pathPattern": "p.startsWith('/materials/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1230
+        "line": 1234
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17389,7 +17436,7 @@
       "pathPattern": "p.match(/^\\/materials\\/[^/]+\\/renders$/) && m === 'POST'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1235
+        "line": 1239
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17404,7 +17451,7 @@
       "pathPattern": "p.startsWith('/jobs/') && m === 'GET'",
       "handler": {
         "file": "src/routes/h5biz.js",
-        "line": 1256
+        "line": 1260
       },
       "enabled": true,
       "defaultResponse": "raw success / {error} failure; inspect handler for legacy variants",
@@ -17539,7 +17586,7 @@
       "pathPattern": "*",
       "handler": {
         "file": "server.js",
-        "line": 979
+        "line": 985
       },
       "enabled": true,
       "defaultResponse": "204 empty",
@@ -17548,8 +17595,8 @@
     }
   ],
   "evidenceReconciliation": {
-    "candidateRecords": 348,
-    "canonicalJson": 334,
+    "candidateRecords": 349,
+    "canonicalJson": 335,
     "aliasRecords": 8,
     "dispatchGuards": 1,
     "exceptionRecords": 1,
